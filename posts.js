@@ -185,7 +185,7 @@ const allPosts = [
     <h2>The Missing Piece: What Controls Mitophagy in Real Life?</h2>
     
     <p>
-      Almost everything we know about PINK1–Parkin comes from artificial mitochondrial poisoning with CCCP or antimycin. But when researchers turned to <em>in vivo</em> reporters like mito-QC and mt-Keima mice, they found something unexpected: Mammalian brains ( including dopamine neurons) show robust basal mitophagy even in the complete absence of PINK1 or Parkin (Sun et al., 2021, <em>Cell Metab</em>).
+      Almost everything we know about PINK1–Parkin comes from artificial mitochondrial poisoning with CCCP or antimycin. But when researchers turned to <em>in vivo</em> reporters like mito-QC and mt-Keima mice, they found something unexpected: Mammalian brains ( including dopamine neurons) show robust basal mitophagy even in the complete absence of PINK1 or Parkin (Pickrell AM, Youle RJ. Neuron, 2015 — The PINK1–Parkin pathway).
     </p>
     
     <p>
@@ -227,13 +227,13 @@ const allPosts = [
   <li><a href="https://doi.org/10.1080/15548627.2016.1164297" target="_blank" rel="noopener noreferrer">Nguyen TN et al. Cell, 2016 — Parkin-mediated mitophagy mechanisms.</a></li>
   <li><a href="https://www.sciencedirect.com/science/article/pii/S0959437X16302155" target="_blank" rel="noopener noreferrer">Cummins N, Götz J. Nat Rev Neurosci, 2018 — Mitophagy in neurodegeneration.</a></li>
   <li><a href="https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2020.00294/full" target="_blank" rel="noopener noreferrer">Palikaras K et al. Nat Rev Endocrinol, 2022 — Mitophagy and metabolic disease.</a></li>
-  <li><a href="https://www.sciencedirect.com/science/article/pii/S1097276515008832" target="_blank" rel="noopener noreferrer">Sun N et al. Cell Metab, 2018 — Basal mitophagy in vivo.</a></li>
   <li><a href="#" target="_blank" rel="noopener noreferrer">Landis N. et al. Fly, 2024 - Mifepristone and rapamycin have non-additive benefits for life span in mated female Drosophila</a></li>
 </ol>
 
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
