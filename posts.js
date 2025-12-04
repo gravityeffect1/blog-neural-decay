@@ -126,53 +126,36 @@ const allPosts = [
   excerpt: 'A deep dive into mitophagy — the cellular process that dismantles damaged mitochondria, and how its failure shapes aging, neurodegeneration, metabolic disease, and future therapeutic strategies.',
   content: `
     <h2>Introduction: When Cells Turn Against Their Own Power Plants</h2>
-
-    <p>
-      Among the silent dramas occurring within the human body, few are as significant — or as intriguingly graceful — as the moment a cell chooses to consume its own power plant. It’s a minor act of biological prioritization that many of us overlook, yet it influences our aging trajectory, our vulnerability to disease, and ultimately our functional lifespan. Mitochondria, the ancient bacterial tenants inherited from early eukaryotes, are essential yet perpetually vulnerable. They drive every heartbeat, every synaptic event, every flicker of metabolic intention , and eventually, deteriorate with an unsettling manner.
-    </p>
-
-    <p>
-      If left unattended, damaged mitochondria gradually poison the very cells that depend on them. Evolution responded with a ruthless but elegant system: <strong>mitophagy</strong>, the selective dismantling of malfunctioning mitochondria before they jeopardize the whole. What might appear to be a trivial maintenance routine reveals itself as one of biology’s most consequential negotiations: the way cells preserve integrity in spite of relentless internal entropy.
-    </p>
-
-    <p>
-      Understanding this ancient self-consumption pathway is not merely academic. It may illuminate why bodies decline with age — and how aging itself might one day be altered.
-    </p>
-
-    <h2>Mitochondria: Relics with Power and a Propensity for Chaos</h2>
-
-    <p>
-      Mitochondria are evolutionary remnants: primitive bacteria that forged a symbiotic pact with early cells over a billion years ago. They retain their own genome, operate their own machinery, and fail in ways that feel old, bacterial, and deeply disruptive. When they break down, they do not do so quietly. They leak reactive oxygen species, activate pro-apoptotic signals such as <em>DIABLO/SMAC</em> and cytochrome c, and become metabolic burdens dragging the entire cell toward dysfunction.
-    </p>
-
-    <h2>Mitophagy: The Balancing Mechanism That Keeps Cells Alive</h2>
-
-    <p>
-      To counteract this, evolution crafted mitophagy. When a mitochondrion loses its membrane potential, the protein <strong>PINK1</strong> abruptly stops being imported and begins to accumulate on the mitochondrial surface. This acts as a distress signal. It recruits <strong>Parkin</strong>, an E3 ubiquitin ligase that coats the organelle in ubiquitin chains, marking it for destruction.
-    </p>
-
-    <p>
-      This remained an unusual biochemical detail until scientists investigating rare hereditary Parkinson’s disease connected the pieces. Mutations in PINK1 and Parkin did not simply affect a theoretical pathway — they weakened the fundamental system responsible for removing damaged mitochondria. Two pivotal studies by Pickrell &amp; Youle (2015, <em>Neuron</em>) and Nguyen et al. (2016, <em>Cell</em>) consolidated these findings into what is now regarded as the standard mitophagy model.
-    </p>
-
-    <p>
-      The link between Parkinson’s disease, which is a condition characterized by the gradual loss of dopaminergic neurons, and mitochondrial quality control suddenly shifted the perspective on everything. When the cleanup system malfunctions, the cell does not die immediately. It struggles. It accumulates metabolic waste. And ultimately, it sadly reaches the point of no return...
-    </p>
-
-    <h2>Everyone pays the price</h2>
-
-    <p>
-      Once researchers learned what to look for, mitophagy dysfunction began to surface everywhere: across neural tissue, metabolic systems, and even within iron-dependent cell death pathways.
-    </p>
-
-    <h3>Neurodegeneration</h3>
-
-    <p>
-      Neurons are extraordinarily energy-dependent. Their long axonal projections require constant mitochondrial upkeep. When mitophagy slows, subtle dysfunction snowballs into pathological cascades. Studies such as those by Cummins &amp; Götz (2018, <em>Nature Reviews Neuroscience</em>) demonstrate that impaired mitochondrial removal increases amyloid toxicity in Alzheimer’s disease, exacerbates TDP-43 pathology in ALS, and renders dopaminergic neurons disproportionately vulnerable. In essence: the brain ages at the rate its mitochondria decay.
-    </p>
-
-    <h3>Diabetes and Metabolic Disorders</h3>
-
+<p>
+    The human body contains a silent battle which occurs between cells and their power plants when cells decide to destroy their energy sources. The human body contains a vital yet unnoticed biological process which determines our aging process and disease susceptibility and determines our lifespan. The early eukaryotic cells inherited these bacterial tenants which exist as essential yet constantly exposed elements. The heart beats and synapses fire and metabolic signals occur through their efforts yet they show signs of deterioration at an alarming rate.
+</p>
+<p>
+The accumulation of damaged mitochondria leads to cellular poisoning because cells depend on these organelles for their survival. The evolutionary solution to this problem involved the development of <strong>mitophagy</strong> which functions as a selective process to eliminate defective mitochondria before they harm the entire system. The process of cellular maintenance through mitophagy functions as a vital biological process which protects cells from internal decay.
+</p>
+<p>
+The study of this ancient cellular self-destruction process holds more than academic value. The discovery of this ancient self-consumption pathway could help scientists understand why bodies deteriorate with time and possibly develop methods to modify the aging process.
+</p>
+<p>
+The ancient bacterial remnants known as mitochondria possess both the ability to generate power and a natural tendency to create disorder. The bacterial remnants from ancient times known as mitochondria function as cellular powerhouses which maintain their own genetic material and operational systems and demonstrate bacterial-like failure patterns that create destructive effects. The breakdown of mitochondria produces harmful substances which trigger cell death pathways through DIABLO/SMAC and cytochrome c release and create metabolic problems that push cells toward functional collapse.
+</p>
+<p>
+The cellular process of mitophagy functions as a protective mechanism which sustains cell survival. The protein <strong>PINK1</strong> stops entering mitochondria when they lose their membrane potential which causes it to accumulate on the surface of damaged organelles. The protein serves as a warning signal to the cell. The protein <strong>Parkin</strong> functions as an E3 ubiquitin ligase which binds to the organelle to create ubiquitin chains that indicate its destruction.
+</p>
+<p>
+Scientists who studied Parkinson's disease discovered that PINK1 and Parkin mutations caused damage to the cellular system which removes defective mitochondria. The two essential research papers by Pickrell &amp; Youle (2015, <em>Neuron</em>) and Nguyen et al. (2016, <em>Cell</em>) established the current understanding of mitophagy as a biological process.
+</p>
+<p>
+The discovery of Parkinson's disease as a neurodegenerative disorder linked to mitochondrial quality control mechanisms transformed our understanding of all related processes. The cell experiences a prolonged period of suffering after its cleanup system fails to function properly. The cell produces increasing amounts of metabolic waste during this time. The cell reaches its functional capacity until it reaches an irreversible state of deterioration.
+</p>
+<p>
+The breakdown of mitophagy functions leads to negative effects which affect all individuals. Scientists discovered mitophagy dysfunction through their research into neural tissues and metabolic systems and iron-dependent cell death pathways.
+</p>
+<p>
+The process of neurodegeneration occurs through the breakdown of neural tissue. The extended neuronal extensions need continuous mitochondrial maintenance to survive. The breakdown of mitophagy function leads to progressive cellular damage which results in disease-related pathological changes. The research by Cummins &amp; Götz (2018, <em>Nature Reviews Neuroscience</em>) shows that defective mitochondrial clearance leads to increased Alzheimer's disease amyloid toxicity and worsens TDP-43 pathology in ALS and makes dopaminergic neurons more susceptible to damage. The brain shows aging signs at a rate that matches the deterioration of its mitochondrial function.
+</p>
+<p>
+The breakdown of mitophagy function leads to the development of diabetes and various metabolic disorders.
+</p>
     <p>
       Then came the metabolic surprise. Research over the past decade has shown that pancreatic beta cells, skeletal muscle, and brown adipose tissue depend heavily on finely tuned mitophagy to maintain glucose balance. A study by Palikaras et al. (2022, <em>Nature Reviews Endocrinology</em>) emphasizes that both excessive and insufficient mitophagy worsen insulin resistance and impair glycemic control.
     </p>
@@ -226,6 +209,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
