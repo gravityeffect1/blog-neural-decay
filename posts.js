@@ -221,18 +221,20 @@ const allPosts = [
     </p>
     
 
-    <h2>References and Links</h2>
-    <ol>
-      <li><a href="https://doi.org/10.1016/j.neuron.2015.01.022" target="_blank" rel="noopener noreferrer">Pickrell AM, Youle RJ. Neuron, 2015 — The PINK1–Parkin pathway.</a></li>
-      <li><a href="https://doi.org/10.1016/j.cell.2016.04.015" target="_blank" rel="noopener noreferrer">Nguyen TN et al. Cell, 2016 — Parkin-mediated mitophagy mechanisms.</a></li>
-      <li><a href="https://doi.org/10.1038/s41583-018-0072-1" target="_blank" rel="noopener noreferrer">Cummins N, Götz J. Nat Rev Neurosci, 2018 — Mitophagy in neurodegeneration.</a></li>
-      <li><a href="https://doi.org/10.1038/s41574-022-00699-w" target="_blank" rel="noopener noreferrer">Palikaras K et al. Nat Rev Endocrinol, 2022 — Mitophagy and metabolic disease.</a></li>
-      <li><a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(17)30721-0">Sun N et al. Cell Metab, 2018 — Basal mitophagy in vivo.</a></li>
-      <li><a href="https://www.tandfonline.com/doi/full/10.1080/19336934.2024.2419151">Landis N. et al. Fly, 2024 - Mifepristone and rapamycin have non-additive benefits for life span in mated female Drosophila</a></li>
-    </ol>
+   <h2>References and Links</h2>
+<ol>
+  <li><a href="https://www.sciencedirect.com/science/article/pii/S0896627314010885" target="_blank" rel="noopener noreferrer">Pickrell AM, Youle RJ. Neuron, 2015 — The PINK1–Parkin pathway.</a></li>
+  <li><a href="https://doi.org/10.1080/15548627.2016.1164297" target="_blank" rel="noopener noreferrer">Nguyen TN et al. Cell, 2016 — Parkin-mediated mitophagy mechanisms.</a></li>
+  <li><a href="https://www.sciencedirect.com/science/article/pii/S0959437X16302155" target="_blank" rel="noopener noreferrer">Cummins N, Götz J. Nat Rev Neurosci, 2018 — Mitophagy in neurodegeneration.</a></li>
+  <li><a href="https://www.frontiersin.org/journals/cell-and-developmental-biology/articles/10.3389/fcell.2020.00294/full" target="_blank" rel="noopener noreferrer">Palikaras K et al. Nat Rev Endocrinol, 2022 — Mitophagy and metabolic disease.</a></li>
+  <li><a href="https://www.sciencedirect.com/science/article/pii/S1097276515008832" target="_blank" rel="noopener noreferrer">Sun N et al. Cell Metab, 2018 — Basal mitophagy in vivo.</a></li>
+  <li><a href="#" target="_blank" rel="noopener noreferrer">Landis N. et al. Fly, 2024 - Mifepristone and rapamycin have non-additive benefits for life span in mated female Drosophila</a></li>
+</ol>
+
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
