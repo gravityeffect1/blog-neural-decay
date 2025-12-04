@@ -142,13 +142,13 @@ const allPosts = [
     <h2>Mitochondria: Relics with Power and a Propensity for Chaos</h2>
 
     <p>
-      Mitochondria are evolutionary remnants — primitive bacteria that forged a symbiotic pact with early cells over a billion years ago. They retain their own genome, operate their own machinery, and fail in ways that feel old, bacterial, and deeply disruptive. When they break down, they do not do so quietly. They leak reactive oxygen species, activate pro-apoptotic signals such as <em>DIABLO/SMAC</em> and cytochrome c, and become metabolic burdens dragging the entire cell toward dysfunction.
+      Mitochondria are evolutionary remnants: primitive bacteria that forged a symbiotic pact with early cells over a billion years ago. They retain their own genome, operate their own machinery, and fail in ways that feel old, bacterial, and deeply disruptive. When they break down, they do not do so quietly. They leak reactive oxygen species, activate pro-apoptotic signals such as <em>DIABLO/SMAC</em> and cytochrome c, and become metabolic burdens dragging the entire cell toward dysfunction.
     </p>
 
     <h2>Mitophagy: The Balancing Mechanism That Keeps Cells Alive</h2>
 
     <p>
-      To counteract this, evolution crafted mitophagy. When a mitochondrion loses its membrane potential, the protein <strong>PINK1</strong> abruptly stops being imported and begins to accumulate on the mitochondrial surface. This acts as a distress signal. It recruits <strong>Parkin</strong>, an E3 ubiquitin ligase that coats the organelle in ubiquitin chains — molecular graffiti marking it for destruction.
+      To counteract this, evolution crafted mitophagy. When a mitochondrion loses its membrane potential, the protein <strong>PINK1</strong> abruptly stops being imported and begins to accumulate on the mitochondrial surface. This acts as a distress signal. It recruits <strong>Parkin</strong>, an E3 ubiquitin ligase that coats the organelle in ubiquitin chains, marking it for destruction.
     </p>
 
     <p>
@@ -159,7 +159,7 @@ const allPosts = [
       The link between Parkinson’s disease — a condition characterized by the gradual loss of dopaminergic neurons — and mitochondrial quality control suddenly shifted the perspective on everything. When the cleanup system malfunctions, the cell does not die immediately. It struggles. It accumulates metabolic waste. And ultimately, it reaches the point of no return.
     </p>
 
-    <h2>When Mitophagy Fails, Every System Pays the Price</h2>
+    <h2>Everyone pays the price</h2>
 
     <p>
       Once researchers learned what to look for, mitophagy dysfunction began to surface everywhere — across neural tissue, metabolic systems, and even within iron-dependent cell death pathways.
@@ -174,7 +174,7 @@ const allPosts = [
     <h3>Diabetes and Metabolic Disorders</h3>
 
     <p>
-      Then came the metabolic surprise. Research over the past decade has shown that pancreatic beta cells, skeletal muscle, and brown adipose tissue depend heavily on finely tuned mitophagy to maintain glucose balance. A study by Palikaras et al. (2022, <em>Nature Reviews Endocrinology</em>) emphasizes that both excessive and insufficient mitophagy worsen insulin resistance and impair glycemic control. Unexpectedly, hexokinase-2 and LDHA — once seen merely as metabolic enzymes — have emerged as regulators of mitophagy with therapeutic potential.
+      Then came the metabolic surprise. Research over the past decade has shown that pancreatic beta cells, skeletal muscle, and brown adipose tissue depend heavily on finely tuned mitophagy to maintain glucose balance. A study by Palikaras et al. (2022, <em>Nature Reviews Endocrinology</em>) emphasizes that both excessive and insufficient mitophagy worsen insulin resistance and impair glycemic control.
     </p>
 
     <h3>Ferroptosis: The Mitochondrial Iron Paradox</h3>
@@ -186,11 +186,11 @@ const allPosts = [
     <h2>The Unanswered Question: What Regulates Mitophagy in Real Organisms?</h2>
 
     <p>
-      Much of what we know about the PINK1–Parkin pathway derives from experiments using artificial mitochondrial toxins such as CCCP or antimycin. Yet when researchers examined <em>in vivo</em> mitophagy using reporters like mito-QC and mt-Keima, they found something unexpected: mammalian brains — including dopaminergic neurons — exhibit robust basal mitophagy even in the complete absence of PINK1 or Parkin (Sun et al., 2021, <em>Cell Metabolism</em>).
+      Much of what we know about the PINK1–Parkin pathway derives from experiments using artificial mitochondrial toxins such as CCCP or antimycin. Yet when researchers examined <em>in vivo</em> mitophagy using reporters like mito-QC and mt-Keima, they found something unexpected: mammalian brains, including dopaminergic neurons, exhibit robust basal mitophagy even in the complete absence of PINK1 or Parkin (Sun et al., 2021, <em>Cell Metabolism</em>).
     </p>
 
     <p>
-      This suggests that the canonical pathway may function more as an emergency brake than as the primary mechanism of everyday mitochondrial turnover. Basal mitophagy appears to rely on a different, still-mysterious set of rules. That mystery defines the frontier — and highlights emerging therapeutic strategies.
+      This suggests that the canonical pathway may function more as an emergency brake than as the primary mechanism of everyday mitochondrial turnover. The mystery defines the frontier and highlights emerging therapeutic strategies.
     </p>
 
     <h2>Therapeutic Directions: From Rapamycin to Repurposed Drugs</h2>
@@ -200,7 +200,7 @@ const allPosts = [
     </p>
 
     <p>
-      A study by Landis et al. (2022, <em>eLife</em>) showed that <strong>mifepristone</strong> promotes mitophagy in <em>Drosophila</em> in a manner comparable to rapamycin, challenging assumptions about the mitophagic potential of existing medications. Meanwhile, natural polyphenolic compounds such as resveratrol and ginsenosides have been shown to enhance mitochondrial homeostasis in diabetic models via the AMPK–SIRT1 pathway. While not curative, their ability to promote mitophagy and reduce dysfunction warrants further investigation, particularly regarding safety, bioavailability, and potential combination therapies.
+      A study by Landis et al. (2022, <em>eLife</em>) showed that <strong>mifepristone</strong> promotes mitophagy in <em>Drosophila</em> in a manner comparable to rapamycin, challenging assumptions about the mitophagic potential of existing medications. Meanwhile, natural polyphenolic compounds such as resveratrol have been shown to enhance mitochondrial homeostasis in diabetic models via the AMPK–SIRT1 pathway.
     </p>
 
     <h2>Conclusion: Mitophagy as the Biology of Resilience</h2>
@@ -210,11 +210,11 @@ const allPosts = [
     </p>
 
     <p>
-      The striking reality is this: our quality of life decades from now depends on microscopic maintenance happening within our cells today. Understanding and ultimately modulating this process is more than a scientific exercise — it offers a roadmap for delaying neurodegeneration, stabilizing metabolic disorders, and extending the functional years of human life.
+      The striking reality is this: our quality of life decades from now depends on microscopic maintenance happening within our cells today. Understanding and ultimately modulating this process is more than a scientific exercise: it offers a roadmap for delaying neurodegeneration, stabilizing metabolic disorders, and extending the functional years of human life.
     </p>
 
     <p>
-      If there is a unifying theme in the future of medicine, it may be this: to age well, our cells must consistently eliminate what no longer serves them. Mitophagy is more than a cleanup mechanism — it is a biological expression of resilience, and perhaps the most promising tool we possess to reshape the trajectory of human healthspan.
+      If there is a unifying theme in the future of medicine, it may be this: to age well, our cells must consistently eliminate what no longer serves them. Mitophagy is more than a cleanup mechanism: it is a biological expression of resilience, and perhaps the most promising tool we possess to reshape the trajectory of human healthspan.
     </p>
 
     <h2>References and Links</h2>
@@ -229,6 +229,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
