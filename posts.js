@@ -115,8 +115,120 @@ const allPosts = [
             <li><a href="https://pubmed.ncbi.nlm.nih.gov/9155671/" target="_blank">Mutation analysis of the p53, APC, and p16 genes in the Barrett’s oesophagus, dysplasia, and adenocarcinoma</a> — PubMed</li>
         </ol>
     `
+},
+      {
+  id: 'mitophagy-power-plants-dying',
+  title: 'Your Power Plants Are Dying: The Secret War Inside Every Cell',
+  date: '2025-12-04',
+  category: 'medicine',
+  tags: ['cell biology', 'mitochondria', 'neurodegeneration', 'aging', 'metabolism'],
+  excerpt: 'A deep dive into mitophagy — the cellular process that dismantles damaged mitochondria — and how its failure shapes aging, neurodegeneration, metabolic disease, and future therapeutic strategies.',
+  content: `
+    <h2>Introduction: When Cells Turn Against Their Own Power Plants</h2>
+
+    <p>
+      Among the silent dramas occurring within the human body, few are as significant — or as intriguingly graceful — as the moment a cell chooses to consume its own power plant. It’s a minor act of biological prioritization that most of us overlook, yet it influences our aging trajectory, our vulnerability to disease, and ultimately our functional lifespan. Mitochondria, the ancient bacterial tenants inherited from early eukaryotes, are essential yet perpetually fragile. They drive every heartbeat, every synaptic event, every flicker of metabolic intention — and with unsettling regularity, they deteriorate.
+    </p>
+
+    <p>
+      If left unattended, damaged mitochondria gradually poison the very cells that depend on them. Evolution responded with a ruthless but elegant system: <strong>mitophagy</strong>, the selective dismantling of malfunctioning mitochondria before they jeopardize the whole. What might appear as a trivial maintenance routine reveals itself as one of biology’s most consequential negotiations — the way cells preserve integrity in spite of relentless internal entropy.
+    </p>
+
+    <p>
+      Understanding this ancient self-consumption pathway is not merely academic. It may illuminate why bodies decline with age — and how aging itself might one day be altered.
+    </p>
+
+    <h2>Mitochondria: Relics with Power and a Propensity for Chaos</h2>
+
+    <p>
+      Mitochondria are evolutionary relics — primitive bacteria that forged a symbiotic pact with early cells over a billion years ago. They retain their own genome, operate their own machinery, and fail in ways that feel old, bacterial, and deeply disruptive. When they break down, they do not do so quietly. They leak reactive oxygen species, activate pro-apoptotic signals such as <em>DIABLO/SMAC</em> and cytochrome c, and become metabolic anchors dragging the entire cell toward dysfunction.
+    </p>
+
+    <h2>Mitophagy: The Balancing Mechanism That Keeps Cells Alive</h2>
+
+    <p>
+      To counteract this, evolution crafted mitophagy. When a mitochondrion loses its membrane potential, the protein <strong>PINK1</strong> abruptly stops being imported and begins to accumulate on the mitochondrial surface. This acts as a distress signal. It recruits <strong>Parkin</strong>, an E3 ubiquitin ligase that coats the organelle in ubiquitin chains — molecular graffiti marking it for destruction.
+    </p>
+
+    <p>
+      Initially thought to be a biochemical curiosity, this pathway became central once researchers studying familial Parkinson’s disease connected mutations in PINK1 and Parkin to mitochondrial clearance defects. Seminal studies by Pickrell &amp; Youle (2015, <em>Neuron</em>) and Nguyen et al. (2016, <em>Cell</em>) cemented the PINK1–Parkin pathway as the canonical model of mitophagy.
+    </p>
+
+    <p>
+      Parkinson’s disease — a condition defined by progressive loss of dopaminergic neurons — thus became the clinical face of dysfunctional mitochondrial housekeeping. When mitophagy fails, the cell does not collapse immediately; instead, it accumulates dysfunction until it crosses a point of irreversible decline.
+    </p>
+
+    <h2>When Mitophagy Fails, Every System Pays the Price</h2>
+
+    <p>
+      Once scientists learned how to recognize mitophagy failure, they found it everywhere — across the nervous system, metabolic tissues, and even in iron-dependent cell death pathways.
+    </p>
+
+    <h3>Neurodegeneration</h3>
+
+    <p>
+      Neurons are energy-intensive cells with long axonal projections that require constant mitochondrial maintenance. When mitophagy slows, small inefficiencies snowball. Reviews such as Cummins &amp; Götz (2018, <em>Nature Reviews Neuroscience</em>) show that impaired mitochondrial clearance amplifies amyloid toxicity in Alzheimer’s disease, accelerates TDP-43 pathology in ALS, and sensitizes dopaminergic neurons to degeneration. Simply put: the brain ages at the rate its mitochondria decay.
+    </p>
+
+    <h3>Diabetes and Metabolic Disorders</h3>
+
+    <p>
+      A decade of metabolic research revealed an unexpected dependency: pancreatic beta cells, skeletal muscle, and brown fat rely heavily on precise mitophagy regulation. Palikaras et al. (2022, <em>Nature Reviews Endocrinology</em>) demonstrated that both insufficient and excessive mitophagy destabilize glucose homeostasis. Enzymes once considered metabolic workhorses, like hexokinase-2 and LDHA, now appear to regulate mitophagy with therapeutic implications.
+    </p>
+
+    <h3>Ferroptosis: The Mitochondrial Iron Paradox</h3>
+
+    <p>
+      Ferroptosis, an iron-dependent, lipid-peroxidation-driven form of cell death, adds further complexity. Mitophagy can prevent ferroptosis by removing excess iron-rich mitochondria — yet mitochondrial degradation releases iron into lysosomes, potentially triggering the very process it seeks to prevent. Cells navigate a delicate balance: clear too little, and toxins accumulate; clear too much, and iron becomes lethal.
+    </p>
+
+    <h2>The Unanswered Question: What Regulates Mitophagy in Real Organisms?</h2>
+
+    <p>
+      Much of the canonical PINK1–Parkin model stems from experiments using artificial mitochondrial toxins like CCCP. However, <em>in vivo</em> reporters such as mito-QC and mt-Keima revealed a surprising reality: mammalian brains, including dopamine neurons, exhibit robust basal mitophagy even in the complete absence of PINK1 or Parkin (Sun et al., 2021, <em>Cell Metabolism</em>).
+    </p>
+
+    <p>
+      This suggests the textbook pathway may function as an emergency system rather than the primary mode of everyday mitochondrial turnover. Basal mitophagy likely operates through yet-unclear mechanisms — a frontier that is reshaping therapeutic thinking.
+    </p>
+
+    <h2>Therapeutic Directions: From Rapamycin to Repurposed Drugs</h2>
+
+    <p>
+      Rapamycin remains a cornerstone of longevity research, enhancing autophagy and mitophagy through inhibition of the mTOR pathway. Yet recent discoveries are expanding the therapeutic landscape.
+    </p>
+
+    <p>
+      A 2022 <em>eLife</em> study by Landis et al. showed that <strong>mifepristone</strong> enhances mitophagy in <em>Drosophila</em> at levels comparable to rapamycin — highlighting the potential of repurposed drugs already in clinical use. Natural compounds such as resveratrol and ginsenosides also modulate mitochondrial homeostasis via the AMPK–SIRT1 axis, offering accessible, low-toxicity adjuncts to metabolic therapy.
+    </p>
+
+    <h2>Conclusion: Mitophagy as the Biology of Resilience</h2>
+
+    <p>
+      Mitophagy forces a sober insight about biological life: survival depends not on brute strength, but on the capacity for continuous self-correction. Cells persist by cannibalizing the parts of themselves that threaten integrity. When this internal housekeeping falters — when dysfunctional mitochondria accumulate, when metabolic debris builds, when clearance slows with age — decline becomes inexorable.
+    </p>
+
+    <p>
+      The striking truth is this: our quality of life decades from now hinges on microscopic maintenance happening today. Understanding and strategically modulating mitophagy is not merely a theoretical exercise. It offers a roadmap toward delaying neurodegeneration, stabilizing metabolic disease, and extending healthspan.
+    </p>
+
+    <p>
+      If the future of medicine has a unifying principle, it may be this: to age well, our cells must remain willing to discard what no longer serves them. Mitophagy is more than cellular sanitation — it is the molecular embodiment of resilience, and perhaps one of the most promising levers we possess to shift the trajectory of human health.
+    </p>
+
+    <h2>References and Links</h2>
+    <ol>
+      <li><a href="https://doi.org/10.1016/j.neuron.2015.01.022" target="_blank" rel="noopener noreferrer">Pickrell AM, Youle RJ. Neuron, 2015 — The PINK1–Parkin pathway.</a></li>
+      <li><a href="https://doi.org/10.1016/j.cell.2016.04.015" target="_blank" rel="noopener noreferrer">Nguyen TN et al. Cell, 2016 — Parkin-mediated mitophagy mechanisms.</a></li>
+      <li><a href="https://doi.org/10.1038/s41583-018-0072-1" target="_blank" rel="noopener noreferrer">Cummins N, Götz J. Nat Rev Neurosci, 2018 — Mitophagy in neurodegeneration.</a></li>
+      <li><a href="https://doi.org/10.1038/s41574-022-00699-w" target="_blank" rel="noopener noreferrer">Palikaras K et al. Nat Rev Endocrinol, 2022 — Mitophagy and metabolic disease.</a></li>
+      <li><a href="https://doi.org/10.1016/j.cmet.2021.02.002" target="_blank" rel="noopener noreferrer">Sun N et al. Cell Metab, 2021 — Basal mitophagy in vivo.</a></li>
+      <li><a href="https://doi.org/10.7554/eLife.80677" target="_blank" rel="noopener noreferrer">Landis GN et al. eLife, 2022 — Mifepristone as a mitophagy enhancer.</a></li>
+    </ol>
+  `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
