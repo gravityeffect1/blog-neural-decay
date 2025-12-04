@@ -213,7 +213,7 @@ const allPosts = [
     </p>
     
     <p>
-      In a desperate attempt to perserve themselves, cells will resort to cannibalism, an act not so rarely seen in nature with our mammalian distant relatives, many of whom will eat their young if they are deemed too weak or are incapacitated. In the molecular universe, when even that last-resort system fails, when broken mitochondria still persist to linger and cellular debris accumulates, when the body's cleanup mechanisms slow with each passing year, the inevitable decline ensues.
+      In a desperate attempt to preserve themselves, cells will resort to cannibalism, an act not so rarely seen in nature wregarding our mammalian relatives, many of whom will eat their young if they are deemed too weak or are incapacitated. In the molecular universe, when even that last-resort system fails, when broken mitochondria still persist to linger and cellular debris accumulates, when the body's cleanup mechanisms slow with each passing year, the inevitable decline ensues.
     </p>
     
     <p>
@@ -233,6 +233,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
