@@ -123,16 +123,16 @@ const allPosts = [
   date: '2025-12-04',
   category: 'medicine',
   tags: ['cell biology', 'mitochondria', 'neurodegeneration', 'aging', 'metabolism'],
-  excerpt: 'A deep dive into mitophagy — the cellular process that dismantles damaged mitochondria — and how its failure shapes aging, neurodegeneration, metabolic disease, and future therapeutic strategies.',
+  excerpt: 'A deep dive into mitophagy — the cellular process that dismantles damaged mitochondria, and how its failure shapes aging, neurodegeneration, metabolic disease, and future therapeutic strategies.',
   content: `
     <h2>Introduction: When Cells Turn Against Their Own Power Plants</h2>
 
     <p>
-      Among the silent dramas occurring within the human body, few are as significant — or as intriguingly graceful — as the moment a cell chooses to consume its own power plant. It’s a minor act of biological prioritization that many of us overlook, yet it influences our aging trajectory, our vulnerability to disease, and ultimately our functional lifespan. Mitochondria, the ancient bacterial tenants inherited from early eukaryotes, are essential yet perpetually vulnerable. They drive every heartbeat, every synaptic event, every flicker of metabolic intention — and with unsettling regularity, they deteriorate.
+      Among the silent dramas occurring within the human body, few are as significant — or as intriguingly graceful — as the moment a cell chooses to consume its own power plant. It’s a minor act of biological prioritization that many of us overlook, yet it influences our aging trajectory, our vulnerability to disease, and ultimately our functional lifespan. Mitochondria, the ancient bacterial tenants inherited from early eukaryotes, are essential yet perpetually vulnerable. They drive every heartbeat, every synaptic event, every flicker of metabolic intention , and eventually, deteriorate with an unsettling manner.
     </p>
 
     <p>
-      If left unattended, damaged mitochondria gradually poison the very cells that depend on them. Evolution responded with a ruthless but elegant system: <strong>mitophagy</strong>, the selective dismantling of malfunctioning mitochondria before they jeopardize the whole. What might appear to be a trivial maintenance routine reveals itself as one of biology’s most consequential negotiations — the way cells preserve integrity in spite of relentless internal entropy.
+      If left unattended, damaged mitochondria gradually poison the very cells that depend on them. Evolution responded with a ruthless but elegant system: <strong>mitophagy</strong>, the selective dismantling of malfunctioning mitochondria before they jeopardize the whole. What might appear to be a trivial maintenance routine reveals itself as one of biology’s most consequential negotiations: the way cells preserve integrity in spite of relentless internal entropy.
     </p>
 
     <p>
@@ -156,13 +156,13 @@ const allPosts = [
     </p>
 
     <p>
-      The link between Parkinson’s disease — a condition characterized by the gradual loss of dopaminergic neurons — and mitochondrial quality control suddenly shifted the perspective on everything. When the cleanup system malfunctions, the cell does not die immediately. It struggles. It accumulates metabolic waste. And ultimately, it reaches the point of no return.
+      The link between Parkinson’s disease, which is a condition characterized by the gradual loss of dopaminergic neurons, and mitochondrial quality control suddenly shifted the perspective on everything. When the cleanup system malfunctions, the cell does not die immediately. It struggles. It accumulates metabolic waste. And ultimately, it sadly reaches the point of no return...
     </p>
 
     <h2>Everyone pays the price</h2>
 
     <p>
-      Once researchers learned what to look for, mitophagy dysfunction began to surface everywhere — across neural tissue, metabolic systems, and even within iron-dependent cell death pathways.
+      Once researchers learned what to look for, mitophagy dysfunction began to surface everywhere: across neural tissue, metabolic systems, and even within iron-dependent cell death pathways.
     </p>
 
     <h3>Neurodegeneration</h3>
@@ -213,9 +213,6 @@ const allPosts = [
       The striking reality is this: our quality of life decades from now depends on microscopic maintenance happening within our cells today. Understanding and ultimately modulating this process is more than a scientific exercise: it offers a roadmap for delaying neurodegeneration, stabilizing metabolic disorders, and extending the functional years of human life.
     </p>
 
-    <p>
-      If there is a unifying theme in the future of medicine, it may be this: to age well, our cells must consistently eliminate what no longer serves them. Mitophagy is more than a cleanup mechanism: it is a biological expression of resilience, and perhaps the most promising tool we possess to reshape the trajectory of human healthspan.
-    </p>
 
     <h2>References and Links</h2>
     <ol>
@@ -229,6 +226,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
