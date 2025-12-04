@@ -203,7 +203,7 @@ const allPosts = [
     </p>
     
     <p>
-      A study conducted by Landis et al. in <em>eLife</em> in 2022 demonstrated that mifepristone promotes mitophagy in <em>Drosophila</em> in a manner akin to rapamycin, questioning current assumptions regarding the mitophagic capabilities of existing medications. This implies that currently available medications can be redirected for novel treatments. Moreover, polyphenolic substances, such as resveratrol and ginsenosides, boost mitochondrial balance in diabetic models through the AMPK–SIRT1 pathway. While it doesn't cure, their capacity to promote mitophagy and reduce dysfunction warrants additional research considering their safety, bioavailability, and possible use in combination therapies.
+      A study conducted by Landis et al. in <em>Fly</em> in 2024 demonstrated that mifepristone promotes mitophagy in <em>Drosophila</em> in a manner akin to rapamycin, questioning current assumptions regarding the mitophagic capabilities of existing medications. This implies that currently available medications can be redirected for novel treatments. Moreover, polyphenolic substances, such as resveratrol and ginsenosides, boost mitochondrial balance in diabetic models through the AMPK–SIRT1 pathway. While it doesn't cure, their capacity to promote mitophagy and reduce dysfunction warrants additional research considering their safety, bioavailability, and possible use in combination therapies.
     </p>
     
     <h2>Conclusion: Mitophagy as the Biology of Resilience</h2>
@@ -227,12 +227,13 @@ const allPosts = [
       <li><a href="https://doi.org/10.1016/j.cell.2016.04.015" target="_blank" rel="noopener noreferrer">Nguyen TN et al. Cell, 2016 — Parkin-mediated mitophagy mechanisms.</a></li>
       <li><a href="https://doi.org/10.1038/s41583-018-0072-1" target="_blank" rel="noopener noreferrer">Cummins N, Götz J. Nat Rev Neurosci, 2018 — Mitophagy in neurodegeneration.</a></li>
       <li><a href="https://doi.org/10.1038/s41574-022-00699-w" target="_blank" rel="noopener noreferrer">Palikaras K et al. Nat Rev Endocrinol, 2022 — Mitophagy and metabolic disease.</a></li>
-      <li><a href="https://doi.org/10.1016/j.cmet.2021.02.002" target="_blank" rel="noopener noreferrer">Sun N et al. Cell Metab, 2021 — Basal mitophagy in vivo.</a></li>
-      <li><a href="https://doi.org/10.7554/eLife.80677" target="_blank" rel="noopener noreferrer">Landis GN et al. eLife, 2022 — Mifepristone as a mitophagy enhancer.</a></li>
+      <li><a href="https://www.cell.com/cell-metabolism/fulltext/S1550-4131(17)30721-0">Sun N et al. Cell Metab, 2018 — Basal mitophagy in vivo.</a></li>
+      <li><a href="https://www.tandfonline.com/doi/full/10.1080/19336934.2024.2419151">Landis N. et al. Fly, 2024 - Mifepristone and rapamycin have non-additive benefits for life span in mated female Drosophila</a></li>
     </ol>
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
