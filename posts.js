@@ -231,8 +231,109 @@ const allPosts = [
 </ol>
 
   `
+},
+    {
+  id: 'hematoxylin-eosin-eigenvectors',
+  title: 'Hematoxylin, Eosin, and Eigenvectors: Why You Shouldn’t Limit Yourself',
+  date: '2025-12-10',
+  category: 'medicine',
+  tags: ['medical education', 'artificial intelligence', 'histopathology', 'data science', 'career development'],
+  excerpt: 'A reflection on medicine, mathematics, and the artificial divide between memorization and creation — and why choosing one path should never mean abandoning another.',
+  content: `
+    
+    <h2>Introduction: The Crossroads We Rarely Question</h2>
+    
+    <p>
+      At eighteen, I stood at what felt like a decisive crossroads — the kind that demands certainty from someone who has barely had the time to question their own inclinations. Stability and prestige pointed clearly toward medicine. Other interests — mathematics, informatics, even the dreaded physics — quietly lingered in the background, less practical, perhaps less reassuring to those watching from the outside.
+    </p>
+    
+    <p>
+      Somewhere between the pages of a biology textbook and endless chemistry pathways, another voice persisted. One that whispered about alternative futures, about systems I might build if only I were more “gifted.” I envied my peers who pursued data science, automatics, engineering. They were building systems, writing code I could not yet decipher, solving equations — creating.
+    </p>
+    
+    <p>
+      Meanwhile, I was memorizing 206 bones of the human body.
+    </p>
+    
+    <p>
+      And yet, the contrast was never as sharp as I imagined.
+    </p>
+    
+    <h2>Where Mathematics Was Hiding All Along</h2>
+    
+    <p>
+      Medicine, stripped to its essence, is pattern recognition. A neural network does something remarkably similar. At its mathematical core, a neuron computes a weighted sum passed through a nonlinearity — simple in structure, yet powerful enough, when layered deeply, to detect metastases in a lymph node slide.
+    </p>
+    
+    <p>
+      In histopathology, a convolutional neural network learns edges, nuclear pleomorphism, glandular distortion — the same visual grammar pathologists spend years internalizing. Its training objective often minimizes cross-entropy, refining predictions until statistical noise becomes meaningful signal.
+    </p>
+    
+    <p>
+      This is not abstract theory. In challenges like CAMELYON16, researchers trained convolutional neural networks to detect micrometastases with near-human performance. They did not replace pathologists, as many feared. Instead, they augmented them — integrating heatmaps that guided attention and uncertainty estimates that triaged ambiguous slides.
+    </p>
+    
+    <p>
+      The lesson is not about artificial intelligence replacing medicine. It is about convergence — a delicate and deeply fascinating interaction between disciplines once perceived as oppositional.
+    </p>
+    
+    <h2>The Artificial Divide</h2>
+    
+    <p>
+      The perceived divide between “memorizing medicine” and “understanding mathematics” is artificial. Clinical reasoning is statistical inference in disguise. Diagnostic workflows resemble decision trees. Pathology slides are high-dimensional data spaces. Eigenvectors — my personal favorite — are not distant from hematoxylin and eosin; they are mathematical descriptions of variation in stain intensity and tissue morphology.
+    </p>
+    
+    <p>
+      Can someone in medical school learn to code? Absolutely. The barrier is not intellectual capacity, but a narrative we have quietly internalized: that doctors are somehow incompetent in technology, that it is too late to begin, that others started earlier and therefore belong more naturally in those spaces.
+    </p>
+    
+    <p>
+      But stagnation invites disruption.
+    </p>
+    
+    <p>
+      Healthcare systems may lack robust data infrastructure. Public hospitals may not yet host personalized AI agents — at least not in Romania. Yet young clinicians are teaching themselves Python after lectures, training convolutional models on open datasets, questioning bias in large language models, and imagining equitable AI systems. Not for prestige, but for progress.
+    </p>
+    
+    <p>
+      The future of medicine will not be built solely by engineers, nor solely by clinicians. It will be built by those who refuse to accept that they must be only one thing.
+    </p>
+    
+    <h2>Courage Over Conformity</h2>
+    
+    <p>
+      Choosing medicine does not close doors to mathematics. It makes mathematics clinically meaningful, profound, and fulfilling. It carves a path — much like wind shaping desert stone — gradually widening your horizon until the possibilities ahead feel infinite.
+    </p>
+    
+    <p>
+      And it is not only mathematics. It is literature, art, music — every discipline that demands courage in a field that often rewards conformity. To those who stare into the empty space ahead and wonder what remains after the exams are finished, after all energy has been poured into this degree, after exhaustion replaces certainty — what is left?
+    </p>
+    
+    <p>
+      I can only say this:
+    </p>
+    
+    <p>
+      <em>Be brave enough to create more than what was prescribed to you.</em>
+    </p>
+    
+    <p>
+      <em>Courage — not inauthentic prestige, not hollow status — is what medicine truly requires.</em>
+    </p>
+    
+    <h2>References and Links</h2>
+    <ol>
+      <li>
+        <a href="https://camelyon16.grand-challenge.org/" target="_blank" rel="noopener noreferrer">
+        CAMELYON16 Challenge — Automated Detection of Lymph Node Metastases
+        </a>
+      </li>
+    </ol>
+
+  `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
