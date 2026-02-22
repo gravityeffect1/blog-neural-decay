@@ -244,11 +244,11 @@ const allPosts = [
     <h2>Introduction: The Crossroads We Rarely Question</h2>
     
     <p>
-      At eighteen, I stood at what felt like a decisive crossroads — the kind that demands certainty from someone who has barely had the time to question their own inclinations. Stability and prestige pointed clearly toward medicine. Other interests — mathematics, informatics, even the dreaded physics — quietly lingered in the background, less practical, perhaps less reassuring to those watching from the outside.
+    At eighteen, I stood at what felt like a decisive crossroads, the kind that demands certainty from someone who has barely had the time to question their own inclinations. Stability and prestige pointed clearly toward medicine. Other interests , (though ones I was certainly not excelling at ), mathematics, informatics, and the dreaded physics- quietly lingered in the background, less practical, perhaps less reassuring to those watching from the outside.
     </p>
     
     <p>
-      Somewhere between the pages of a biology textbook and endless chemistry pathways, another voice persisted. One that whispered about alternative futures, about systems I might build if only I were more “gifted.” I envied my peers who pursued data science, automatics, engineering. They were building systems, writing code I could not yet decipher, solving equations — creating.
+     But somewhere in the background of (one) particular biology textbook, and chemistry pathways, another voice lingered. One that was telling me all the endless possibilities of how my life could turn out, if only I were more ‘gifted’. I sadly envied my peers who pursued data science, automatics, engineering. They were building systems, writing code I could never understand fully, and solving equations. Creating, essentially.
     </p>
     
     <p>
@@ -262,51 +262,47 @@ const allPosts = [
     <h2>Where Mathematics Was Hiding All Along</h2>
     
     <p>
-      Medicine, stripped to its essence, is pattern recognition. A neural network does something remarkably similar. At its mathematical core, a neuron computes a weighted sum passed through a nonlinearity — simple in structure, yet powerful enough, when layered deeply, to detect metastases in a lymph node slide.
+     Medicine, stripped to its essence, is pattern recognition. A neural network does something remarkably similar. At its mathematical core, a neuron computes: a weighted sum passed through a nonlinearity. It’s simple, yet powerful enough, when stacked deeply, to detect metastases in a lymph node slide.
     </p>
     
     <p>
-      In histopathology, a convolutional neural network learns edges, nuclear pleomorphism, glandular distortion — the same visual grammar pathologists spend years internalizing. Its training objective often minimizes cross-entropy, refining predictions until statistical noise becomes meaningful signal.
+      In histopathology, a convolutional neural network learns edges, nuclear pleomorphism, glandular distortion, becoming the same visual grammar pathologists spend years internalizing. Its training objective often minimizes cross-entropy, refining predictions until statistical noise becomes meaningful signal.
     </p>
     
     <p>
-      This is not abstract theory. In challenges like CAMELYON16, researchers trained convolutional neural networks to detect micrometastases with near-human performance. They did not replace pathologists, as many feared. Instead, they augmented them — integrating heatmaps that guided attention and uncertainty estimates that triaged ambiguous slides.
+      This is not abstract theory. In fact, in challenges like CAMELYON16, researchers trained convolutional neural networks to detect micrometastases with near-human performance. They did not replace pathologists, as many feared. Instead, they augmented them, integrating heatmaps that guided attention and uncertainty estimates that triaged ambiguous slides.
     </p>
     
     <p>
-      The lesson is not about artificial intelligence replacing medicine. It is about convergence — a delicate and deeply fascinating interaction between disciplines once perceived as oppositional.
+      The lesson here is not about AI replacing medicine. Rather, it is about convergence. A delicate, mind boggling interaction, between fields that are, essentially, a threat to one another.
     </p>
     
     <h2>The Artificial Divide</h2>
     
     <p>
-      The perceived divide between “memorizing medicine” and “understanding mathematics” is artificial. Clinical reasoning is statistical inference in disguise. Diagnostic workflows resemble decision trees. Pathology slides are high-dimensional data spaces. Eigenvectors — my personal favorite — are not distant from hematoxylin and eosin; they are mathematical descriptions of variation in stain intensity and tissue morphology.
+      The perceived divide between “memorizing medicine” and “understanding mathematics” is artificial. Clinical reasoning is statistical inference in disguise. Diagnostic workflows are decision trees, pathology slides are high-dimensional data spaces and eigenvectors(my personal favorite) are not distant from hematoxylin and eosin; they are mathematical descriptions of variation in stain intensity and tissue morphology.
     </p>
     
     <p>
-      Can someone in medical school learn to code? Absolutely. The barrier is not intellectual capacity, but a narrative we have quietly internalized: that doctors are somehow incompetent in technology, that it is too late to begin, that others started earlier and therefore belong more naturally in those spaces.
+      Can someone in medical school learn to code? Absolutely. The barrier is not intellectual capacity, but rather a certain toxic narrative that we have drilled into ourselves for decades now: doctors are ‘incompetent’ when it comes to anything tech related. We tell ourselves it is too late, that others started earlier and that the system is stagnant.
     </p>
     
     <p>
-      But stagnation invites disruption.
+      <em>But stagnation invites disruption.</em>
     </p>
     
     <p>
-      Healthcare systems may lack robust data infrastructure. Public hospitals may not yet host personalized AI agents — at least not in Romania. Yet young clinicians are teaching themselves Python after lectures, training convolutional models on open datasets, questioning bias in large language models, and imagining equitable AI systems. Not for prestige, but for progress.
-    </p>
-    
-    <p>
-      The future of medicine will not be built solely by engineers, nor solely by clinicians. It will be built by those who refuse to accept that they must be only one thing.
+     Healthcare systems may lack proper data infrastructure. Public hospitals may not yet host personalized AI agents, at least in Romania, yet young clinicians are quietly teaching themselves Python after lectures, training convolutional models on open datasets, questioning bias in large language models, and imagining equitable AI systems, all in hopes that someday, they too will amount to something far greater than themselves. The future of medicine will not be built solely by engineers, nor solely by clinicians. It will be built by those who refuse to accept that they must be only one thing.
     </p>
     
     <h2>Courage Over Conformity</h2>
     
     <p>
-      Choosing medicine does not close doors to mathematics. It makes mathematics clinically meaningful, profound, and fulfilling. It carves a path — much like wind shaping desert stone — gradually widening your horizon until the possibilities ahead feel infinite.
+      Choosing medicine does not close doors to mathematics. It makes mathematics clinically meaningful, profound and fulfilling. It carves a path, much like the wind against a desert stone, that instantly enlarges your horizons and makes you gasp at the infinite possibilities that lie ahead.
     </p>
     
     <p>
-      And it is not only mathematics. It is literature, art, music — every discipline that demands courage in a field that often rewards conformity. To those who stare into the empty space ahead and wonder what remains after the exams are finished, after all energy has been poured into this degree, after exhaustion replaces certainty — what is left?
+      And it is not only mathematics. It is literature, art, music- every discipline that demands courage in a field that often rewards conformity. So to those that gawk at the empty space ahead of you, and wonder, "What is left of me when all the exams are finished, when all of my efforts were put into this degree, and when all my energy and luck runs out, what comes of me?"
     </p>
     
     <p>
@@ -318,7 +314,7 @@ const allPosts = [
     </p>
     
     <p>
-      <em>Courage — not inauthentic prestige, not hollow status — is what medicine truly requires.</em>
+      <em>Courage— not inauthentic prestige, not hollow status, is what medicine truly requires.</em>
     </p>
     
     <h2>References and Links</h2>
@@ -333,6 +329,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
