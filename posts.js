@@ -240,6 +240,7 @@ const allPosts = [
   tags: ['medical education', 'artificial intelligence', 'histopathology', 'data science', 'career development'],
   excerpt: 'A reflection on medicine, mathematics, and the artificial divide between memorization and creation — and why choosing one path should never mean abandoning another.',
   content: `
+    <img src="images/courage.png" alt="courage" style="width: 100%; max-width: 400px; display: block; margin: 0 auto 30px; border: 1px solid var(--border-color);">
     
     <h2>Introduction: The Crossroads We Rarely Question</h2>
     
@@ -329,6 +330,7 @@ const allPosts = [
   `
 }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
+
 
 
 
