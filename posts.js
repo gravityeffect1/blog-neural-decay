@@ -329,6 +329,183 @@ const allPosts = [
 
   `
 }
+    ,
+    {
+        id: 'alphafold-viral-proteins',
+        title: 'Folding the Enemy: What AlphaFold Taught Us About Fighting Viruses',
+        category: 'bioinformatics',
+        date: '2026-04-26',
+        excerpt: 'For fifty years, predicting how a protein folds from its amino acid sequence was considered one of the hardest unsolved problems in biology. Then a neural network figured it out in an afternoon. Here\'s why that changes everything for virology.',
+        tags: ['bioinformatics', 'machine learning', 'structural biology', 'virology', 'drug discovery', 'alphafold'],
+        content: `
+            <p>
+                Here is a fact that should bother you more than it does: a protein doesn't come with an instruction manual.
+            </p>
+
+            <p>
+                You get a string of amino acids — maybe three hundred of them, maybe three thousand — tumbling freshly off the ribosome into the crowded, chaotic, violently aqueous interior of a cell. And within microseconds, that string folds itself into a precise three-dimensional shape. The shape determines everything: whether it's an enzyme, a receptor, a structural scaffold, a weapon. The shape <em>is</em> the function. Get the shape wrong and you get cystic fibrosis, Alzheimer's, cancer. Get it exactly right and you get life.
+            </p>
+
+            <p>
+                The problem is: no one — not Anfinsen, not Levinthal, not fifty years of crystallographers and NMR spectroscopists and molecular dynamics simulators — could reliably predict the final shape from the sequence alone. The Levinthal paradox put a number on the humiliation: a 100-residue protein has roughly 10<sup>47</sup> possible conformations. Sampling all of them at one per nanosecond would take longer than the age of the universe. And yet the protein does it in microseconds (nature, being deeply inconvenient, doesn't read physics papers).
+            </p>
+
+            <p>
+                Then, in November 2020, DeepMind's AlphaFold2 entered CASP14 — the biennial protein structure prediction Olympics — and basically ended the competition. Its median accuracy was comparable to experimental methods. The fifty-year-old "protein folding problem" was, if not solved, then cracked open so thoroughly that the field would never be the same.
+            </p>
+
+            <h2>What AlphaFold Actually Does</h2>
+
+            <p>
+                The honest answer is that AlphaFold is not one thing. It is a pipeline — a sequence of transformer-based neural network modules that work together to turn a raw amino acid sequence into atomic coordinates with confidence scores.
+            </p>
+
+            <p>
+                The key insight is evolutionary. AlphaFold starts by searching for all known homologous sequences — proteins from other organisms that share evolutionary ancestry with your protein of interest. These sequences are aligned into a Multiple Sequence Alignment (MSA). The idea: if two positions in the alignment have been mutating together throughout evolution (if when residue A mutates, residue B also mutates to compensate), those two residues are probably physically close to each other in the folded structure. Co-evolution as a spatial constraint.
+            </p>
+
+            <p>
+                From this MSA, AlphaFold builds a representation of <em>pairwise residue relationships</em> — essentially a map of which amino acids are likely near each other in space. This pairwise representation is fed through a stack of "Evoformer" blocks (the name is exactly what it sounds like: an Evolved Transformer), which iteratively refine both the sequence representation and the distance map. Finally, a "Structure Module" uses the refined representations to place each atom in three-dimensional space, using a frame-based approach borrowed from robotics (each residue gets a local coordinate frame, and the module learns to rotate and translate those frames into a globally consistent structure).
+            </p>
+
+            <p>
+                Each predicted residue position comes with a per-residue confidence score called pLDDT (predicted local distance difference test), ranging from 0 to 100. Scores above 90 are considered highly reliable. Scores below 50 mean the model is guessing — which often corresponds to intrinsically disordered regions, and that's actually informative in itself. (More on that shortly.)
+            </p>
+
+            <h2>Why Viral Proteins Are a Particularly Interesting Target</h2>
+
+            <p>
+                Viruses are, structurally speaking, a nightmare. They evolve at rates that make bacterial evolution look leisurely. A single replication cycle of HIV introduces roughly one mutation per genome — which, across billions of viral particles in one infected person, means the virus is conducting its own constant, brutal experiment in sequence space. The influenza polymerase is so error-prone that every flu season produces a quasi-species swarm of variants rather than a single discrete strain.
+            </p>
+
+            <p>
+                This is exactly what makes AlphaFold interesting for virology, and also exactly why the problem is harder than it first appears.
+            </p>
+
+            <p>
+                Traditional structural biology methods — X-ray crystallography, cryo-electron microscopy, NMR — require substantial quantities of purified protein, expensive equipment, and timelines measured in months or years. When SARS-CoV-2 emerged in late 2019, the structural biology community worked at extraordinary speed; the first cryo-EM structure of the spike protein trimer was published in February 2020, a remarkable achievement that relied on pre-existing infrastructure and enormous institutional effort. But as variants accumulated — Alpha, Delta, Omicron BA.1, BA.2, BA.4/5, XBB.1.5, JN.1 — experimentally solving a new structure for each one became unfeasible at the pace the virus was evolving.
+            </p>
+
+            <p>
+                AlphaFold changes this calculus. You can predict a structure from sequence alone, in minutes, on hardware that fits in a university compute cluster (or, with AlphaFold3 and its successors, on increasingly accessible cloud infrastructure). That doesn't replace experimental structures — a predicted structure needs experimental validation for critical applications — but it gives you a working model immediately, and that working model is often good enough to guide the next experiment.
+            </p>
+
+            <h2>Case Studies: Three Viruses, Three Problems</h2>
+
+            <h3>SARS-CoV-2: The Spike Protein and the Moving Target</h3>
+
+            <p>
+                The SARS-CoV-2 spike protein is the primary target for neutralizing antibodies and, consequently, for vaccines. It mediates host cell entry by binding to ACE2 — the receptor found on lung epithelial cells, among other tissues — and fusing the viral and cell membranes. Its structure is a massive, heavily glycosylated trimeric protein, and its receptor-binding domain (RBD) is the most immunologically targeted region.
+            </p>
+
+            <p>
+                The Omicron variant's RBD contained more than thirty mutations relative to the original Wuhan strain. This presented an immediate question: which of these mutations were structurally significant? Which altered the binding interface with ACE2? Which disrupted antibody recognition? Answering these questions experimentally takes months. AlphaFold-predicted structures — combined with docking and molecular dynamics simulations — allowed researchers to generate hypotheses within days, prioritizing which variants to characterize experimentally.
+            </p>
+
+            <p>
+                One specific application worth noting: several groups used AlphaFold predictions of spike variant structures to model antibody-antigen interactions for existing monoclonal antibodies. The predictions correctly flagged several Omicron mutations (notably K417N, E484A, and Q493R) as likely to disrupt key antibody binding contacts — mutations that experimental data subsequently confirmed abolished activity of most first-generation monoclonals. Predicting immune escape, not just structure: that's a qualitatively different kind of insight.
+            </p>
+
+            <h3>HIV: Integrase and the Allosteric Problem</h3>
+
+            <p>
+                HIV integrase catalyzes the insertion of viral DNA into the host genome — one of the essential steps in establishing a permanent infection. It's also the target of the integrase strand transfer inhibitors (INSTIs), a class of antiretrovirals that now forms the backbone of first-line HIV treatment (dolutegravir, bictegravir, cabotegravir — the drugs that changed HIV from a death sentence to a chronic manageable condition in wealthy countries, and that remain inaccessible to most of the people who need them, but that's a different and more depressing essay).
+            </p>
+
+            <p>
+                INSTI resistance is increasingly well-documented, and the mutations conferring it are concentrated in the active site. But integrase has another face that's therapeutically interesting: allosteric inhibitor binding sites, particularly the LEDGF/p75 binding interface. LEDGF is a cellular cofactor that integrase hijacks to tether itself to active chromatin. Block this interaction and you block integration through a completely different mechanism — one that might overcome INSTI resistance.
+            </p>
+
+            <p>
+                Predicting the integrase-LEDGF interface and screening for small molecules that could wedge between them is exactly the kind of problem where AlphaFold structural predictions (combined with protein-protein docking tools like AlphaFold-Multimer, which extends the approach to protein complexes) provide genuine value. You're not just asking "what does integrase look like" but "what does the allosteric site look like when it's complexed with its natural partner, and where are the druggable pockets in that interface."
+            </p>
+
+            <h3>Influenza: Neuraminidase, Resistance, and the Mutational Landscape</h3>
+
+            <p>
+                Oseltamivir (Tamiflu) targets influenza neuraminidase — the enzyme that cleaves sialic acid from host cell receptors, allowing newly budded virions to escape and spread. The famous H274Y mutation in H1N1 (now renamed N1-H275Y in the N1 subtype numbering) confers oseltamivir resistance by subtly rearranging the active site in a way that prevents drug binding while barely affecting substrate binding. The virus finds the narrow path between "broken enzyme" and "resistant enzyme" with unnerving precision.
+            </p>
+
+            <p>
+                What AlphaFold enabled here — alongside deep mutational scanning and phylogenetic analysis — is a more systematic mapping of the mutational landscape around the active site. Which mutations are structurally tolerated? Which ones perturb the active site enough to cause fitness costs? Generating predicted structures for a library of neuraminidase variants and assessing structural integrity in silico is feasible in a way that wasn't possible with experimental structural biology alone. This feeds directly into surveillance: when a new resistance-associated variant appears in clinical isolates, you have a structural framework for understanding it immediately.
+            </p>
+
+            <h2>Drug Discovery: From Structure to Pocket to Molecule</h2>
+
+            <p>
+                Structure prediction is only the first step. The drug discovery pipeline that follows looks something like this:
+            </p>
+
+            <p>
+                <strong>1. Pocket identification.</strong> Given a predicted structure, computational tools (FPocket, SiteMap, DoGSiteScorer — there are many, and none of them are perfect) identify cavities on the protein surface that are likely to bind small molecules. Druggable pockets are typically concave, partially hydrophobic, and of sufficient size to accommodate a small molecule with reasonable affinity. Not every protein has one. Many viral proteins — particularly the flatter interfaces involved in protein-protein interactions — are notoriously difficult to drug for this reason.
+            </p>
+
+            <p>
+                <strong>2. Virtual screening or de novo design.</strong> Once a pocket is identified, you can either screen a library of known compounds by docking (computational fitting of molecules into the pocket, scored by predicted binding affinity) or use generative models to design new molecules that specifically complement the pocket shape and chemistry. Both approaches have seen substantial AI-assisted advances in recent years — RoseTTAFold, DiffSBDD, and various transformer-based generative models have been applied to this problem with early promising results.
+            </p>
+
+            <p>
+                <strong>3. Validation and iteration.</strong> Computational predictions require experimental validation: biochemical binding assays, cellular activity assays, and eventually animal models. The majority of computationally promising compounds fail. This is not a failure of the computational methods — it reflects the irreducible complexity of drug-likeness, bioavailability, selectivity, and the gap between isolated protein and intact virus. What computational approaches do is compress the early stages of the pipeline, so you fail faster and learn more cheaply.
+            </p>
+
+            <h2>The Honest Limitations</h2>
+
+            <p>
+                AlphaFold is extraordinary. It is also not magic, and the field has done itself some disservice by occasionally presenting it as such.
+            </p>
+
+            <p>
+                <strong>Static structures, dynamic proteins.</strong> AlphaFold predicts a single conformation — essentially the lowest-energy state. But proteins are dynamic. Viral proteins often have multiple functional conformations: pre-fusion and post-fusion states (the SARS-CoV-2 spike adopts both, and both are therapeutically relevant); open and closed active sites; disordered regions that fold upon binding. AlphaFold captures none of this conformational ensemble. Molecular dynamics simulations can explore it, but they're computationally expensive and require the AlphaFold structure as a starting point, not a replacement.
+            </p>
+
+            <p>
+                <strong>Intrinsically disordered proteins.</strong> Many viral proteins — or regions of them — are intrinsically disordered: they don't have a stable folded structure. The HIV-1 Tat protein is a classic example; its disordered N-terminal activation domain is essential for function but has no defined structure. AlphaFold will give you low-confidence predictions for these regions (pLDDT below 50), correctly signaling uncertainty, but it cannot tell you what the disordered region <em>does</em> functionally or what it looks like when it engages its partners.
+            </p>
+
+            <p>
+                <strong>Viral novelty.</strong> AlphaFold's power comes from evolutionary co-variation signals — and those signals require homologous sequences in the training database. For highly novel viral proteins with no characterized homologs, or for early pandemic pathogens where database coverage is sparse, prediction accuracy degrades. This is precisely the scenario where you most desperately want structural information.
+            </p>
+
+            <p>
+                <strong>The gap between structure and mechanism.</strong> Knowing a protein's shape tells you where the druggable pocket is. It does not tell you the protein's catalytic mechanism, its dynamics during function, the thermodynamics of ligand binding, or how the protein behaves in the context of the intact viral particle. Structure is necessary but not sufficient for understanding biology.
+            </p>
+
+            <h2>What It Means That a Neural Network Can See This</h2>
+
+            <p>
+                I keep coming back to something that feels philosophically significant, even if it resists clean articulation.
+            </p>
+
+            <p>
+                Crystallography is a hundred years old. An X-ray crystallographer will tell you about the months of work that go into growing crystals of sufficient quality, the careful work of data collection at synchrotron light sources, the intellectual effort of solving the phase problem, the manual refinement of the model against electron density maps. It is craft in the deepest sense — embodied knowledge, accumulated over years, transmitted from mentor to student. There is something irreducibly human in it.
+            </p>
+
+            <p>
+                AlphaFold learned the relationship between sequence and structure from the accumulated output of that human craft: every solved protein structure deposited in the PDB, representing decades of collective scientific labor. It distilled those patterns — the evolutionary constraints, the physical principles, the geometric regularities — into weights in a neural network. And then it generalized, in a way that humans explicitly could not.
+            </p>
+
+            <p>
+                This is not a replacement for structural biology. The experimentalists who trained AlphaFold are not being made obsolete — they are being multiplied. Every protein structure deposited in the PDB is now not just one data point but a contribution to a model that can predict millions more. The work of the past hundred years of structural biology is alive inside AlphaFold2, rearranged into something that operates at a scale no individual human or laboratory could match.
+            </p>
+
+            <p>
+                And the viruses are still evolving. Faster than we can crystallize them. Faster than we can collect cryo-EM data. Faster than we can sequence and characterize every new variant. For the first time, we have a tool that can at least <em>keep pace with</em> that evolutionary velocity — not perfectly, not without experimental validation, but well enough to ask better questions, faster.
+            </p>
+
+            <p>
+                In medicine, being a few weeks ahead of the virus can mean the difference between a targeted therapeutic and an outbreak. The protein folding problem isn't solved. But we've changed the terms of engagement, and I think that matters more than the word "solved" ever could.
+            </p>
+
+            <h2>References</h2>
+            <ol>
+                <li>Jumper J et al. <a href="https://www.nature.com/articles/s41586-021-03819-2" target="_blank" rel="noopener noreferrer">Highly accurate protein structure prediction with AlphaFold. <em>Nature</em> 596, 583–589 (2021).</a></li>
+                <li>Wrapp D et al. <a href="https://www.science.org/doi/10.1126/science.abb2507" target="_blank" rel="noopener noreferrer">Cryo-EM structure of the 2019-nCoV spike in the prefusion conformation. <em>Science</em> 367, 1260–1263 (2020).</a></li>
+                <li>Baek M et al. <a href="https://www.science.org/doi/10.1126/science.abj8754" target="_blank" rel="noopener noreferrer">Accurate prediction of protein structures and interactions using a three-track neural network. <em>Science</em> 373, 871–876 (2021).</a></li>
+                <li>Tuekprakhon A et al. <a href="https://www.cell.com/cell/fulltext/S0092-8674(22)00651-4" target="_blank" rel="noopener noreferrer">Antibody escape of SARS-CoV-2 Omicron BA.4 and BA.5 from vaccine and BA.1 serum. <em>Cell</em> 185, 2422–2433 (2022).</a></li>
+                <li>Eswar N et al. Comparative Protein Structure Modeling Using Modeller. <em>Current Protocols in Bioinformatics</em> (2006).</li>
+            </ol>
+        `
+    }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 
