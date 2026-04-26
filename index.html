@@ -678,9 +678,25 @@
             left: -24px;
             opacity: 1;
         }
+        #reading-progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.15) 100%);
+            z-index: 1000;
+            transition: width 0.1s linear;
+            opacity: 0;
+            pointer-events: none;
+        }
+        #reading-progress-bar.visible {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
+    <div id="reading-progress-bar"></div>
     <header id="home">
         <div class="container">
             <div class="header-content">
@@ -938,7 +954,30 @@
             };
             return icons[tag] || 'terminal';
         }
+        let progressBarActive = false;
+
+        function updateProgressBar() {
+            if (!progressBarActive) return;
+            const bar = document.getElementById('reading-progress-bar');
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const pct = docHeight > 0 ? Math.min((window.scrollY / docHeight) * 100, 100) : 0;
+            bar.style.width = pct + '%';
+        }
+
+        function showProgressBar() {
+            progressBarActive = true;
+            document.getElementById('reading-progress-bar').classList.add('visible');
+        }
+
+        function hideProgressBar() {
+            progressBarActive = false;
+            const bar = document.getElementById('reading-progress-bar');
+            bar.classList.remove('visible');
+            bar.style.width = '0%';
+        }
+
    window.showPostsByTag = function(tag) {
+    hideProgressBar();
     renderPostsByTag(tag);
     window.location.hash = `tag-${tag}`;
     setTimeout(() => {
@@ -949,6 +988,7 @@
     }, 100);
 };
         window.showAllPosts = function() {
+            hideProgressBar();
             renderPostsByTag();
             window.location.hash = '';
         };
@@ -1007,6 +1047,8 @@
                     </div>
                 `;
                 window.location.hash = `post-${post.id}`;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                showProgressBar();
             }
         };
         
@@ -1035,6 +1077,7 @@
         
        
         document.addEventListener('DOMContentLoaded', function() {
+            window.addEventListener('scroll', updateProgressBar);
             renderPostsByTag();
             
          
