@@ -505,6 +505,63 @@ const allPosts = [
                 <li>Eswar N et al. Comparative Protein Structure Modeling Using Modeller. <em>Current Protocols in Bioinformatics</em> (2006).</li>
             </ol>
         `
+    },
+    {
+        id: 'optimised-for-loneliness',
+        title: 'Optimised for Loneliness',
+        category: 'reflections',
+        date: '2026-06-16',
+        excerpt: 'We live in an era where you can scroll through a thousand human faces in ten minutes, and yet, when the lights go out and you are left with the ghosts of your past, we are lonelier than we have ever been.',
+        tags: ['reflections', 'society', 'love'],
+        content: `
+            <p>
+                We live in an era where you can order food at any hour, switch jobs with a single click, scroll through a thousand human faces in ten minutes, and yet we are lonelier than we have ever been. It's become so widespread, this chronic lonesome syndrome, that we can hardly call it abnormal. It has found its way through our hearts, our minds, infesting everything we hold dear and sabotaging even those few authentic connections we do have.
+            </p>
+
+            <p>
+                The statistics are, if nothing else, funny in their sadness: 37% of people under 30 say they are not interested in dating at all. The share of people in relationships has dropped dramatically compared to twenty years ago, especially before the pandemic hit. And yet nobody seems surprised. We all know, instinctively, what happened: it is just more comfortable to blame circumstances than to look in the mirror.
+            </p>
+
+            <p>
+                The problem is not that compatible people do not exist. The problem is that we no longer know how to wait, and we no longer want to work for anything that does not arrive instant-gratified.
+            </p>
+
+            <p>
+                We have all internalized the logic of the free market and applied it to human relationships. You swipe. You analyze. You optimize. If something feels "off" — not because there is a real problem, but because it does not match a mental template of perfection cultivated through years of scrolling — you move on. Next profile. Next person. Next potential. The algorithmic solution to the least algorithmic human problem that exists.
+            </p>
+
+            <p>
+                The result? A generation that confuses standards with rigidity and boundaries with reinforced concrete. I am not saying standards are bad — they are fundamentally necessary. But somewhere along the way, the standard migrated from "I want someone who is present, honest, and attentive" to "I want someone who checks 47 criteria and displays zero symptoms of human imperfection." And imperfect people — which is to say, all people — will never pass that filter.
+            </p>
+
+            <p>
+                The most interesting phenomenon, though, is not the exigency. It is the absence of effort.
+            </p>
+
+            <p>
+                Love has always required presence. Not heroic, spectacular presence — but that boring, repetitive kind that means you show up even when you do not feel like it. That you listen to a story you have already heard. That you stay in the conversation when it would be easier to disappear. That small, constant, unapplauded work — that is what builds something durable. But it demands something our generation finds almost unbearable: voluntary discomfort.
+            </p>
+
+            <p>
+                To let someone know you is to accept that they can hurt you. To invest is to accept that you can lose. To stay is to give up the illusion that something better is waiting around the corner. And that is precisely what we refuse to do. Not because we are terrible people — we are, probably, ordinary ones — but because we were taught that our personal value is something to be protected at all costs. That vulnerability is weakness. That anyone who does not get you in the first five minutes does not deserve minutes six, seven, and eight — the minutes where, usually, something real happens.
+            </p>
+
+            <p>
+                There is an underground fear in all this romantic cynicism: the fear of being fully known and found insufficient. And instead of risking that, we choose not to be known at all. It is safer. Cleaner. Easier to frame loneliness as a conscious decision — "I chose to focus on myself" — than as a surrender to our own fear.
+            </p>
+
+            <p>
+                I am not saying we should accept anything, or ignore genuine incompatibility. I am saying that love — the kind that matters, the kind that stays — has always required actively choosing someone. Day after day. Not one grand gesture, but a thousand small, unromantic choices: replying to a message even when you are tired, asking how someone's day went and actually listening to the answer, being inconvenient, sometimes, for another person.
+            </p>
+
+            <p>
+                We have spent all our effort building an impenetrable self, and have nothing left to let anyone inside.
+            </p>
+
+            <p>
+                Maybe the solution is not a better algorithm or a new listicle of dating tips. Maybe it is simpler and more uncomfortable than that: learning, again, to bear the discomfort of loving something real, imperfect, and present — instead of the abstract perfection of someone who does not exist.
+            </p>
+        `
     }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
