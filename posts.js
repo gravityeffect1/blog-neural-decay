@@ -505,6 +505,238 @@ const allPosts = [
                 <li>Eswar N et al. Comparative Protein Structure Modeling Using Modeller. <em>Current Protocols in Bioinformatics</em> (2006).</li>
             </ol>
         `
+    },
+    {
+        id: 'optimised-for-loneliness',
+        title: 'Optimised for Loneliness',
+        category: 'reflections',
+        date: '2026-06-16',
+        excerpt: 'We live in an era where you can scroll through a thousand human faces in ten minutes, and yet, when the lights go out and you are left with the ghosts of your past, we are lonelier than we have ever been.',
+        tags: ['reflections', 'society', 'love'],
+        content: `
+            <p>
+                We live in an era where you can order food at any hour, switch jobs with a single click, scroll through a thousand human faces in ten minutes, and yet we are lonelier than we have ever been. It's become so widespread, this chronic lonesome syndrome, that we can hardly call it abnormal. It has found its way through our hearts, our minds, infesting everything we hold dear and sabotaging even those few authentic connections we do have.
+            </p>
+
+            <p>
+                The statistics are, if nothing else, funny in their sadness: 37% of people under 30 say they are not interested in dating at all. The share of people in relationships has dropped dramatically compared to twenty years ago, especially before the pandemic hit. And yet nobody seems surprised. We all know, instinctively, what happened: it is just more comfortable to blame circumstances than to look in the mirror.
+            </p>
+
+            <p>
+                The problem is not that compatible people do not exist. The problem is that we no longer know how to wait, and we no longer want to work for anything that does not arrive instant-gratified.
+            </p>
+
+            <p>
+                We have all internalized the logic of the free market and applied it to human relationships. You swipe. You analyze. You optimize. If something feels "off" — not because there is a real problem, but because it does not match a mental template of perfection cultivated through years of scrolling — you move on. Next profile. Next person. Next potential. The algorithmic solution to the least algorithmic human problem that exists.
+            </p>
+
+            <p>
+                The result? A generation that confuses standards with rigidity and boundaries with reinforced concrete. I am not saying standards are bad — they are fundamentally necessary. But somewhere along the way, the standard migrated from "I want someone who is present, honest, and attentive" to "I want someone who checks 47 criteria and displays zero symptoms of human imperfection." And imperfect people — which is to say, all people — will never pass that filter.
+            </p>
+
+            <p>
+                The most interesting phenomenon, though, is not the exigency. It is the absence of effort.
+            </p>
+
+            <p>
+                Love has always required presence. Not heroic, spectacular presence — but that boring, repetitive kind that means you show up even when you do not feel like it. That you listen to a story you have already heard. That you stay in the conversation when it would be easier to disappear. That small, constant, unapplauded work — that is what builds something durable. But it demands something our generation finds almost unbearable: voluntary discomfort.
+            </p>
+
+            <p>
+                To let someone know you is to accept that they can hurt you. To invest is to accept that you can lose. To stay is to give up the illusion that something better is waiting around the corner. And that is precisely what we refuse to do. Not because we are terrible people — we are, probably, ordinary ones — but because we were taught that our personal value is something to be protected at all costs. That vulnerability is weakness. That anyone who does not get you in the first five minutes does not deserve minutes six, seven, and eight — the minutes where, usually, something real happens.
+            </p>
+
+            <p>
+                There is an underground fear in all this romantic cynicism: the fear of being fully known and found insufficient. And instead of risking that, we choose not to be known at all. It is safer. Cleaner. Easier to frame loneliness as a conscious decision — "I chose to focus on myself" — than as a surrender to our own fear.
+            </p>
+
+            <p>
+                I am not saying we should accept anything, or ignore genuine incompatibility. I am saying that love — the kind that matters, the kind that stays — has always required actively choosing someone. Day after day. Not one grand gesture, but a thousand small, unromantic choices: replying to a message even when you are tired, asking how someone's day went and actually listening to the answer, being inconvenient, sometimes, for another person.
+            </p>
+
+            <p>
+                We have spent all our effort building an impenetrable self, and have nothing left to let anyone inside.
+            </p>
+
+            <p>
+                Maybe the solution is not a better algorithm or a new listicle of dating tips. Maybe it is simpler and more uncomfortable than that: learning, again, to bear the discomfort of loving something real, imperfect, and present — instead of the abstract perfection of someone who does not exist.
+            </p>
+        `
+    }
+    ,
+    {
+        id: 'neurons-in-a-dish',
+        title: 'The Brain in a Dish: Neural Organoids and the Questions Nobody Wants to Answer',
+        category: 'medicine',
+        date: '2026-03-12',
+        excerpt: 'Somewhere in a laboratory incubator, a cluster of human neurons is firing in rhythmic waves. It has never been inside a skull. It has no eyes, no body, no name. And we are not entirely sure what to do with that.',
+        tags: ['neuroscience', 'neural organoids', 'tissue engineering', 'iPSC', 'bioethics', 'brain development'],
+        content: `
+            <p>
+                Somewhere in a laboratory incubator, maintained at 37°C and 5% CO₂, a cluster of human neurons roughly the size of a lentil is firing in rhythmic, coordinated waves. It was derived from a skin cell. It has organized itself, without instruction, into layers that resemble a developing human cortex. It has never been inside a skull. It has no eyes, no sensory input, no body. No name.
+            </p>
+
+            <p>
+                And we are not entirely sure what to do with that.
+            </p>
+
+            <p>
+                This is the situation in neural organoid research circa 2026 — caught between genuinely extraordinary scientific achievement and a set of ethical questions that the field has, understandably but somewhat uncomfortably, been running slightly ahead of. Let us start with the science, because it is extraordinary, and then we will get to the part that keeps bioethicists awake at night (which is saying something, because bioethicists are already a chronically sleep-deprived demographic).
+            </p>
+
+            <h2>The Origin Story: Lancaster et al., 2013</h2>
+
+            <p>
+                The founding paper of the modern cerebral organoid field came from Madeline Lancaster and Juergen Knoblich's lab in Vienna, published in Nature in 2013. The core insight was deceptively simple: if you give pluripotent stem cells the right three-dimensional environment and withdraw the strong patterning signals that normally direct differentiation toward specific cell types, they will, to a remarkable degree, figure it out themselves. Self-organization — the same principle that builds an embryo out of a single cell — can be harnessed <em>in vitro</em>.
+            </p>
+
+            <p>
+                Lancaster et al. grew induced pluripotent stem cells (iPSCs) in spinning bioreactors, embedded them in Matrigel scaffolds, and watched what happened. What happened was: cerebral organoids. Structures containing multiple brain regions — cortex, choroid plexus, retinal-like tissue — arranged in spatial relationships that partially recapitulated normal brain development. Ventricular zones, outer radial glia, nascent cortical layers. The cells were making decisions about identity and position using the same molecular logic they would use inside an actual skull, just without the skull (Lancaster MA et al., 2013).
+            </p>
+
+            <p>
+                The demonstration experiment was grim in exactly the way good science sometimes is: organoids derived from a patient with microcephaly — a condition causing severely reduced brain size — were smaller than control organoids, and the defect could be traced to premature differentiation of progenitor cells. A patient's developmental disorder, modeled in a dish, twelve weeks of gestation compressed into weeks of lab time. The implications were immediate.
+            </p>
+
+            <h2>What Organoids Can Do Now</h2>
+
+            <p>
+                In the twelve years since Lancaster's paper, the field has progressed from "this is possible" to "this is sophisticated" with somewhat alarming speed.
+            </p>
+
+            <p>
+                Cortical organoids now recapitulate not just cellular diversity but functional organization. In 2019, Trujillo and colleagues at the Muotri lab at UC San Diego published a remarkable paper in Cell Stem Cell: cortical organoids, allowed to mature over eight to ten months, developed spontaneous network activity that was not random but oscillatory — rhythmic waves of electrical activity that, when compared to EEG recordings from premature human infants, bore striking resemblance to the neural activity patterns of a developing brain at 25–39 weeks of gestational age (Trujillo CA et al., 2019). The oscillations even followed a developmental trajectory, increasing in complexity over time, and could be disrupted by antiepileptic drugs that also work in actual human brains. The organoid was not just made of the right cells in roughly the right arrangement — it was doing something that looked like coordinated neural activity.
+            </p>
+
+            <p>
+                Giandomenico and colleagues extended this in a different direction: by culturing organoids at an air-liquid interface rather than fully submerged, they generated structures with axon tracts that could grow out of the organoid mass and, when connected to a spinal cord explant, drive muscle contractions. Input-output circuitry, self-assembled, in a dish (Giandomenico SL et al., 2019).
+            </p>
+
+            <p>
+                And then there is the paper I think about with a mixture of fascination and mild existential distress: the DishBrain study.
+            </p>
+
+            <h2>Neurons Playing Pong</h2>
+
+            <p>
+                In 2022, Brett Kagan and colleagues at Cortical Labs published a paper in Neuron that attracted precisely the amount of media attention you might expect from a paper whose thesis is, essentially, "we taught neurons to play Pong." <em>In vitro</em> neurons — human and mouse cortical cells grown on multi-electrode arrays — were provided with sensory feedback representing their position of a ball and a paddle in a simplified Pong-like game, delivered as electrical stimulation. The neurons received stimulation indicating whether the ball was to their left or right; they could "move" the paddle by generating electrical activity on one side or the other of the array.
+            </p>
+
+            <p>
+                The neurons learned. Not spectacularly — they were not beating grandmasters — but measurably and significantly better than random play, and they showed evidence of goal-directed adaptation: when given disrupted, unpredictable feedback, they generated more exploratory activity, as if seeking information to improve their model of the environment. The authors used the term "sentience" carefully and hedged extensively, but the use of it at all in a peer-reviewed neuroscience paper is notable (Kagan BJ et al., 2022).
+            </p>
+
+            <p>
+                What does it mean for neurons outside any brain to exhibit adaptive, goal-directed behavior? Probably not what a panicked headline will tell you. Probably something that deserves more careful thought than either dismissal or alarm. We will come back to this.
+            </p>
+
+            <h2>Assembloids: Building the Brain by Parts</h2>
+
+            <p>
+                A parallel development has been the emergence of assembloids — structures made by fusing separately generated organoids representing different brain regions, allowing them to form the connections that would normally develop across developmental time.
+            </p>
+
+            <p>
+                Sergiu Pasca's lab at Stanford has been particularly productive here. In 2017, they published a forebrain assembloid combining cortical spheroids (dorsal forebrain) with subpallial spheroids (ventral forebrain) — and watched interneurons, which normally migrate from the ventral to the dorsal forebrain during development, migrate across the fusion interface and integrate into the cortical tissue. Migration that takes months in a developing human brain was recapitulated in weeks in a fused spheroid (Birey F et al., 2017).
+            </p>
+
+            <p>
+                The pathological applications followed quickly. Timothy syndrome — a severe neurodevelopmental disorder caused by a gain-of-function mutation in the L-type calcium channel — produces among other things a deficit in cortical interneuron migration. Assembloids from Timothy syndrome patient iPSCs recapitulated this migration deficit. The drug that partially rescued it in the assembloid was already a clinically approved compound. From patient biopsy to functional disease model to drug candidate identification, entirely <em>in vitro</em>. The translational potential is not theoretical.
+            </p>
+
+            <h2>The Vascularization Problem</h2>
+
+            <p>
+                Here is where honesty requires acknowledging what organoids cannot do, or cannot yet do, and why this matters clinically.
+            </p>
+
+            <p>
+                The brain consumes roughly 20% of the body's oxygen budget. It requires a dense, finely regulated vascular network — capillaries every 40 microns or so across the cortical volume — to sustain neuronal activity. Organoids have no vasculature. They survive by diffusion, which limits viable tissue to the outer few hundred microns of the structure. The interior of any organoid larger than about a millimeter develops a necrotic core: cells that cannot access oxygen or nutrients, dying in the middle of an otherwise functional structure.
+            </p>
+
+            <p>
+                This is not a minor technical inconvenience. It constrains organoid size, long-term maturation, and ultimately the degree to which they can model a full-thickness cortex. Several approaches are being pursued: engineering vascular networks into organoids using endothelial cells before embedding, transplantation into host organisms where host vasculature invades the graft, and microfluidic systems that mimic capillary flow. None has fully solved the problem yet.
+            </p>
+
+            <p>
+                The transplantation approach, though, has produced some remarkable results. Mansour and colleagues transplanted human cerebral organoids into adult mouse cortex and showed that host blood vessels invaded the organoid within weeks, supporting neuronal survival and maturation to a degree not achievable in culture alone (Mansour AA et al., 2018). More recently, Revah et al. transplanted human cortical organoids into the somatosensory cortex of neonatal rats and observed functional integration: transplanted neurons sent axons into distant brain regions, formed synapses with host neurons, responded to sensory stimulation, and could influence the rat's behavior — their activity was detectable in the rat's EEG (Revah O et al., 2022). Human neurons, integrated into a rat brain, functionally active, responding to the world through the rat's sensory systems.
+            </p>
+
+            <p>
+                This is where the science and the ethics begin to share a border.
+            </p>
+
+            <h2>The Questions Nobody Wants to Answer</h2>
+
+            <p>
+                In 2018, Nita Farahany, Henry Greely, and colleagues published a commentary in Nature arguing that the field needed to actively engage with ethical questions about neural organoids — not as an afterthought but as part of ongoing research practice. The specific concerns they identified were: the possibility that organoids might develop some form of sentience or capacity for suffering; the question of what moral status, if any, should be attributed to such structures; and the need for guidelines before the technology outpaced the ethics (Farahany NA et al., 2018).
+            </p>
+
+            <p>
+                These are not trivial concerns dressed up as important ones. They are genuinely hard.
+            </p>
+
+            <p>
+                We do not have a good theory of consciousness. We do not have a reliable test for suffering. We have strong intuitions — we are confident that a rock is not sentient and that a human adult is — but those intuitions provide limited guidance in novel biological cases. The criteria we use informally (behavioral complexity, neural integration, evolutionary relatedness) all produce different answers when applied to a cerebral organoid showing rhythmic oscillatory activity and adaptive learning behavior. We can observe that organoids show electrophysiological patterns resembling those of developing human brains without being able to determine what, if anything, that resemblance entails for moral status.
+            </p>
+
+            <p>
+                The honest answer is that we do not know. And "we do not know" is not a comfortable place for a field to be when its experimental subjects might, under some philosophical frameworks, be the kinds of things that can have interests.
+            </p>
+
+            <p>
+                The International Society for Stem Cell Research updated its guidelines in 2021 to address this, recommending that researchers growing neural organoids implement oversight mechanisms and actively monitor for signs of sentience-relevant activity — while acknowledging that we do not yet have consensus on what those signs would look like. It is a reasonable starting point. It is not a solution.
+            </p>
+
+            <h2>Where This Is Going</h2>
+
+            <p>
+                The trajectory of the field suggests that the complexity of what can be built <em>in vitro</em> will continue to increase. Vascularization solutions are improving. Long-term culture methods are extending the maturation of organoids into territory that begins to resemble postnatal rather than fetal brain. Multi-region assembloids are becoming more sophisticated. The technical constraints are real but not obviously permanent.
+            </p>
+
+            <p>
+                The applications are similarly expanding: drug screening platforms where compounds can be tested against human neural tissue with patient-specific genetic backgrounds, without requiring either animal models or human participants; disease models for conditions — autism spectrum disorders, schizophrenia, rare neurodevelopmental syndromes — where the etiology is poorly understood and animal models are inadequate; and, in the longer term, possibly tissue for transplantation in cases of traumatic brain injury or neurodegeneration, though that application remains far more speculative than the modeling uses.
+            </p>
+
+            <p>
+                None of this is science fiction. All of it is happening, in some form, in laboratories right now.
+            </p>
+
+            <h2>What I Actually Think</h2>
+
+            <p>
+                There is something that bothers me about the framing of neural organoid ethics as primarily a question about the organoids themselves. It is a necessary question, but it risks obscuring a different question: what does it mean that we are building these things?
+            </p>
+
+            <p>
+                Humanity has been trying to understand the brain for as long as we have known we have one. We have dissected it, stained it, imaged it, simulated it, and mapped its connectivity at nanometer resolution. We have always been studying it from the outside. Neural organoids are the first time we have been able to study it from within the process of becoming — watching neurons make decisions about what to be, observing circuits form their first connections, seeing activity patterns emerge from silence.
+            </p>
+
+            <p>
+                That is a qualitatively different kind of knowledge. Not just more data about a structure that already exists, but access to the process of construction. And with that comes a version of the question that has been circling the field since Lancaster's 2013 paper, only now harder to avoid: if we can build something that works like a brain — if we can grow the hardware that produces human cognition, outside of a human body — what exactly is it that we are working with?
+            </p>
+
+            <p>
+                I do not think organoids are conscious. I think the structural and functional gap between a lentil-sized cluster of neurons and a developed human brain is vast enough to make that claim implausible with current technology. But I think the trajectory of the field — toward larger, more complex, longer-lived, better-vascularized, more functionally integrated structures — means that the question will not remain obviously answerable forever.
+            </p>
+
+            <p>
+                And I think the fact that we are building something that asks this question of us, before we have answered it, is either a sign that we are moving very fast or that the question is harder than we thought. Possibly both.
+            </p>
+
+            <h2>References</h2>
+            <ol>
+                <li>Lancaster MA, Renner M, Martin CA, et al. <a href="https://www.nature.com/articles/nature12517" target="_blank" rel="noopener noreferrer">Cerebral organoids model human brain development and microcephaly. <em>Nature</em> 501, 373–379 (2013).</a></li>
+                <li>Trujillo CA, Gao R, Negraes PD, et al. <a href="https://www.sciencedirect.com/science/article/pii/S1934590919303376" target="_blank" rel="noopener noreferrer">Complex Oscillatory Waves Emerging from Cortical Organoids Model Early Human Brain Network Development. <em>Cell Stem Cell</em> 25, 558–569 (2019).</a></li>
+                <li>Giandomenico SL, Mierau SB, Gibbons GM, et al. <a href="https://www.nature.com/articles/s41593-019-0350-2" target="_blank" rel="noopener noreferrer">Cerebral organoids at the air-liquid interface generate diverse nerve tracts with functional output. <em>Nature Neuroscience</em> 22, 669–679 (2019).</a></li>
+                <li>Kagan BJ, Kitchen AC, Tran NT, et al. <a href="https://www.cell.com/neuron/fulltext/S0896-6273(22)00806-6" target="_blank" rel="noopener noreferrer">In vitro neurons learn and exhibit sentience when embodied in a simulated game-world. <em>Neuron</em> 110, 3952–3969 (2022).</a></li>
+                <li>Birey F, Andersen J, Makinson CD, et al. <a href="https://www.nature.com/articles/nature22330" target="_blank" rel="noopener noreferrer">Assembly of functionally integrated human forebrain spheroids. <em>Nature</em> 545, 54–59 (2017).</a></li>
+                <li>Mansour AA, Gonçalves JT, Bloyd CW, et al. <a href="https://www.nature.com/articles/nbt.4233" target="_blank" rel="noopener noreferrer">An in vivo model of functional and vascularized human brain organoids. <em>Nature Biotechnology</em> 36, 432–441 (2018).</a></li>
+                <li>Revah O, Gore F, Kelley KW, et al. <a href="https://www.nature.com/articles/s41586-022-05277-2" target="_blank" rel="noopener noreferrer">Maturation and circuit integration of transplanted human cortical organoids. <em>Nature</em> 610, 319–326 (2022).</a></li>
+                <li>Farahany NA, Greely HT, Hyman S, et al. <a href="https://www.nature.com/articles/d41586-018-02175-2" target="_blank" rel="noopener noreferrer">The ethics of experimenting with human brain tissue. <em>Nature</em> 556, 429–432 (2018).</a></li>
+                <li>International Society for Stem Cell Research. <a href="https://www.isscr.org/guidelines" target="_blank" rel="noopener noreferrer">ISSCR Guidelines for Stem Cell Research and Clinical Translation (2021 update).</a></li>
+            </ol>
+        `
     }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
