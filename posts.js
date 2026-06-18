@@ -527,11 +527,11 @@ const allPosts = [
             </p>
 
             <p>
-                We have all internalized the logic of the free market and applied it to human relationships. You swipe. You analyze. You optimize. If something feels "off" — not because there is a real problem, but because it does not match a mental template of perfection cultivated through years of scrolling — you move on. Next profile. Next person. Next potential. The algorithmic solution to the least algorithmic human problem that exists.
+                We have all internalized the logic of the free market and applied it to human relationships. If something feels "off" — because it does not match a mental template of perfection cultivated through years of scrolling — you move on. Next profile. Next person. Next potential. The algorithmic solution to the least algorithmic human problem that exists.
             </p>
 
             <p>
-                The result? A generation that confuses standards with rigidity and boundaries with reinforced concrete. I am not saying standards are bad — they are fundamentally necessary. But somewhere along the way, the standard migrated from "I want someone who is present, honest, and attentive" to "I want someone who checks 47 criteria and displays zero symptoms of human imperfection." And imperfect people — which is to say, all people — will never pass that filter.
+                Perhaps the most terrifying thing of them all? We have become estranged to ourselves. We cannot sit in boredom, in our own misery, without needing to distract ourselves with lustful, meaningless connections. Who hasn't done this, though? I see how so many people are quick to point fingers and advocate for pure, true love, but..let's be honest! The human connectome has evolved in such expansive ways over the centuries - we should be free of society's expectations of how relationships ought to be. But not at the cost of others. I am not saying standards are bad — they are fundamentally necessary. But somewhere along the way, the standard migrated from "I want someone who is present, honest, and attentive" to "I want someone who checks 47 criteria and displays zero symptoms of human imperfection." And imperfect people — which is to say, all people — will never pass that filter.
             </p>
 
             <p>
@@ -539,11 +539,11 @@ const allPosts = [
             </p>
 
             <p>
-                Love has always required presence. Not heroic, spectacular presence — but that boring, repetitive kind that means you show up even when you do not feel like it. That you listen to a story you have already heard. That you stay in the conversation when it would be easier to disappear. That small, constant, unapplauded work — that is what builds something durable. But it demands something our generation finds almost unbearable: voluntary discomfort.
+                Love has always required presence. It has never asked for something heroic, something.. spectacular — but that slow, repetitive kind that means you show up even when you do not feel like it. That you listen to a story you have already heard. That you stay in the conversation when it would be easier to disappear. That small, constant, unapplauded work — that is what builds something durable. But it demands something our generation finds almost unbearable: voluntary discomfort.
             </p>
 
             <p>
-                To let someone know you is to accept that they can hurt you. To invest is to accept that you can lose. To stay is to give up the illusion that something better is waiting around the corner. And that is precisely what we refuse to do. Not because we are terrible people — we are, probably, ordinary ones — but because we were taught that our personal value is something to be protected at all costs. That vulnerability is weakness. That anyone who does not get you in the first five minutes does not deserve minutes six, seven, and eight — the minutes where, usually, something real happens.
+                To let someone know you is to accept that they can hurt you. To invest is to accept that you can lose. To stay is to give up the illusion that something better is waiting around the corner. And that is precisely what we refuse to do. We are, probably, ordinary but inherently lonesome folks — but because we were taught that our personal value is something to be protected at all costs, we start seing that vulnerability is weakness. That anyone who does not get you in the first five minutes does not deserve minutes six, seven, and eight — the minutes where, usually, something real happens.
             </p>
 
             <p>
@@ -551,13 +551,16 @@ const allPosts = [
             </p>
 
             <p>
-                I am not saying we should accept anything, or ignore genuine incompatibility. I am saying that love — the kind that matters, the kind that stays — has always required actively choosing someone. Day after day. Not one grand gesture, but a thousand small, unromantic choices: replying to a message even when you are tired, asking how someone's day went and actually listening to the answer, being inconvenient, sometimes, for another person.
+                I am not saying we should accept anything, or ignore genuine incompatibility. Love — the kind that matters, the kind that stays — has always required actively choosing someone. Day after day. Not one grand gesture, but a thousand small, unromantic choices: replying to a message even when you are tired, asking how someone's day went and actually listening to the answer, being inconvenient, sometimes, for another person.
             </p>
 
             <p>
                 We have spent all our effort building an impenetrable self, and have nothing left to let anyone inside.
             </p>
 
+            <p>
+                Sometimes, love is waiting for someone from afar. knowing that, no matter the seconds that were wasted, nothing will come from it. That, perhaps, hiding one's feelings weren't going to yield results in the first place. 
+            </p>
             <p>
                 Maybe the solution is not a better algorithm or a new listicle of dating tips. Maybe it is simpler and more uncomfortable than that: learning, again, to bear the discomfort of loving something real, imperfect, and present — instead of the abstract perfection of someone who does not exist.
             </p>
