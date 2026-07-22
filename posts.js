@@ -116,7 +116,66 @@ const allPosts = [
         </ol>
     `
 },
-      {
+{
+    id: 'takotsubo-inima-franta',
+    title: 'Takotsubo: Ce Se Întâmplă Când Inima Crede Poveștile Creierului',
+    date: '2026-07-22',
+    category: 'medicine',
+    tags: ['cardiologie', 'fiziopatologie', 'neurocardiologie', 'educație medicală'],
+    excerpt: 'Un review în stil PubMed despre cardiomiopatia Takotsubo — "sindromul inimii frânte" — de la furtuna de catecolamine care paralizează ventriculul stâng, până la axa creier-inimă care explică de ce o durere emoțională poate arăta, la ecocardiografie, exact ca un infarct.',
+    content: `
+        <h2>Introducere: Metafora Care S-a Dovedit Literală</h2>
+
+        <p>"Mi s-a frânt inima" a fost mereu, pentru mine, doar o figură de stil bună pentru caption-uri triste pe Instagram sau pentru orice roman rusesc citit la 2 dimineața. Apoi am dat, în cursul de cardiologie, peste un caz care m-a făcut să mă opresc din citit și să recitesc paragraful de trei ori: o femeie de 68 de ani, fără nicio boală coronariană, ajunge la urgențe cu durere toracică, supradenivelare de segment ST și un ventricul stâng care, la ventriculografie, arată exact ca un <em>tako-tsubo</em> — vasul tradițional japonez folosit pentru prinderea caracatițelor, cu gât îngust și bază rotunjită și balonată. Declanșatorul? Aflase, cu câteva ore înainte, de moartea soțului ei. Coronarele erau perfect curate. Nu exista infarct. Exista, în schimb, o inimă care, funcțional, se comporta ca și cum ar fi fost una.</p>
+
+        <p>Asta este cardiomiopatia Takotsubo (TTS), cunoscută și sub numele mult mai poetic de "broken heart syndrome" sau "stress cardiomyopathy". Nu e un eveniment rar sau o curiozitate de manual — reprezintă aproximativ 1-2% din toate prezentările suspectate de sindrom coronarian acut, și până la 5-6% dintre femeile care se prezintă cu suspiciune de infarct miocardic <a href="https://pubmed.ncbi.nlm.nih.gov/36872594/" target="_blank" rel="noopener noreferrer">(Pelliccia et al., 2023)</a>. Iar partea cu adevărat interesantă, cea care m-a făcut să scriu postarea asta pentru secțiunea de Medicine în loc de Reflections, este că mecanismul din spate leagă direct sistemul nervos central de inimă — practic o dovadă fiziopatologică a faptului că un gând sau o emoție poate produce leziune miocardică reală, măsurabilă, vizibilă la RMN cardiac.</p>
+
+        <h2>Fiziopatologia: Furtuna de Catecolamine</h2>
+
+        <p>Mecanismul central acceptat astăzi este <strong>ipoteza catecolaminergică</strong>. La un declanșator emoțional (doliu, ceartă, veste proastă) sau fizic (sepsis, AVC, intervenție chirurgicală, chiar și o anestezie generală), glandele suprarenale și terminațiile nervoase simpatice eliberează o cantitate masivă de epinefrină și norepinefrină — de ordinul a de 2-3 ori mai mare decât în infarctul miocardic acut clasic <a href="https://pubmed.ncbi.nlm.nih.gov/28606950/" target="_blank" rel="noopener noreferrer">(Y-Hassan & Tornvall, 2018)</a>. Problema nu e doar cantitatea, ci și <em>unde</em> acționează: miocardul apical are o densitate mai mare de receptori β-adrenergici decât cel bazal.</p>
+
+        <p>La concentrații foarte mari, catecolaminele nu mai activează doar căile Gs clasice, ci comută semnalizarea receptorului β2 către proteina Gi — un fenomen numit "stimulus trafficking". Rezultatul e practic paradoxal: în loc să crească forța de contracție, această supra-stimulare deprimă contractilitatea, mai ales la vârf, unde receptorii sunt mai numeroși. Adaugă la asta supraîncărcarea cu calciu intracelular, toxicitatea directă a catecolaminelor asupra cardiomiocitelor și spasmul microvascular coronarian, și obții exact tabloul clinic clasic: balonizare apicală tranzitorie, cu bază hipercontractilă compensatorie — silueta de "tako-tsubo" <a href="https://pubmed.ncbi.nlm.nih.gov/35979181/" target="_blank" rel="noopener noreferrer">(Singh et al., 2022)</a>. Vestea (relativ) bună: spre deosebire de infarct, aici e vorba de "myocardial stunning" — leziune funcțională reversibilă, nu de necroză ireversibilă prin ocluzie coronariană. De-asta ventriculul, în marea majoritate a cazurilor, își revine complet în 1-4 săptămâni.</p>
+
+        <h2>Axa Creier-Inimă: Când Insula Îi Trimite Inimii Un Semnal Prost</h2>
+
+        <p>Aici e partea care mă interesează cel mai mult, pentru că se leagă direct de tot ce scriu de obicei despre creier pe blogul ăsta. Întrebarea evidentă e: de ce unii oameni, expuși la același stres emoțional, dezvoltă Takotsubo, iar alții nu? Răspunsul pare să stea, cel puțin parțial, în modul în care creierul lor procesează și reglează răspunsul autonom la stres — nu în inimă.</p>
+
+        <p>Studii de neuroimagistică funcțională arată alterări structurale și funcționale în rețeaua autonomă centrală la pacienții cu TTS: modificări de volum și conectivitate în insula dreaptă, amigdală și cortexul cingulat anterior — exact regiunile care formează "creierul limbic-autonom" responsabil de integrarea emoției cu reglarea cardiovasculară <a href="https://pubmed.ncbi.nlm.nih.gov/30831580/" target="_blank" rel="noopener noreferrer">(Templin et al., 2019)</a>. Insula dreaptă în particular pare centrală, fiind implicată direct în tonusul simpatic; pacienții cu TTS prezintă atât modificări volumetrice, cât și funcționale ale acestei regiuni în faza acută <a href="https://pubmed.ncbi.nlm.nih.gov/32002630/" target="_blank" rel="noopener noreferrer">(Klein et al., 2020)</a>. Mai mult, în condiții de stres experimental (expunere la frig), pacienții cu TTS arată o conectivitate crescută, aberantă, între amigdala stângă și insula dreaptă, comparativ cu martorii sănătoși — o rețea limbic-autonomă care pare "prea reactivă" sau prost calibrată <a href="https://pubmed.ncbi.nlm.nih.gov/30862828/" target="_blank" rel="noopener noreferrer">(Radfar et al., 2021)</a>.</p>
+
+        <p>Practic, inima nu face altceva decât să asculte de-a dreptul de un semnal transmis de un creier care, în acel moment, interpretează greșit sau amplifică o amenințare emoțională, traducând-o într-o furtună simpatică suficient de puternică încât să paralizeze temporar mușchiul cardiac. E genul de lucru care mă face să mă întreb dacă distincția pe care o facem instinctiv între "boală a minții" și "boală a corpului" mai are vreun sens fiziologic, sau dacă e doar o comoditate de manual.</p>
+
+        <h2>Diagnostic: Cum Deosebești o Inimă Frântă de Un Infarct Adevărat</h2>
+
+        <p>Clinic, TTS mimează un infarct: durere toracică, dispnee, supradenivelare ST, troponină crescută. Diferența majoră e coronarografia normală. Cele mai folosite criterii de diagnostic sunt criteriile Mayo Clinic revizuite și scorul InterTAK. Criteriile Mayo cer patru elemente: (1) hipokinezie/akinezie/diskinezie tranzitorie a segmentelor ventriculului stâng, care depășește teritoriul unei singure artere coronare, adesea, dar nu obligatoriu, cu balonizare apicală; (2) absența unei leziuni coronariene obstructive sau a rupturii de placă acute care să explice anomalia de mișcare; (3) modificări ECG noi (supradenivelare ST și/sau inversare de undă T) sau creștere modestă a troponinei; (4) absența feocromocitomului sau a miocarditei <a href="https://pubmed.ncbi.nlm.nih.gov/20582391/" target="_blank" rel="noopener noreferrer">(Prasad, Lerman & Rihal, 2008)</a>.</p>
+
+        <p>Scorul InterTAK e mai granular și util mai ales pentru triaj rapid la urgențe: combină sexul feminin, prezența unui declanșator emoțional sau fizic, absența subdenivelării ST (cu excepția derivației aVR), tulburări psihiatrice sau neurologice preexistente și prelungirea intervalului QT, atribuind un scor de la 0 la 100. Un scor ≥40 identifică TTS cu o sensibilitate de 81.8% și o specificitate de 100% față de sindromul coronarian acut clasic <a href="https://academic.oup.com/eurheartj/article/39/22/2047/5025411" target="_blank" rel="noopener noreferrer">(Ghadri et al., 2018)</a>. Observația care mi s-a părut cea mai contraintuitivă: chiar unele dintre "regulile" clasice (fără subdenivelare ST, femeie, declanșator emoțional) sunt ele însele criterii de diagnostic, nu doar factori de risc epidemiologici — TTS e una din puținele patologii cardiace unde demografia intră direct în scorul diagnostic.</p>
+
+        <h2>Prognostic: De Ce "Reversibil" Nu Înseamnă "Fără Consecințe"</h2>
+
+        <p>Multă vreme, TTS a fost predat ca o entitate esențial benignă — inima își revine, deci pacientul e bine. Datele mai recente complică tabloul. Supraviețuirea la un an raportată de Mayo Clinic e de 94.2%, dar într-un studiu de cohortă populațională, dintre pacienții externați în viață, 34.6% au decedat pe parcursul unei urmăriri medii de aproape 6 ani, iar 7.5% au avut un episod recurent de TTS <a href="https://pubmed.ncbi.nlm.nih.gov/29957259/" target="_blank" rel="noopener noreferrer">(Ghadri et al., 2018 — Natural History)</a>. Important: mortalitatea pe termen lung e determinată predominant de cauze <em>non-cardiovasculare</em> — cancer, boli neurologice, depresie — nu de recidiva sindromului cardiac în sine <a href="https://pubmed.ncbi.nlm.nih.gov/27406446/" target="_blank" rel="noopener noreferrer">(Redfors et al., 2016)</a>.</p>
+
+        <p>Cu alte cuvinte, inima aproape întotdeauna se vindecă. Dar TTS pare să fie mai degrabă un marker — un semnal că sistemul nervos autonom al acelui pacient e cronic dereglat sau vulnerabil — decât un eveniment izolat, autolimitat. Ceea ce mă duce înapoi la observația din secțiunea despre axa creier-inimă: dacă originea reală a bolii e o disfuncție de reglare limbic-autonomă, atunci tratarea doar a episodului acut cardiac, fără a adresa componenta neuropsihiatrică subiacentă, tratează simptomul și ignoră cauza.</p>
+
+        <h2>Concluzii: Ce Ar Trebui Să Reținem</h2>
+
+        <p>Takotsubo e, cred, cel mai bun argument fiziopatologic pe care ți-l poate oferi cardiologia pentru ideea că mintea și corpul nu sunt sisteme separate care doar "comunică" ocazional, ci un singur sistem integrat care poate fi observat direct pe o ecocardiografie. O veste proastă, procesată greșit undeva în amigdală și insula dreaptă, se traduce, prin nervul simpatic, într-o concentrație toxică de catecolamine care paralizează temporar un ventricul întreg. Rămâne întrebarea pe care mi-o pun tot mai des în ultima vreme, citind despre neurocardiologie: câte alte "boli ale inimii" pe care le tratăm astăzi ca fiind pur mecanice au, de fapt, o origine care începe în creier, doar că încă nu avem instrumentele să o vedem?</p>
+
+        <h2>Referințe și linkuri</h2>
+        <ol>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/36872594/" target="_blank" rel="noopener noreferrer">Pelliccia F et al. Epidemiology, Pathophysiology, Diagnosis, and Principles of Management of Takotsubo Cardiomyopathy: A Review.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/35979181/" target="_blank" rel="noopener noreferrer">Singh T et al. Takotsubo cardiomyopathy: A comprehensive review.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/28606950/" target="_blank" rel="noopener noreferrer">Y-Hassan S, Tornvall P. Pathophysiology of Takotsubo Syndrome.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/30831580/" target="_blank" rel="noopener noreferrer">Templin C et al. Altered limbic and autonomic processing supports brain-heart axis in Takotsubo syndrome.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/32002630/" target="_blank" rel="noopener noreferrer">Klein C et al. Functional neuroimaging in the acute phase of Takotsubo syndrome: volumetric and functional changes of the right insular cortex.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/30862828/" target="_blank" rel="noopener noreferrer">Radfar A et al. Brain functional connectivity is altered in patients with Takotsubo Syndrome.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/20582391/" target="_blank" rel="noopener noreferrer">Prasad A, Lerman A, Rihal CS. Proposed Mayo Clinic criteria for the diagnosis of Tako-Tsubo cardiomyopathy and long-term prognosis.</a> — PubMed</li>
+            <li><a href="https://academic.oup.com/eurheartj/article/39/22/2047/5025411" target="_blank" rel="noopener noreferrer">Ghadri JR et al. International Expert Consensus Document on Takotsubo Syndrome (Part II): Diagnostic Workup, Outcome, and Management.</a> — European Heart Journal</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/29957259/" target="_blank" rel="noopener noreferrer">Ghadri JR et al. Natural history and predictors of mortality of patients with Takotsubo syndrome.</a> — PubMed</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/27406446/" target="_blank" rel="noopener noreferrer">Redfors B et al. In-hospital and long-term mortality in Takotsubo cardiomyopathy: a community hospital experience.</a> — PubMed</li>
+        </ol>
+    `
+},
+{
 
   id: 'mitophagy-power-plants-dying',
   title: 'Your Power Plants Are Dying: The Secret War Inside Every Cell',
