@@ -799,6 +799,33 @@ const allPosts = [
                 <li>International Society for Stem Cell Research. <a href="https://www.isscr.org/guidelines" target="_blank" rel="noopener noreferrer">ISSCR Guidelines for Stem Cell Research and Clinical Translation (2021 update).</a></li>
             </ol>
         `
+    },
+    {
+        id: 'on-invisible-planets',
+        title: 'On Invisible Planets',
+        category: 'reflections',
+        date: '2026-08-16',
+        excerpt: 'Before Neptune was ever seen, astronomers already knew it was there — because Uranus kept leaning toward something in the dark. A short, romantic meditation on love as gravity: the things we know only by how they bend us.',
+        tags: ['reflections', 'astronomy', 'love'],
+        content: `
+            <p>I have always loved that some of the most astonishing things in the sky were found before anyone actually laid eyes on them.</p>
+
+            <p>Long before Neptune ever swam into a telescope's eyepiece, astronomers already suspected it was out there. Uranus kept drifting, ever so slightly, off the path the mathematics had drawn for it — not dramatically, just enough to suggest that something unseen, somewhere past the known edge of the Solar System, was reaching for it. Quietly. Insistently. Pulling.</p>
+
+            <p>So they stopped looking for the light and followed the pull instead.</p>
+
+            <p>Astronomy keeps telling this same story, in different disguises. A star's brightness dips at the same interval, night after night, and we say: something is passing in front of it. A star seems to sway ever so slightly on its axis, tracing a small, patient circle, and we say: something invisible is dancing with it, close enough to matter. Starlight bends around a patch of what should be nothing, and that bend becomes its own quiet confession — there is a mass hidden in that darkness, and it wants, in its own way, to be known.</p>
+
+            <p>We like to imagine discovery as the moment something finally steps into the light. But it almost never starts there. It starts earlier, in the dark, with an absence that behaves so much like a presence that it becomes impossible to ignore — a gravity with no visible source, a tug you cannot explain and cannot quite dismiss either.</p>
+
+            <p>I wonder how much of the universe we only ever know this way. Not seen. Not even reached. Only felt, in the small, involuntary way it bends everything that orbits near it. A planet does not need to be seen to be real. It only needs to leave its fingerprints on the things that love it enough to circle back.</p>
+
+            <p>I have been reading about space again lately, the way I do in certain seasons, and it keeps happening: I come across some small, glittering fact — the kind that would mean almost nothing said aloud to no one, but everything said aloud to someone who already knows the sky better than I do — and some part of me quietly sets it aside. Saves it. As if for later. As if for someone in particular.</p>
+
+            <p>It is a strange, stubborn habit, the way the mind keeps making these small offerings out of nowhere, to no one in particular, and yet clearly, always, for somebody.</p>
+
+            <p>Perhaps that is its own kind of astronomy — noticing the small, persistent pull of something no longer within sight, and understanding, only by the shape of your own orbit, how much it must have mattered all along. Perhaps love behaves the same way planets do. You do not always get to see it. You only get to watch yourself bend.</p>
+        `
     }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
