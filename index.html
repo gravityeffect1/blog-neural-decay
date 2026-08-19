@@ -522,13 +522,40 @@
 
         @media (max-width: 900px) {
             main.layout { grid-template-columns: 1fr; }
-            .sidebar-column { grid-row: auto; border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 56px; margin-top: 8px; }
+            .sidebar-column { grid-column: 1; grid-row: auto; border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 56px; margin-top: 8px; }
             .container { padding: 0 26px; }
             .identity-grid, .author-grid { grid-template-columns: 1fr; }
             .author-strip { grid-template-columns: 1fr; }
             .strip-b-wrap { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
             .w-row { grid-template-columns: 1fr; gap: 8px; }
             .gallery-strip { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 640px) {
+            .container { padding: 0 20px; }
+            header { padding: 32px 0 22px; }
+            .logo { font-size: 1.9rem; padding-bottom: 8px; }
+            nav ul { gap: 20px 24px; }
+            .banner-header { height: 190px; border-bottom-width: 1px; }
+            .idx-section { padding: 44px 0; }
+            .idx-section:first-of-type { padding-top: 36px; }
+            .idx-row { grid-template-columns: 34px 1fr; gap: 16px; }
+            .idx-num { font-size: 0.68rem; }
+            .idx-label { font-size: 0.62rem; letter-spacing: 0.1em; white-space: normal; flex-wrap: wrap; row-gap: 6px; }
+            .idx-label::after { min-width: 16px; }
+            .author-grid { row-gap: 24px; }
+            .author-portrait { width: 128px; }
+            .author-name { font-size: 1.45rem; }
+            .author-strip { grid-template-columns: 1fr; gap: 12px; margin-top: 30px; }
+            .strip-b-wrap { gap: 12px; }
+            .w-row { padding-left: 14px; margin-left: -14px; row-gap: 6px; }
+            .w-row:hover { padding-left: 22px; }
+            .w-main h3 { font-size: 1.2rem; }
+            .full-post-content h1 { font-size: 1.7rem; }
+            .full-post-content .post-content h2 { font-size: 1.25rem; }
+            .post-meta-line { flex-wrap: wrap; row-gap: 8px; }
+            .footer-row { flex-direction: column; align-items: flex-start; gap: 22px; }
+            .gallery-item .cap { padding: 10px 14px 16px; }
         }
     </style>
 </head>
