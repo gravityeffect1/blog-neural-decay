@@ -4,705 +4,543 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEURAL_DECAY :: Sara's Digital Diary </title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Cinzel:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tenor+Sans&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;1,500&family=Lora:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         :root {
-            --bg-primary: #fcfcfc;
-            --bg-secondary: #ffffff;
-            --bg-accent: #f8f8f8;
-            --bg-hover: #f3f3f3;
-            --text-primary: #0a0a0a;
-            --text-secondary: #5a5a5a;
-            --text-tertiary: #8a8a8a;
-            --accent-dark: #1a1a1a;
-            --accent-light: #efefef;
-            --border-color: #e5e5e5;
-            --border-dark: #d0d0d0;
-            --shadow-light: rgba(0, 0, 0, 0.03);
-            --shadow-medium: rgba(0, 0, 0, 0.06);
-            --shadow-heavy: rgba(0, 0, 0, 0.12);
+            --paper: #f6f6f3;
+            --paper-raised: #fbfbf9;
+            --ink: #111113;
+            --ink-soft: #55565b;
+            --ink-faint: #98989c;
+            --line: #dddad4;
+            --line-strong: #bcb8b0;
+            --accent: #8a1f26;
+            --accent-soft: rgba(138, 31, 38, 0.07);
+
+            --display: 'Bodoni Moda', Didot, 'Bodoni MT', Georgia, serif;
+            --body-serif: 'Lora', Georgia, 'Iowan Old Style', serif;
+            --quote-serif: 'Lora', Georgia, serif;
+            --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
         }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            font-family: 'Lora', 'Georgia', serif;
-            line-height: 1.9;
-            overflow-x: hidden;
-            letter-spacing: 0.015em;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: var(--body-serif);
+            line-height: 1.8;
             font-weight: 400;
         }
-        
-    
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.015) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
-            opacity: 0.6;
-        }
-        
-        .container {
-            position: relative;
-            z-index: 2;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-        }
-        
-       
-      header {
-    background: rgba(255, 255, 255, 0.98);
-    border-bottom: 1px solid var(--border-color);
-    padding: 35px 0;
-    position: relative;
-    z-index: 100;
-    backdrop-filter: blur(20px) saturate(180%);
-    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-        
-        header:hover {
-            box-shadow: 0 8px 32px var(--shadow-light);
-            border-bottom-color: var(--border-dark);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Bodoni Moda', serif;
-            font-size: 2.6rem;
-            font-weight: 400;
-            color: var(--text-primary);
-            text-decoration: none;
-            letter-spacing: 0.08em;
-            position: relative;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            font-style: italic;
-        }
-        
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: linear-gradient(90deg, var(--text-primary) 0%, transparent 100%);
-            transition: width 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .logo:hover {
-            letter-spacing: 0.12em;
-        }
-        
-        .logo:hover::after {
-            width: 100%;
-        }
-        
-        .tagline {
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            margin-top: 12px;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            font-weight: 400;
-        }
-        
-     nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;  
-}
-        
-        nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-family: 'Tenor Sans', sans-serif;
-            font-weight: 400;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            cursor: pointer;
-            padding-bottom: 2px;
-        }
-        
-        nav a:hover {
-            color: var(--text-primary);
-        }
-        
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 50%;
-            transform: translateX(-50%) scaleX(0);
-            width: 100%;
-            height: 1px;
-            background: var(--text-primary);
-            transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        nav a:hover::before {
-            transform: translateX(-50%) scaleX(1);
-        }
-        
-       
-        .banner-header {
-            width: 100%;
-            height: 300px;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-            position: relative;
-            overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .banner-header img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .banner-header:hover img {
-            transform: scale(1.02);
-            filter: brightness(1.05);
-        }
-        
-        /* Main Content */
-        main {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 60px;
-            padding: 60px 0;
-        }
-        
-        .content-area {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 4px 24px var(--shadow-light);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .content-area:hover {
-            box-shadow: 0 12px 48px var(--shadow-medium);
-            transform: translateY(-4px);
-            border-color: var(--border-dark);
-        }
-        
-        
-        .terminal-welcome {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            margin-bottom: 48px;
-            overflow: hidden;
-            box-shadow: 0 2px 20px var(--shadow-light);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .terminal-welcome:hover {
-            box-shadow: 0 8px 36px var(--shadow-medium);
-            transform: translateY(-2px);
-        }
-        
-        .terminal-header {
-            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-hover) 100%);
-            padding: 20px 32px;
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.7rem;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        
-        .terminal-body {
-            padding: 40px;
-            font-family: 'Cormorant', serif;
-            font-size: 1.05rem;
-            line-height: 2;
-            color: var(--text-secondary);
-        }
-        
-        .prompt {
-            color: var(--text-primary);
-            font-weight: 600;
-            font-family: 'Cinzel', serif;
-            font-size: 0.95rem;
-            letter-spacing: 0.05em;
-        }
-        
-        .command {
-            color: var(--text-primary);
-            font-style: italic;
-            font-weight: 500;
-        }
-        
-        .output {
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            font-size: 1rem;
-        }
-        
-        
-        .blog-posts h2 {
-            font-family: 'Bodoni Moda', serif;
-            color: var(--text-primary);
-            margin-bottom: 40px;
-            padding: 32px 40px;
-            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-hover) 100%);
-            border-left: 2px solid var(--text-primary);
-            text-transform: capitalize;
-            letter-spacing: 0.1em;
-            font-weight: 500;
-            font-size: 1.3rem;
-            font-style: italic;
-        }
-        
-        .post {
-            border-bottom: 1px solid var(--border-color);
-            padding: 48px 40px;
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-        }
-        
-        .post::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 0;
-            height: 100%;
-            background: linear-gradient(90deg, var(--bg-accent) 0%, transparent 100%);
-            transition: width 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            z-index: -1;
-        }
-        
-        .post:hover {
-            background: transparent;
-            padding-left: 56px;
-        }
-        
-        .post:hover::before {
-            width: 100%;
-        }
-        
-        .post:last-child {
-            border-bottom: none;
-        }
-        
-        .post-meta {
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.7rem;
-            color: var(--text-tertiary);
-            margin-bottom: 20px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-        
-        .post-category {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            padding: 4px 16px;
-            border-radius: 0;
-            font-weight: 400;
-            margin-right: 20px;
-            font-size: 0.65rem;
-            letter-spacing: 0.15em;
-            display: inline-block;
-        }
-        
-        .post-category.medicine { background: #1a1a1a; }
-        .post-category.bioinformatics { background: #3a3a3a; }
-        .post-category.coding { background: #0a0a0a; }
-        .post-category.reflections { background: #5a5a5a; }
-        
-        .post h3 {
-            font-family: 'Bodoni Moda', serif;
-            color: var(--text-primary);
-            margin-bottom: 24px;
-            font-size: 1.85rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            line-height: 1.35;
-            font-style: italic;
-        }
-        .post h3 a {
-            color: inherit;
-            text-decoration: none;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            background: linear-gradient(to right, var(--text-primary) 0%, var(--text-primary) 100%);
-            background-size: 0 1px;
-            background-position: 0 100%;
-            background-repeat: no-repeat;
-        }
-        
-        .post h3 a:hover {
-            color: var(--text-secondary);
-            background-size: 100% 1px;
-        }
-        
-        .post-excerpt {
-            color: var(--text-secondary);
-            margin-bottom: 24px;
-            font-family: 'Lora', serif;
-            font-size: 1.05rem;
-            line-height: 1.9;
-        }
-        
-        .read-more {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.75rem;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            border-bottom: 1px solid transparent;
-            padding-bottom: 2px;
-        }
-        
-        .read-more:hover {
-            border-bottom: 1px solid var(--text-primary);
-            letter-spacing: 0.15em;
-        }
-        
-       
-        .full-post-content {
-            padding: 56px;
-            line-height: 2.1;
-        }
-        
-        .full-post-content h1 {
-            font-family: 'Bodoni Moda', serif;
-            color: var(--text-primary);
-            margin-bottom: 32px;
-            font-size: 2.6rem;
-            font-weight: 500;
-            letter-spacing: 0.02em;
-            line-height: 1.25;
-            font-style: italic;
-        }
-        
-        .full-post-content p {
-            margin-bottom: 28px;
-            text-align: justify;
-            font-family: 'Lora', serif;
-            font-size: 1.1rem;
-        }
-        
-        .full-post-content a {
-            color: var(--text-primary);
-            text-decoration: none;
-            border-bottom: 1px solid var(--text-primary);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            padding-bottom: 1px;
-        }
-        
-        .full-post-content a:hover {
-            color: var(--text-secondary);
-            border-bottom-color: var(--text-secondary);
-        }
-        
-        .back-button {
-            background: transparent;
-            border: 1px solid var(--text-primary);
-            color: var(--text-primary);
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.7rem;
-            padding: 12px 28px;
-            border-radius: 0;
-            cursor: pointer;
-            margin-bottom: 40px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-        
-        .back-button:hover {
-            background: var(--text-primary);
-            color: var(--bg-primary);
-            transform: translateX(-4px);
-        }
-        
-        
-        .sidebar {
-            display: flex;
-            flex-direction: column;
-            gap: 48px;
-        }
-        
-        .widget {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            overflow: hidden;
-            box-shadow: 0 4px 24px var(--shadow-light);
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .widget:hover {
-            box-shadow: 0 8px 40px var(--shadow-medium);
-            transform: translateY(-3px);
-            border-color: var(--border-dark);
-        }
-        
-        .widget-header {
-            background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-hover) 100%);
-            padding: 24px 28px;
-            border-bottom: 1px solid var(--border-color);
-        }
-        
-        .widget-title {
-            font-family: 'Bodoni Moda', serif;
-            color: var(--text-primary);
-            font-size: 1rem;
-            text-transform: capitalize;
-            letter-spacing: 0.08em;
-            font-weight: 500;
-            font-style: italic;
-        }
-        
-        .widget-content {
-            padding: 32px;
-        }
-        
-        .recent-posts a {
-            display: block;
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 14px 0;
-            border-bottom: 1px solid var(--border-color);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            font-family: 'Lora', serif;
-            font-size: 0.95rem;
-            cursor: pointer;
-            position: relative;
-        }
-        
-        .recent-posts a::before {
-            content: '→';
-            position: absolute;
-            left: -20px;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            color: var(--text-primary);
-        }
-        
-        .recent-posts a:hover {
-            color: var(--text-primary);
-            padding-left: 16px;
-        }
-        
-        .recent-posts a:hover::before {
-            left: 0;
-            opacity: 1;
-        }
-        
-        .recent-posts a:last-child {
-            border-bottom: none;
-        }
-        
-       
-        .no-posts {
-            padding: 40px;
-        }
-        
-        .terminal-empty {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 0;
-            overflow: hidden;
-        }
-        
-        .empty-state {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            font-family: 'Cormorant', serif;
-            font-size: 1rem;
-            color: var(--text-tertiary);
-            font-style: italic;
-        }
-        
-        .empty-text {
-            color: var(--text-tertiary);
-        }
-        
-       
-        footer {
-            background: var(--bg-secondary);
-            border-top: 1px solid var(--border-color);
-            padding: 64px 0;
-            text-align: center;
-            margin-top: 96px;
-        }
-        
-        .footer-content {
-            font-family: 'Tenor Sans', sans-serif;
-            color: var(--text-secondary);
-            font-size: 0.75rem;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-        
-        .footer-content p:first-child {
-            margin-bottom: 12px;
-        }
-        
-        .social-links {
-            margin-top: 32px;
-        }
-        
-        .social-links a {
-            color: var(--text-secondary);
-            font-size: 1.2rem;
-            margin: 0 24px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            display: inline-block;
-        }
-        
-        .social-links a:hover {
-            color: var(--text-primary);
-            transform: translateY(-3px) scale(1.1);
-        }
-        
-        
-        @media (max-width: 768px) {
-            main {
-                grid-template-columns: 1fr;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 30px;
-            }
-            
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 28px;
-            }
-            
-            .logo {
-                font-size: 2rem;
-            }
-            
-            .container {
-                padding: 0 28px;
-            }
-            
-            .post {
-                padding: 36px 28px;
-            }
-            
-            .terminal-body {
-                padding: 32px 24px;
-            }
-            
-            .banner-header {
-                height: 200px;
-            }
-        }
-        
-       
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        .post {
-            animation: fadeInUp 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-   
-        .widget-content img {
-            transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-            filter: grayscale(0%);
-            position: relative;
-        }
-        
-        .widget-content img:hover {
-            transform: scale(1.05) translateY(-4px);
-            box-shadow: 0 12px 48px var(--shadow-heavy);
-            filter: grayscale(0%) brightness(1.05);
-        }
-        
-        
-        .logo::before {
-            content: '✦';
-            position: absolute;
-            left: -32px;
-            opacity: 0;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            color: var(--text-secondary);
-            font-size: 0.8rem;
-        }
-        
-        .logo:hover::before {
-            left: -24px;
-            opacity: 1;
-        }
+
+        a { color: inherit; }
+        ::selection { background: var(--accent); color: var(--paper); }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+        }
+
+        .container { max-width: 1180px; margin: 0 auto; padding: 0 48px; }
+
         #reading-progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 2px;
-            background: linear-gradient(90deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.15) 100%);
+            position: fixed; top: 0; left: 0;
+            width: 0%; height: 2px;
+            background: var(--accent);
             z-index: 1000;
             transition: width 0.1s linear;
             opacity: 0;
             pointer-events: none;
         }
-        #reading-progress-bar.visible {
-            opacity: 1;
+        #reading-progress-bar.visible { opacity: 1; }
+
+        /* ---------- masthead ---------- */
+        header {
+            padding: 52px 0 30px;
+            border-bottom: 1px solid var(--ink);
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+        .logo-block { display: flex; flex-direction: column; gap: 14px; }
+        .logo {
+            font-family: var(--display);
+            font-size: 2.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            text-decoration: none;
+            color: var(--ink);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+            cursor: pointer;
+        }
+        .logo::after {
+            content: '';
+            position: absolute; left: 0; bottom: 0;
+            width: 34px; height: 2px;
+            background: var(--accent);
+        }
+        .tagline {
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            color: var(--ink-soft);
+            letter-spacing: 0.02em;
+        }
+        .tagline .br { color: var(--accent); }
+
+        nav ul { list-style: none; display: flex; gap: 34px; flex-wrap: wrap; }
+        nav a {
+            text-decoration: none;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            letter-spacing: 0.04em;
+            color: var(--ink-soft);
+            padding-bottom: 5px;
+            position: relative;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        nav a::after {
+            content: '';
+            position: absolute; left: 0; bottom: 0;
+            width: 100%; height: 1px;
+            background: var(--accent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.35s cubic-bezier(.16,.84,.44,1);
+        }
+        nav a:hover { color: var(--ink); }
+        nav a:hover::after { transform: scaleX(1); }
+
+        /* ---------- banner ---------- */
+        .banner-header {
+            width: 100%;
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid var(--ink);
+        }
+        .banner-header img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 8s cubic-bezier(.16,.84,.44,1);
+        }
+        .banner-header:hover img { transform: scale(1.03); }
+
+        /* ---------- section index rows ---------- */
+        .idx-section { border-bottom: 1px solid var(--line); padding: 68px 0; }
+        .idx-section:first-of-type { padding-top: 60px; }
+        .idx-row {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+        .idx-num {
+            font-family: var(--mono);
+            font-size: 0.78rem;
+            line-height: 1;
+            color: var(--accent);
+            letter-spacing: 0.02em;
+            padding-top: 3px;
+        }
+        .idx-label {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-family: var(--mono);
+            font-size: 0.68rem;
+            line-height: 1;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 28px;
+            white-space: nowrap;
+        }
+        .idx-label::after {
+            content: '';
+            flex: 1;
+            min-width: 24px;
+            align-self: center;
+            border-bottom: 1px dotted var(--line-strong);
+        }
+        .tag-filter-info {
+            display: none;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--mono);
+            font-size: 0.72rem;
+            color: var(--ink-soft);
+            margin: -10px 0 26px;
+            letter-spacing: 0.03em;
+        }
+        .tag-filter-info.active { display: flex; flex-wrap: wrap; }
+        .tag-filter-info strong { color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; }
+        .tag-filter-info a {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 1px;
+        }
+
+        main.layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 0 80px;
+        }
+        .content-column { grid-column: 1; }
+        .sidebar-column { grid-column: 2; grid-row: 1 / span 3; border-left: 1px solid var(--line); padding-left: 56px; padding-top: 60px; }
+
+        /* ---------- identity ---------- */
+        .identity-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+        .identity-term {
+            font-family: var(--display);
+            font-size: 1.3rem;
+            color: var(--ink);
+            margin-bottom: 10px;
+        }
+        .identity-def { font-family: var(--body-serif); font-size: 0.98rem; color: var(--ink-soft); line-height: 1.85; }
+        .identity-def div { margin-bottom: 5px; }
+        .identity-def .status { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-faint); margin-top: 8px; }
+
+        /* ---------- author ---------- */
+        .author-grid { display: grid; grid-template-columns: 168px 1fr; gap: 40px; align-items: start; }
+        .author-portrait { position: relative; width: 168px; }
+        .author-portrait img {
+            width: 100%; aspect-ratio: 4/5; object-fit: cover; display: block;
+        }
+        .author-portrait::after {
+            content: '';
+            position: absolute; left: -10px; top: 10px;
+            width: 100%; aspect-ratio: 4/5;
+            border: 1px solid var(--accent);
+            z-index: -1;
+        }
+        .author-name { font-family: var(--display); font-size: 1.7rem; letter-spacing: 0.01em; margin-bottom: 6px; }
+        .author-role { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.06em; color: var(--accent); margin-bottom: 20px; text-transform: uppercase; }
+        .author-bio { font-family: var(--body-serif); font-size: 1.03rem; color: var(--ink-soft); line-height: 1.95; max-width: 58ch; }
+
+        .author-strip {
+            grid-column: 1 / -1; margin-top: 40px;
+            display: grid;
+            grid-template-columns: 148px 1.15fr 1fr;
+            gap: 16px;
+            align-items: stretch;
+        }
+        .strip-caption {
+            font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.06em;
+            color: var(--ink-faint); line-height: 1.6;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding-bottom: 4px;
+        }
+        .strip-caption .br { color: var(--accent); }
+        .strip-item { position: relative; overflow: hidden; border: 1px solid var(--line); cursor: pointer; }
+        .strip-item img {
+            width: 100%; height: 100%; object-fit: cover; display: block;
+            transition: transform 0.6s cubic-bezier(.16,.84,.44,1);
+        }
+        .strip-item:hover img { transform: scale(1.04); }
+        .strip-a { aspect-ratio: 3/4; }
+        .strip-b-wrap { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
+        .strip-b { aspect-ratio: unset; height: 100%; }
+        .strip-item .frame {
+            position: absolute; left: 8px; bottom: 8px;
+            font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.03em;
+            color: #f7f4ee; text-shadow: 0 1px 4px rgba(0,0,0,0.55);
+            opacity: 0; transition: opacity 0.35s ease;
+        }
+        .strip-item:hover .frame { opacity: 1; }
+
+        /* ---------- writings index ---------- */
+        .writings-list { margin-top: 4px; }
+        .w-row {
+            position: relative;
+            display: grid;
+            grid-template-columns: 52px 100px 1fr;
+            gap: 24px;
+            align-items: start;
+            padding: 26px 0 26px 20px;
+            margin-left: -20px;
+            border-top: 1px solid var(--line);
+            transition: padding-left 0.4s cubic-bezier(.16,.84,.44,1);
+        }
+        .w-num, .w-meta { padding-top: 5px; }
+        .w-row::before {
+            content: '';
+            position: absolute; left: 0; top: 0; bottom: 0;
+            width: 2px; background: var(--accent);
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 0.4s cubic-bezier(.16,.84,.44,1);
+        }
+        .writings-list .w-row:first-child { border-top: none; }
+        .w-row:hover { padding-left: 32px; }
+        .w-row:hover::before { transform: scaleY(1); }
+        .w-num { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-faint); }
+        .w-row:hover .w-num { color: var(--accent); }
+        .w-meta { font-family: var(--mono); font-size: 0.68rem; color: var(--ink-faint); line-height: 1.6; }
+        .w-meta .cat { display: block; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); }
+        .w-main h3 {
+            font-family: var(--display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .w-main h3 a { text-decoration: none; }
+        .w-row:hover .w-main h3 { color: var(--accent); }
+        .w-excerpt { font-family: var(--body-serif); font-size: 0.96rem; color: var(--ink-soft); line-height: 1.8; max-width: 60ch; }
+        .w-arrow { font-family: var(--mono); font-size: 0.7rem; color: var(--ink-faint); margin-top: 10px; display: inline-block; }
+        .w-row:hover .w-arrow { color: var(--accent); }
+
+        .empty-state {
+            font-family: var(--mono);
+            font-size: 0.8rem;
+            color: var(--ink-faint);
+            padding: 40px 0;
+        }
+        .empty-state span { display: block; margin-bottom: 8px; }
+
+        /* ---------- full post ---------- */
+        .back-button {
+            background: transparent;
+            border: 1px solid var(--ink);
+            color: var(--ink);
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 11px 24px;
+            cursor: pointer;
+            margin-bottom: 44px;
+            transition: all 0.35s ease;
+        }
+        .back-button:hover { background: var(--ink); color: var(--paper); }
+
+        .full-post-content h1 {
+            font-family: var(--display);
+            font-size: 2.4rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 34px;
+            line-height: 1.25;
+        }
+        .full-post-content .post-content h2 {
+            font-family: var(--display);
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin: 44px 0 18px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
+        }
+        .full-post-content .post-content h3 {
+            font-family: var(--display);
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin: 32px 0 14px;
+        }
+        .full-post-content .post-content p {
+            margin-bottom: 26px;
+            font-family: var(--body-serif);
+            font-size: 1.06rem;
+            color: var(--ink-soft);
+            line-height: 1.95;
+        }
+        .full-post-content .post-content strong { color: var(--ink); }
+        .full-post-content .post-content em { font-style: italic; }
+        .full-post-content .post-content a {
+            color: var(--ink);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent);
+            transition: color 0.3s ease;
+        }
+        .full-post-content .post-content a:hover { color: var(--accent); }
+        .full-post-content .post-content a:has(> img) { border-bottom: none; }
+        .full-post-content .post-content img {
+            max-width: 100%;
+            display: block;
+            margin: 36px auto;
+            border: 1px solid var(--line);
+        }
+        .full-post-content .post-content ol,
+        .full-post-content .post-content ul {
+            margin: 0 0 26px 1.3em;
+            font-family: var(--mono);
+            font-size: 0.82rem;
+            color: var(--ink-soft);
+            line-height: 2;
+        }
+
+        .post-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+        .post-tag-pill {
+            display: inline-block;
+            border: 1px solid var(--line-strong);
+            color: var(--ink-soft);
+            padding: 4px 12px;
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .post-tag-pill:hover { border-color: var(--accent); color: var(--accent); }
+
+        .demo-link {
+            display: inline-block;
+            margin-top: 6px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            padding: 11px 24px;
+            font-family: var(--mono);
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .demo-link:hover { background: var(--accent); color: var(--paper); }
+
+        .post-meta-line {
+            display: flex; align-items: center; gap: 16px; margin-bottom: 22px;
+        }
+        .post-category {
+            font-family: var(--mono);
+            font-size: 0.62rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent-deep, var(--accent));
+            border: 1px solid var(--line-strong);
+            padding: 4px 12px;
+        }
+        .post-date { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.1em; color: var(--ink-faint); }
+
+        /* ---------- sidebar ---------- */
+        .side-block { padding-bottom: 46px; margin-bottom: 46px; border-bottom: 1px solid var(--line); }
+        .side-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .side-label {
+            font-family: var(--mono);
+            font-size: 0.65rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--ink-faint);
+            margin-bottom: 18px;
+        }
+        .paper-title { font-family: var(--display); font-size: 1.08rem; color: var(--ink); margin-bottom: 8px; display: block; text-decoration: none; }
+        .paper-title:hover { color: var(--accent); }
+        .paper-meta { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-soft); }
+        .paper-abstract { font-family: var(--body-serif); font-size: 0.9rem; color: var(--ink-soft); line-height: 1.75; margin-top: 12px; }
+        .paper-link { display: inline-block; margin-top: 14px; font-family: var(--mono); font-size: 0.68rem; color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent); padding-bottom: 1px; }
+
+        .quote-block { position: relative; padding-left: 20px; border-left: 2px solid var(--accent); }
+        .quote-portrait {
+            width: 56px; height: 56px;
+            float: right;
+            margin-left: 14px;
+            border: 1px solid var(--line-strong);
+            cursor: pointer;
+        }
+        .quote-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .quote-text { font-family: var(--quote-serif); font-style: italic; font-size: 1.02rem; color: var(--ink); line-height: 1.75; }
+        .quote-src { font-family: var(--mono); font-size: 0.66rem; color: var(--ink-faint); margin-top: 12px; clear: both; display: block; }
+
+        .recent-list a {
+            display: flex; justify-content: space-between; gap: 12px;
+            padding: 11px 0;
+            text-decoration: none;
+            color: var(--ink-soft);
+            font-family: var(--body-serif);
+            font-size: 0.93rem;
+            border-bottom: 1px dotted var(--line-strong);
+            transition: color 0.25s ease;
+        }
+        .recent-list a:last-child { border-bottom: none; }
+        .recent-list a:hover { color: var(--accent); }
+        .recent-list a span { font-family: var(--mono); font-size: 0.64rem; color: var(--ink-faint); white-space: nowrap; margin-left: 12px; }
+
+        /* ---------- gallery ---------- */
+        .gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+        .gallery-item {
+            display: flex; flex-direction: column;
+            border-right: 1px solid var(--line);
+            cursor: pointer;
+        }
+        .gallery-item:last-child { border-right: none; }
+        .gallery-frame { aspect-ratio: 3/4; overflow: hidden; }
+        .gallery-frame img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(.16,.84,.44,1);
+        }
+        .gallery-item:hover .gallery-frame img { transform: scale(1.045); }
+        .gallery-item .cap {
+            padding: 14px 20px 20px;
+            font-family: var(--mono);
+            font-size: 0.66rem;
+            letter-spacing: 0.06em;
+            color: var(--ink-soft);
+            text-transform: uppercase;
+            display: flex;
+            justify-content: space-between;
+            transition: color 0.3s ease;
+        }
+        .gallery-item .cap .no { color: var(--ink-faint); }
+        .gallery-item:hover .cap { color: var(--accent); }
+        .gallery-item:hover .cap .no { color: var(--accent); }
+
+        /* ---------- footer ---------- */
+        footer { border-top: 1px solid var(--ink); padding: 40px 0 60px; }
+        .footer-row { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        footer p { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.03em; color: var(--ink-soft); }
+        footer .sub { font-family: var(--quote-serif); font-style: italic; font-size: 0.88rem; color: var(--ink-faint); margin-top: 8px; letter-spacing: 0; }
+        .social-links { display: flex; gap: 20px; }
+        .social-links a { font-family: var(--mono); font-size: 0.68rem; text-decoration: none; color: var(--ink-soft); border-bottom: 1px solid transparent; transition: color 0.25s ease, border-color 0.25s ease; }
+        .social-links a:hover { color: var(--accent); border-color: var(--accent); }
+
+        a:focus-visible, .gallery-item:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+        /* ---------- modal ---------- */
+        #imageModal {
+            display: none; position: fixed; z-index: 1000; left: 0; top: 0;
+            width: 100%; height: 100%; background: rgba(246, 246, 243, 0.97);
+        }
+        #imageModal .modal-close {
+            position: absolute; top: 20px; right: 40px;
+            color: var(--ink); font-size: 40px; font-weight: 300;
+            font-family: var(--display); cursor: pointer;
+        }
+        #modalImg { margin: 6% auto 0; display: block; width: 80%; max-width: 720px; border: 1px solid var(--line-strong); }
+        #caption { margin: 16px auto; display: block; width: 80%; max-width: 720px; text-align: center; color: var(--ink-soft); font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; }
+
+        @media (max-width: 900px) {
+            main.layout { grid-template-columns: 1fr; }
+            .sidebar-column { grid-row: auto; border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 56px; margin-top: 8px; }
+            .container { padding: 0 26px; }
+            .identity-grid, .author-grid { grid-template-columns: 1fr; }
+            .author-strip { grid-template-columns: 1fr; }
+            .strip-b-wrap { grid-template-rows: none; grid-template-columns: 1fr 1fr; }
+            .w-row { grid-template-columns: 1fr; gap: 8px; }
+            .gallery-strip { grid-template-columns: repeat(2, 1fr); }
         }
     </style>
 </head>
 <body>
     <div id="reading-progress-bar"></div>
+
     <header id="home">
         <div class="container">
             <div class="header-content">
-                <div>
-                    <a href="#home" class="logo" onclick="showAllPosts()">Neural Decay</a>
-                    <div class="tagline">Medicine · Coding · Digital Diary </div>
+                <div class="logo-block">
+                    <a class="logo" onclick="showAllPosts()">Neural Decay</a>
+                    <div class="tagline">[ medicine <span class="br">·</span> code <span class="br">·</span> digital diary ]</div>
                 </div>
                 <nav>
                     <ul>
@@ -718,244 +556,280 @@
         </div>
     </header>
 
-  <!--header-->
     <div class="banner-header">
         <img src="images/change-moth.png" alt="Neural Decay Banner">
     </div>
 
     <div class="container">
-        <main>
-            <div class="content-area">
-                <div id="about" class="terminal-welcome">
-                    <div class="terminal-header">
-                        Identity
-                    </div>
-                    <div class="terminal-body">
-                        <div class="output">
-                            <span class="prompt">Persona</span> <span class="command">Curious Mind</span><br>
-                            <span class="output">A seeker of patterns between clinical research and code</span><br>
-                            <span class="output">Navigating the delicate intersection of medicine and technology</span><br>
-                            <span class="output">Currently immersed in the complexities of medical school</span><br><br>
-                            
-                            <span class="prompt">Mission</span> <span class="command">Acta Non Verba</span><br>
-                            <span class="output">Exploring where biological systems meet digital architecture</span><br>
-                            <span class="output">Status: Online · Ready to dissect tissue and machine learning alike</span><br>
+        <main class="layout">
+            <div class="content-column">
+
+                <section class="idx-section" id="about">
+                    <div class="idx-row">
+                        <span class="idx-num">01</span>
+                        <div>
+                            <span class="idx-label">Identity</span>
+                            <div class="identity-grid">
+                                <div>
+                                    <div class="identity-term">Persona</div>
+                                    <div class="identity-def">
+                                        <div>A seeker of patterns between clinical research and code.</div>
+                                        <div>Navigating the delicate intersection of medicine and technology.</div>
+                                        <div class="status">status: immersed in the complexities of medical school</div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="identity-term">Mission</div>
+                                    <div class="identity-def">
+                                        <div>Exploring where biological systems meet digital architecture.</div>
+                                        <div class="status">status: online · ready to dissect tissue and machine learning alike</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="about-section" class="terminal-welcome">
-                    <div class="terminal-header">
-                        Author
-                    </div>
-                        <div class="terminal-body" style="display: flex; gap: 30px; align-items: center;">
-                                <img src="images/sara-photo.jpg" alt="Sara Sova" 
-                                 style="width: 120px; height: 120px; 
-                                border-radius: 50%; 
-                                object-fit: cover; 
-                                border: 2px solid var(--border-color);
-                                flex-shrink: 0;
-                                transition: all 0.4s ease;">
-        
-                                <div class="output" style="flex: 1;">
-                            <span class="prompt">Profile</span> <span class="command">Sara Sova</span><br>
-                            <span class="output">Medical student at UMFCD, Bucharest, navigating the beautiful chaos of second year. Currently surviving on phonk music, mania, and the occasional existential crisis about cuboidal epithelium. Coding when I'm not crying over anatomy.</span><br>
+                </section>
+
+                <section class="idx-section" id="about-section">
+                    <div class="idx-row">
+                        <span class="idx-num">02</span>
+                        <div>
+                            <span class="idx-label">Author</span>
+                            <div class="author-grid">
+                                <div class="author-portrait">
+                                    <img src="images/sara-photo.jpg" alt="Sara Sova">
+                                </div>
+                                <div>
+                                    <div class="author-name">Sara Sova</div>
+                                    <div class="author-role">Medical Student — UMFCD, Bucharest</div>
+                                    <p class="author-bio">Medical student at UMFCD, Bucharest, navigating the beautiful chaos of second year. Currently surviving on phonk music, mania, and the occasional existential crisis about cuboidal epithelium. Coding when I'm not crying over anatomy.</p>
+                                </div>
+                                <div class="author-strip">
+                                    <div class="strip-caption"><span>off<span class="br">-</span>duty frames</span></div>
+                                    <div class="strip-item strip-a" onclick="showModal(this.querySelector('img').src, 'Sara — café portrait')"><img src="images/IMG_2133.jpg" alt="Sara, café portrait"><span class="frame">01</span></div>
+                                    <div class="strip-b-wrap">
+                                        <div class="strip-item strip-b" onclick="showModal(this.querySelector('img').src, 'Sara — close portrait')"><img src="images/sara-closeup.jpg" alt="Sara, close portrait"><span class="frame">02</span></div>
+                                        <div class="strip-item strip-b" onclick="showModal(this.querySelector('img').src, 'Sara — stairwell mirror')"><img src="images/IMG_2567.jpg" alt="Sara, stairwell mirror"><span class="frame">03</span></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div id="coding" class="blog-posts">
-                    <h2><i class="fas fa-pen-nib"></i> Recent Writings</h2>
-                    <div id="posts-container">
-                     
+                </section>
+
+                <section class="idx-section" style="border-bottom: none;">
+                    <div class="idx-row">
+                        <span class="idx-num">03</span>
+                        <div>
+                            <span class="idx-label"><span id="writings-label-text">Recent Writings</span></span>
+                            <div class="tag-filter-info" id="tag-filter-info"></div>
+                            <div id="posts-container"></div>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
-            <aside class="sidebar">
-                <div class="widget">
-                    <div class="widget-header">
-                        <h2 class="widget-title"><i class="fas fa-book-open"></i> Paper of the Day</h2>
-                    </div>
-                    <div class="widget-content" id="paper-of-the-day">
-                 
+
+            <aside class="sidebar-column">
+                <div class="side-block">
+                    <div class="side-label">Paper of the Day</div>
+                    <div id="paper-of-the-day"></div>
+                </div>
+
+                <div class="side-block">
+                    <div class="side-label">Quote of the Month</div>
+                    <div class="quote-block">
+                        <div class="quote-portrait" onclick="showModal('images/brain.jpg', 'Brain')"><img src="images/brain.jpg" alt="Pixelated brain"></div>
+                        <p class="quote-text">"Noli foras ire, in teipsum reddi; in interiore homine habitat veritas."</p>
+                        <span class="quote-src">— Augustine, De Vera Religione</span>
                     </div>
                 </div>
-<div class="widget">
-    <div class="widget-header">
-        <h2 class="widget-title"><i class="fas fa-brain"></i> Quote of the Month</h2>
-    </div>
-    <div class="widget-content" style="padding: 40px 30px; text-align: center;">
-        <div style="margin-bottom: 25px;">
-            <img src="images/brain.jpg" alt="Pixelated Brain" 
-                 style="width: 100px; height: 100px; 
-                        image-rendering: pixelated;
-                        image-rendering: -moz-crisp-edges;
-                        image-rendering: crisp-edges;
-                        filter: grayscale(20%);
-                        transition: all 0.4s ease;">
-        </div>
-        
-        <div style="border-top: 1px solid var(--border-color); 
-                    border-bottom: 1px solid var(--border-color); 
-                    padding: 20px 0;">
-            <p style="font-family: 'Cormorant', serif; 
-                      font-size: 1.1rem; 
-                      font-style: italic; 
-                      color: var(--text-primary); 
-                      line-height: 1.8; 
-                      margin: 0;">
-                "Noli foras ire, in teipsum reddi; in interiore homine habitat veritas."
-            </p>
-        </div>
-    </div>
-</div>
+
+                <div class="side-block">
+                    <div class="side-label">Archive</div>
+                    <div class="recent-list" id="recent-list"></div>
+                </div>
             </aside>
         </main>
-        <div class="widget">
-            <div class="widget-header">
-                <h2 class="widget-title">
-                    <i class="fas fa-images"></i> Gallery
-                </h2>
+    </div>
+
+    <div class="container" style="padding-left: 0; padding-right: 0;">
+        <section class="idx-section" style="border-top: 1px solid var(--ink);">
+            <div class="idx-row" style="padding: 0 48px;">
+                <span class="idx-num">04</span>
+                <div>
+                    <span class="idx-label">Gallery</span>
+                </div>
             </div>
-            <div class="widget-content" style="padding: 20px;">
-             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;">
-    <img src="images/diva.jpg" alt="diva"
-         style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 3px; 
-                border: 1px solid var(--border-color); cursor: pointer; 
-                transition: all 0.3s ease;"
-         onclick="showModal(this.src, 'Diva')"
-         onmouseover="this.style.borderColor='#8a8a8a'; this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.2)'"
-         onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
-    
-    <img src="images/makeup.jpg" alt="makeup"
-         style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 3px; 
-                border: 1px solid var(--border-color); cursor: pointer; 
-                transition: all 0.3s ease;"
-         onclick="showModal(this.src, 'Makeup')"
-         onmouseover="this.style.borderColor='#6a6a6a'; this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.25)'"
-         onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
-    
-    <img src="images/peony.jpg" alt="peony"
-         style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 3px; 
-                border: 1px solid var(--border-color); cursor: pointer; 
-                transition: all 0.3s ease;"
-         onclick="showModal(this.src, 'Peony')"
-         onmouseover="this.style.borderColor='#5a5a5a'; this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.2)'"
-         onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
-    
-    <img src="images/swans.jpg" alt="swans"
-         style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 3px; 
-                border: 1px solid var(--border-color); cursor: pointer; 
-                transition: all 0.3s ease;"
-         onclick="showModal(this.src, 'Swans')"
-         onmouseover="this.style.borderColor='#7a7a7a'; this.style.boxShadow='0 0 15px rgba(0, 0, 0, 0.22)'"
-         onmouseout="this.style.borderColor='var(--border-color)'; this.style.boxShadow='none'">
-</div>
-            </div>
+        </section>
+    </div>
+    <div class="gallery-strip">
+        <div class="gallery-item" onclick="showModal('images/diva.jpg', 'Diva')">
+            <div class="gallery-frame"><img src="images/diva.jpg" alt="diva"></div>
+            <div class="cap"><span>Diva</span><span class="no">01</span></div>
+        </div>
+        <div class="gallery-item" onclick="showModal('images/makeup.jpg', 'Makeup')">
+            <div class="gallery-frame"><img src="images/makeup.jpg" alt="makeup"></div>
+            <div class="cap"><span>Makeup</span><span class="no">02</span></div>
+        </div>
+        <div class="gallery-item" onclick="showModal('images/peony.jpg', 'Peony')">
+            <div class="gallery-frame"><img src="images/peony.jpg" alt="peony"></div>
+            <div class="cap"><span>Peony</span><span class="no">03</span></div>
+        </div>
+        <div class="gallery-item" onclick="showModal('images/swans.jpg', 'Swans')">
+            <div class="gallery-frame"><img src="images/swans.jpg" alt="swans"></div>
+            <div class="cap"><span>Swans</span><span class="no">04</span></div>
         </div>
     </div>
-   <footer id="contact">
+
+    <footer id="contact">
         <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Neural Decay · The Multidisciplinary Dome of Exploration</p>
-                <p style="margin-top: 8px; font-style: italic; text-transform: none; letter-spacing: 0.05em; font-family: 'Cormorant', serif;">Powered by curiosity, research, and endless cups of irish cream latte</p>
+            <div class="footer-row">
+                <div>
+                    <p>&copy; 2026 NEURAL DECAY — the multidisciplinary dome of exploration</p>
+                    <p class="sub">powered by curiosity, research, and endless cups of irish cream latte</p>
+                </div>
                 <div class="social-links">
-                    <a href="https://github.com/gravityeffect1" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://x.com/gravityeffect1" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.linkedin.com/in/sara-mihaela-sova/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:sara.sova@icloud.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://github.com/gravityeffect1" target="_blank" aria-label="GitHub">github</a>
+                    <a href="https://x.com/gravityeffect1" target="_blank" aria-label="Twitter">twitter</a>
+                    <a href="https://www.linkedin.com/in/sara-mihaela-sova/" target="_blank" aria-label="LinkedIn">linkedin</a>
+                    <a href="mailto:sara.sova@icloud.com" aria-label="Email">email</a>
                 </div>
             </div>
         </div>
     </footer>
-    
-    <div id="imageModal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.95);" onclick="closeImageModal()">
-        <span style="position: absolute; top: 15px; right: 35px; color: var(--text-primary); font-size: 40px; font-weight: 300; cursor: pointer; font-family: 'Cormorant', serif;" onclick="closeImageModal()">&times;</span>
-        <img id="modalImg" style="margin: auto; display: block; width: 80%; max-width: 700px; margin-top: 5%; border: 1px solid var(--border-color);">
-        <div id="caption" style="margin: auto; display: block; width: 80%; max-width: 700px; text-align: center; color: var(--text-primary); padding: 10px 0; font-family: 'Cormorant', serif;"></div>
+
+    <div id="imageModal" onclick="closeImageModal()">
+        <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImg">
+        <div id="caption"></div>
     </div>
+
     <script src="posts.js"></script>
     <script>
-        // Current view state
         let currentView = 'all';
         let currentTag = null;
+
+        function ordinal(n) { return String(n).padStart(2, '0'); }
+
         function renderPostsByTag(tag = null) {
             const container = document.getElementById('posts-container');
+            const labelText = document.getElementById('writings-label-text');
+            const filterInfo = document.getElementById('tag-filter-info');
             container.innerHTML = '';
-            
+
             let postsToShow = allPosts;
-            
+
             if (tag) {
-                postsToShow = allPosts.filter(post => post.tags.includes(tag));
+                postsToShow = allPosts.filter(post => post.tags && post.tags.includes(tag));
                 currentView = 'tag';
                 currentTag = tag;
-                
-                const tagHeader = document.createElement('div');
-                tagHeader.innerHTML = `
-                    <div style="background: var(--bg-accent); border: 1px solid var(--border-color); 
-                               border-radius: 0; padding: 20px; margin-bottom: 30px;">
-                        <h3 style="font-family: 'Bodoni Moda', serif; color: var(--text-primary); 
-                                  margin: 0; text-transform: capitalize; letter-spacing: 0.03em; font-style: italic;">
-                            <i class="fas fa-tag"></i> ${tag}
-                        </h3>
-                        <p style="font-family: 'Tenor Sans', sans-serif; color: var(--text-secondary); 
-                                  font-size: 0.7rem; margin: 8px 0 0 0; letter-spacing: 0.1em; text-transform: uppercase;">
-                            Showing ${postsToShow.length} post${postsToShow.length === 1 ? '' : 's'} in this category
-                        </p>
-                        <button onclick="showAllPosts()" 
-                                style="background: transparent; border: 1px solid var(--text-primary); 
-                                       color: var(--text-primary); font-family: 'Tenor Sans', sans-serif; 
-                                       font-size: 0.65rem; padding: 6px 14px; border-radius: 0; cursor: pointer; 
-                                       margin-top: 15px; transition: all 0.3s ease; letter-spacing: 0.1em; text-transform: uppercase;"
-                                onmouseover="this.style.background='var(--text-primary)'; this.style.color='var(--bg-primary)'"
-                                onmouseout="this.style.background='transparent'; this.style.color='var(--text-primary)'">
-                            <i class="fas fa-arrow-left"></i> Back to All Posts
-                        </button>
-                    </div>
-                `;
-                container.appendChild(tagHeader);
+                labelText.textContent = 'Recent Writings';
+                filterInfo.classList.add('active');
+                filterInfo.innerHTML = `Filtered by <strong>${tag}</strong> · ${postsToShow.length} post${postsToShow.length === 1 ? '' : 's'} · <a href="javascript:void(0)" onclick="showAllPosts()">clear</a>`;
             } else {
                 currentView = 'all';
                 currentTag = null;
+                labelText.textContent = `Recent Writings — ${allPosts.length} entries`;
+                filterInfo.classList.remove('active');
+                filterInfo.innerHTML = '';
             }
-            
+
             if (postsToShow.length === 0) {
-                container.innerHTML += `
-                    <div class="no-posts">
-                        <div class="terminal-empty">
-                            <div class="terminal-header">No posts found in "${tag}"</div>
-                            <div class="terminal-body">
-                                <span class="output">No posts available for this category</span><br>
-                                <span class="output">Status: Awaiting content</span>
-                            </div>
-                        </div>
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <span>// no posts found for "${tag}"</span>
+                        <span>status: awaiting content</span>
                     </div>`;
                 return;
             }
-            
-            postsToShow.forEach(post => {
-                const postElement = document.createElement('article');
-                postElement.className = 'post';
-                postElement.innerHTML = `
-                    <div class="post-meta">
-                        <span class="post-category ${post.category}">${post.category}</span>
-                        <span class="post-date">${post.date}</span>
-                    </div>
-                    <h3><a href="javascript:void(0)" onclick="showFullPost('${post.id}')">${post.title}</a></h3>
-                    <p class="post-excerpt">${post.excerpt}</p>
-                    <a href="javascript:void(0)" class="read-more" onclick="showFullPost('${post.id}')">Read More →</a>
-                `;
-                container.appendChild(postElement);
-            });
-        }
-        function getTagIcon(tag) {
-            const icons = {
-                'coding': 'code',
-                'medicine': 'stethoscope',
-                'bioinformatics': 'dna'
-            };
-            return icons[tag] || 'terminal';
-        }
-        let progressBarActive = false;
 
+            const list = document.createElement('div');
+            list.className = 'writings-list';
+
+            postsToShow.forEach((post, i) => {
+                const row = document.createElement('article');
+                row.className = 'w-row';
+                row.innerHTML = `
+                    <span class="w-num">${ordinal(i + 1)}</span>
+                    <div class="w-meta"><span class="cat">${post.category}</span>${post.date}</div>
+                    <div class="w-main">
+                        <h3><a href="javascript:void(0)" onclick="showFullPost('${post.id}')">${post.title}</a></h3>
+                        <p class="w-excerpt">${post.excerpt}</p>
+                        <a href="javascript:void(0)" class="w-arrow" onclick="showFullPost('${post.id}')">read →</a>
+                    </div>
+                `;
+                list.appendChild(row);
+            });
+            container.appendChild(list);
+        }
+
+        function renderRecentList() {
+            const el = document.getElementById('recent-list');
+            const recent = [...allPosts].slice(0, 5);
+            el.innerHTML = recent.map(post => {
+                const d = new Date(post.date);
+                const label = isNaN(d) ? '' : d.toLocaleDateString('en-US', { month: '2-digit', year: '2-digit' });
+                return `<a href="javascript:void(0)" onclick="showFullPost('${post.id}')">${post.title}<span>${label}</span></a>`;
+            }).join('');
+        }
+
+        window.showPostsByTag = function(tag) {
+            hideProgressBar();
+            renderPostsByTag(tag);
+            window.location.hash = `tag-${tag}`;
+            setTimeout(() => {
+                const writingsSection = document.getElementById('posts-container');
+                if (writingsSection) writingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        };
+        window.showAllPosts = function() {
+            hideProgressBar();
+            renderPostsByTag();
+            window.location.hash = '';
+        };
+
+        window.showFullPost = function(postId) {
+            const post = allPosts.find(p => p.id === postId);
+            if (!post) return;
+            const container = document.getElementById('posts-container');
+            document.getElementById('writings-label-text').textContent = 'Reading';
+            document.getElementById('tag-filter-info').classList.remove('active');
+            document.getElementById('tag-filter-info').innerHTML = '';
+
+            container.innerHTML = `
+                <div class="full-post">
+                    <button onclick="showAllPosts()" class="back-button">&larr; Back to Posts</button>
+                    <article class="full-post-content">
+                        <div class="post-meta-line">
+                            <span class="post-category">${post.category}</span>
+                            <span class="post-date">${post.date}</span>
+                        </div>
+                        <h1>${post.title}</h1>
+                        <div class="post-content">
+                            ${post.content.split('\n\n').map(section => {
+                                section = section.trim();
+                                if (section.startsWith('<')) return section;
+                                return `<p>${section.replace(/\n/g, '<br>')}</p>`;
+                            }).join('')}
+                        </div>
+                        <div class="post-footer" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--line);">
+                            <div class="post-tags">
+                                ${post.tags ? post.tags.map(tag =>
+                                    `<a href="javascript:void(0)" onclick="showPostsByTag('${tag}')" class="post-tag-pill">#${tag}</a>`
+                                ).join('') : ''}
+                            </div>
+                            ${post.id === 'plasmyrage' ? `
+                            <a href="https://gravityeffect1.github.io/plasmyrage/" target="_blank" class="demo-link">View Live Demo &nearr;</a>` : ''}
+                        </div>
+                    </article>
+                </div>
+            `;
+            window.location.hash = `post-${post.id}`;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            showProgressBar();
+        };
+
+        let progressBarActive = false;
         function updateProgressBar() {
             if (!progressBarActive) return;
             const bar = document.getElementById('reading-progress-bar');
@@ -963,12 +837,10 @@
             const pct = docHeight > 0 ? Math.min((window.scrollY / docHeight) * 100, 100) : 0;
             bar.style.width = pct + '%';
         }
-
         function showProgressBar() {
             progressBarActive = true;
             document.getElementById('reading-progress-bar').classList.add('visible');
         }
-
         function hideProgressBar() {
             progressBarActive = false;
             const bar = document.getElementById('reading-progress-bar');
@@ -976,119 +848,27 @@
             bar.style.width = '0%';
         }
 
-   window.showPostsByTag = function(tag) {
-    hideProgressBar();
-    renderPostsByTag(tag);
-    window.location.hash = `tag-${tag}`;
-    setTimeout(() => {
-        const writingsSection = document.getElementById('coding');
-        if (writingsSection) {
-            writingsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    }, 100);
-};
-        window.showAllPosts = function() {
-            hideProgressBar();
-            renderPostsByTag();
-            window.location.hash = '';
-        };
-        window.showFullPost = function(postId) {
-            const post = allPosts.find(p => p.id === postId);
-            if (post) {
-                const container = document.getElementById('posts-container');
-                container.innerHTML = `
-                    <div class="full-post">
-                        <button onclick="showAllPosts()" class="back-button">
-                            <i class="fas fa-arrow-left"></i> Back to Posts
-                        </button>
-                        
-                        <article class="post full-post-content">
-                            <div class="post-meta">
-                                <span class="post-category ${post.category}">${post.category}</span>
-                                <span class="post-date">${post.date}</span>
-                            </div>
-                            <h1>${post.title}</h1>
-                            
-                          <div class="post-content" style="color: var(--text-primary); line-height: 2.1;">
-    ${post.content.split('\n\n').map(section => {
-        section = section.trim();
-        if (section.startsWith('<')) {
-            return section;
-        } else {
-            return `<p>${section.replace(/\n/g, '<br>')}</p>`;
-        }
-    }).join('')}
-</div>
-                            
-                            <div class="post-footer" style="margin-top: 40px; padding-top: 25px; 
-                                                          border-top: 1px solid var(--border-color);">
-                                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 20px;">
-                                    ${post.tags ? post.tags.map(tag => 
-                                        `<a href="javascript:void(0)" onclick="showPostsByTag('${tag}')" 
-                                           style="background: var(--text-primary); color: var(--bg-primary); 
-                                                  padding: 4px 12px; border-radius: 0; 
-                                                  font-family: 'Tenor Sans', sans-serif; 
-                                                  font-size: 0.65rem; text-decoration: none; letter-spacing: 0.1em;
-                                                  text-transform: uppercase;">#${tag}</a>`
-                                    ).join('') : ''}
-                                </div>
-                                
-                                ${post.id === 'plasmyrage' ? `
-                                <a href="https://gravityeffect1.github.io/plasmyrage/" target="_blank" 
-                                   style="background: var(--text-primary); color: var(--bg-primary); 
-                                          padding: 12px 24px; border-radius: 0; text-decoration: none; 
-                                          font-family: 'Tenor Sans', sans-serif; display: inline-block; 
-                                          margin-right: 10px; letter-spacing: 0.1em; text-transform: uppercase;
-                                          font-size: 0.75rem;">
-                                    <i class="fas fa-external-link-alt"></i> View Live Demo
-                                </a>` : ''}
-                            </div>
-                        </article>
-                    </div>
-                `;
-                window.location.hash = `post-${post.id}`;
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                showProgressBar();
-            }
-        };
-        
-        function openImageModal(img) {
+        window.showModal = function(src, caption) {
             const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            const caption = document.getElementById('caption');
-            
+            document.getElementById('modalImg').src = src;
+            document.getElementById('caption').textContent = caption;
             modal.style.display = 'block';
-            modalImg.src = img.src;
-            caption.innerHTML = img.alt;
-        }
-        function closeImageModal() {
+        };
+        window.closeImageModal = function() {
             document.getElementById('imageModal').style.display = 'none';
-        }
-        
-        function showModal(src, caption) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImg');
-            const captionText = document.getElementById('caption');
-            
-            modal.style.display = 'block';
-            modalImg.src = src;
-            captionText.innerHTML = caption;
-        }
-        
-       
+        };
+
         document.addEventListener('DOMContentLoaded', function() {
             window.addEventListener('scroll', updateProgressBar);
+            renderRecentList();
             renderPostsByTag();
-            
-         
+
             if (window.location.hash) {
                 const hash = window.location.hash.substr(1);
                 if (hash.startsWith('tag-')) {
-                    const tag = hash.replace('tag-', '');
-                    showPostsByTag(tag);
+                    showPostsByTag(hash.replace('tag-', ''));
                 } else if (hash.startsWith('post-')) {
-                    const postId = hash.replace('post-', '');
-                    showFullPost(postId);
+                    showFullPost(hash.replace('post-', ''));
                 }
             }
         });
