@@ -826,6 +826,269 @@ const allPosts = [
 
             <p>Perhaps that is its own kind of astronomy — noticing the small, persistent pull of something no longer within sight, and understanding, only by the shape of your own orbit, how much it must have mattered all along. Perhaps love behaves the same way planets do. You do not always get to see it. You only get to watch yourself bend.</p>
         `
+    },
+    {
+        id: 'the-disapproval-matrix',
+        title: 'The Disapproval Matrix',
+        category: 'reflections',
+        date: '2026-09-13',
+        excerpt: 'A summer internship at IVB, told through a hand-drawn diagram taped to a wall — and its Bayesian rewrite. On mentorship, collaboration, learning to translate across disciplines, and recalibrating who gets to occupy the quadrant of people who actually want to see you improve.',
+        tags: ['reflections', 'mentorship', 'research', 'identity'],
+        content: `
+            <p>There is a sheet of paper taped to the tiled wall beside the Cartographer's desk.</p>
+
+            <p>It is neither framed nor laminated, which is perhaps the first indication of its importance. The handwriting is uneven, the axes have been drawn by hand, and the whole thing looks like the result of a conversation that began as a joke and ended with someone accidentally revealing an entire philosophy of human relationships.</p>
+
+            <p>At the top, in capital letters, it says: THE DISAPPROVAL MATRIX.</p>
+
+            <p>The horizontal axis separates people who know you from people who do not. The vertical one separates rational criticism from irrational criticism—already an ambitious undertaking, considering the human tendency to become spectacularly irrational as soon as another person develops an opinion.</p>
+
+            <p>There are four quadrants. Critics are experts who do not know you personally and criticise the work rather than its author. Frenemies know you but do not necessarily want to see you improve. Haters—YouTube commenters, jealous ignoramuses and "lesser apes," according to the original diagram—occupy the predictable corner.</p>
+
+            <p>The remaining quadrant belongs to people who know you, want to see you improve and, to preserve the scientific precision of the original wording, "give a fuck about you." The Cartographer gave that quadrant a name I have chosen to retire for the benefit of everyone's reading comprehension.</p>
+
+            <p>I understood the matrix immediately.</p>
+
+            <p>More accurately, I understood why he had drawn it.</p>
+
+            <p>I should probably explain why I was standing in that room at IVB, reading the things taped beside the head of the laboratory's desk in the first place.</p>
+
+            <p>The first time I saw the Cartographer was during a cellular-biology lecture. Nothing terribly cinematic happened. He spoke; I listened; something about the way he arranged ideas irritated my brain in precisely the right direction.</p>
+
+            <p>The second time was during my first-year oral examination.</p>
+
+            <p>When I discovered that he would be examining our group, I had a small crisis in the hallway. My friends responded with the exhausted affection of people who had already heard quite enough about this particular professor.</p>
+
+            <p>There she goes again. Another completely proportionate emotional reaction.</p>
+
+            <p>I eventually sat across from him and answered his questions. I loved cellular biology, which helped. At that point, I would have recited entire sections of the seventh edition of Alberts if someone had asked nicely—or, frankly, if someone had simply remained seated long enough.</p>
+
+            <p>At one point, after I had produced another suspiciously complete paragraph, I looked towards the window behind him. I remember the university car park below it. I remember knowing that he was watching me think and refusing, for whatever reason, to look directly back at him.</p>
+
+            <p>Then he told me that I needed to recognise when I was capable of operating beyond the level currently being asked of me.</p>
+
+            <p>I finally looked at him.</p>
+
+            <p>Perhaps it was one comment among thousands he has made to students. To me, it became a practical instruction.</p>
+
+            <p>During the following year, I returned seriously to informatics. I took courses, reopened VS Code, learnt Python properly, refreshed skills I had allowed to become slightly dusty and began building my own projects. I moved from saying that I was interested in artificial intelligence to having actual evidence that I could make something with it.</p>
+
+            <p>Much of this education was self-taught and slightly feral. I did not have a technical university arranging the curriculum around me. I had online courses, public datasets, an unreasonable number of browser tabs and the conviction that enough stubbornness could compensate for an imperfectly linear education.</p>
+
+            <p>During my second year, histology gave me the entry point I needed. I began talking to one of my professors about my code, the projects I had attempted and the kind of research I wanted to pursue. Eventually, in the middle of an English seminar, my phone rang. I stepped into the hallway and learnt that she had spoken to the Cartographer about me. He was interested in my work and wanted to talk.</p>
+
+            <p>I returned to the seminar physically.</p>
+
+            <p>Mentally, I had already left the building.</p>
+
+            <p>Our first proper conversation moved between mathematics, informatics, medicine and the things I wanted to build. At some point, he stopped and remarked that I appeared to be interviewing him more than he was interviewing me.</p>
+
+            <p>I could hardly tell him that I had already completed the background research.</p>
+
+            <p>Not then, anyway.</p>
+
+            <p>When I eventually arrived at IVB, there was no neat artificial-intelligence project waiting with my name attached. Very few people at the institute worked directly within the overlap I had chosen between machine learning, medicine and histopathology. The Cartographer wanted me to look for opportunities, but even he could not initially tell me precisely what shape my work there would take.</p>
+
+            <p>Then, approximately two weeks later, I received a message:</p>
+
+            <p>Can you come to the institute today? There's someone I think you could work with.</p>
+
+            <p>That was how I met the Counterweight.</p>
+
+            <p>He came from the direction I had spent years envying: formal technical education, postgraduate training, professional experience and the proper vocabulary for things I had learnt by opening documentation and refusing to close it until something worked.</p>
+
+            <p>During our first conversation—with the Cartographer looking rather pleased to be placing two unusual specimens in the same enclosure—I felt distinctly outmatched.</p>
+
+            <p>Fortunately, that feeling becomes difficult to maintain once you begin working beside another person.</p>
+
+            <h3>407 Slides and No Map</h3>
+
+            <p>Our project did not arrive as a beautifully formulated research question. It arrived as 407 whole-slide histology images and one essential problem: potentially valuable tissue data could not be allowed to disappear unused.</p>
+
+            <p>"Find something we can do with them," we were told.</p>
+
+            <p>It was less a project brief and more like being handed the remains of a research question and asked whether we could build backwards.</p>
+
+            <p>The images came from colorectal tissue. Gradually, our aim became teaching a deep-learning model to distinguish meaningful histological regions: normal glands, stroma, adenocarcinoma invasion, low-grade dysplasia and high-grade dysplasia.</p>
+
+            <p>In theory: image in, segmented tissue out.</p>
+
+            <p>In practice: why has the model decided that this gland is stroma? Why does high-grade dysplasia cease to exist whenever its appearance would be most convenient? Why can a metric look respectable while the corresponding tissue mask commits crimes against morphology?</p>
+
+            <p>At first, the Counterweight and I worked mostly in parallel. We tried different approaches, read papers, documented everything we could and attempted to build a direction while the semester was ending and examinations were approaching.</p>
+
+            <p>We began with a YOLO-based semantic-segmentation pipeline. We prepared the data, trained models and eventually moved towards five-fold cross-validation so our conclusions would not depend on one unusually friendly train–test split. We produced predictions, class-specific results and confusion matrices, then compared what the numbers claimed with what the model had actually drawn over the tissue.</p>
+
+            <p>The public data behaved one way.</p>
+
+            <p>Our internal slides behaved another.</p>
+
+            <p>External validation, like most useful forms of criticism, has no interest in protecting your feelings.</p>
+
+            <p>The poorer internal results forced us to ask better questions. Was the problem staining variation? Resolution? Annotation quality? Class definitions? The architecture itself? Were we asking a model designed for efficient localisation to understand subtle differences in glandular morphology and histological grading?</p>
+
+            <p>Eventually, the project moved beyond its original YOLO baseline and towards a ConvNeXt-based approach better suited to capturing broader structural context. What began as can we segment this tissue? developed into something more clinically interesting: can information about tissue architecture and regions of interest help distinguish low- from high-grade dysplasia?</p>
+
+            <p>A spreadsheet treats those as separate labels.</p>
+
+            <p>Biology, inconveniently, does not always respect spreadsheets.</p>
+
+            <p>This was one of the first things IVB taught me about research: projects rarely begin where their final abstract claims they began. They start with inconvenient data, abandoned directions, code that refuses to cooperate and conversations in which nobody quite knows the answer yet. The clean scientific narrative comes later. First comes the wandering.</p>
+
+            <p>When the exams ended and we began spending actual afternoons at the institute, the Counterweight and I discovered that we worked much better sitting beside one another than exchanging messages online. I began seeing the limits of his knowledge. More importantly, I allowed myself to notice where I could fill them.</p>
+
+            <p>He had been formally trained in things I had taught myself. I understood medical contexts he had only recently begun entering. Once we stopped experiencing those differences as evidence that either of us was deficient, they became the structure of the collaboration.</p>
+
+            <p>He could see the system.</p>
+
+            <p>I could keep asking what the system meant inside actual tissue.</p>
+
+            <p>Until then, I had known how to work beside people. I had not often known how to think alongside them.</p>
+
+            <p>The institute taught me that working with somebody at your level does not mean discovering an identical copy of yourself. Sometimes it means finding the person whose strengths begin precisely where yours become uncertain.</p>
+
+            <h3>Learning to Translate</h3>
+
+            <p>The technical work was only half of the internship.</p>
+
+            <p>At some point, the Cartographer told me that I needed to change the way I presented ideas. I could not address every audience as though they already shared my background, vocabulary or speed of thought. The people listening would come from different disciplines and would not necessarily understand why a particular architectural choice, validation result or histological distinction mattered.</p>
+
+            <p>I needed to explain without sounding superior.</p>
+
+            <p>To change forms without diluting the idea.</p>
+
+            <p>To become understandable without becoming smaller.</p>
+
+            <p>At first, I heard this as criticism of how I sounded. Later, I understood it as instruction in how to become useful.</p>
+
+            <p>The test came during one of our laboratory presentations. There were roughly twenty people in the room: physicians, biologists, doctoral researchers, technical specialists and a senior professor whose approval was not especially easy to manufacture.</p>
+
+            <p>The Counterweight presented the technical parts of our project. He understood what he was explaining, and I understood what he was explaining, but I could feel the discussion moving deeper into details that meant increasingly little to anyone who had not spent the preceding weeks living inside our notebooks.</p>
+
+            <p>So I began interrupting him.</p>
+
+            <p>Gently.</p>
+
+            <p>"What the Counterweight means is—"</p>
+
+            <p>Then I would translate. What was happening in the tissue. Why the distinction mattered. Why the model confused particular classes. What the numerical result meant histologically and what it definitely did not allow us to claim.</p>
+
+            <p>I watched people begin to understand.</p>
+
+            <p>The senior professor smiled. People asked questions. At the end, we were encouraged to take the work beyond the institute and present it to a larger audience.</p>
+
+            <p>That moment mattered because it made something rather obvious finally feel real: communicating scientific work is not something added after the research has been completed. It is part of the research. If I cannot explain why we performed an experiment, what its limitations are and what its result means biologically, then I probably do not understand it as well as I think I do.</p>
+
+            <h3>After Six</h3>
+
+            <p>The moments I remember most clearly, however, are not always the experiments or presentations.</p>
+
+            <p>They happened after six.</p>
+
+            <p>By then, most people were leaving the institute. The corridors became quieter, the official part of the day began dissolving, and sometimes it would be the Cartographer, the Counterweight, the Mariner and me still sitting there.</p>
+
+            <p>We would ostensibly be discussing work. The Mariner would say something ridiculous. Somebody would answer. Then all of us would be laughing much too loudly for a nearly empty institute.</p>
+
+            <p>That was when I realised I was no longer trying to enter the room.</p>
+
+            <p>These were my people.</p>
+
+            <p>That sounds dramatic for an internship. But it had stopped being merely an internship some time before I noticed.</p>
+
+            <p>Around the main project were other questions, other fields and other people: viral proteins, molecular docking, computational virology, nephrology, immunofluorescence, biostatistics and the possibility that artificial intelligence could connect problems that had previously lived in separate rooms. An ordinary afternoon could move from colorectal histology to Marburg virus and somehow make both subjects feel like parts of the same conversation.</p>
+
+            <p>The institute did not give me one fixed niche. It showed me that I could build one at the intersection.</p>
+
+            <p>I arrived imagining that the meaningful outcomes would be publication, congresses, a thesis completed suspiciously early or an entrance into the relatively narrow Romanian world of artificial intelligence in medicine. Those things still matter. I am ambitious; there is no morally impressive reason to pretend otherwise. I want the paper. I want the presentation. I want the work to survive peer review and become useful beyond the machines on which we trained it.</p>
+
+            <p>But those are not the only things that changed me.</p>
+
+            <p>I had spent years learning how to be exceptional alone. At IVB, I began learning how to belong to a team without making myself intellectually smaller.</p>
+
+            <p>I learnt that my strange, self-assembled technical education still counted. I learnt that the medical context I brought into the project was not decorative. I learnt that another person's competence did not threaten mine; it enlarged the range of what we could build together.</p>
+
+            <p>I learnt that admitting we did not know where a project was going was not evidence that we had failed to design it. Sometimes it meant we were still doing the honest part.</p>
+
+            <p>Most importantly, I felt that something I knew how to do mattered there.</p>
+
+            <p>Not in an inflated or heroic sense. I was not indispensable, nor did I single-handedly rescue 407 slides while dramatic orchestral music played in the background. I mean important in the quiet sense: if I did not arrive, some small element would be missing from the room. My questions could alter the direction of the work. My understanding of the medical problem could change how we interpreted the model. I was contributing rather than merely completing an assignment.</p>
+
+            <p>Maybe that is what belonging feels like when you encounter it after expecting only opportunity.</p>
+
+            <p>I am about to begin my clinical years now. Soon, medicine will stop arriving primarily as courses, diagrams, tissue slides and molecular pathways. I will enter hospitals, meet patients and begin learning semiology—the difficult practice of turning what another person experiences into signs one can recognise without reducing the person to them.</p>
+
+            <p>I know I will enter that world differently because of this summer.</p>
+
+            <p>Once you have learnt to question the ground truth, you begin seeing uncertain labels everywhere. Once you have watched a model fail on data from outside the environment that trained it, you become suspicious of people who generalise confidently from one familiar population. Once you have learnt to translate between disciplines, it becomes difficult to accept that medicine and mathematics were ever truly separate.</p>
+
+            <p>And once you have found a room in which your mind makes sense, you begin carrying its coordinates with you.</p>
+
+            <h3>Posterior Update</h3>
+
+            <p>The original Disapproval Matrix classified other people's opinions.</p>
+
+            <p>Mine, after one summer at IVB, became a matrix of calibration.</p>
+
+            <p>The question was no longer simply who knew me, who judged me rationally or whose opinion deserved to survive contact with evidence. I became more interested in what certain people's attention had done to my internal measurements.</p>
+
+            <p>Some people distort you. Some evaluate your work competently from a distance. A small number know enough to notice where your understanding of yourself has become poorly calibrated—and care enough to interfere.</p>
+
+            <p>So here is my revised model:</p>
+
+            <p>The Calibration Matrix: A Longitudinal Bayesian Update with Relational Priors, Temporal Drift and Sigmoid-Calibrated Trust.</p>
+
+            <p>Posterior estimates following one summer of inadequate sample size and excessive inference.</p>
+
+            <img src="images/calibration-matrix.jpg" alt="The Calibration Matrix, a hand-drawn diagram taped to the wall" style="width: 100%; max-width: 500px; display: block; margin: 0 auto 30px; border: 1px solid var(--border-color);">
+
+            <p>I have replaced Critics with Validators: people who may not know you personally but understand the field well enough to evaluate the work rather than construct a story about its author.</p>
+
+            <p>I have retained Frenemies and Haters, because scientific progress does not require the removal of every funny variable. The Haters may remain with the YouTube commenters, jealous ignoramuses and lesser apes. Their contribution to the model is negligible but visually satisfying.</p>
+
+            <p>The new upper-left quadrant is called Calibrators.</p>
+
+            <p>They know you. They challenge you accurately. They want to see you improve without requiring you to become smaller.fri They recognise potential before it becomes performance, criticise without diminishing and make room for versions of you that do not exist yet.</p>
+
+            <p>The Counterweight belongs there. So do the Mariner, the Vector and the Filter.</p>
+
+            <p>The Counterweight taught me that complementary knowledge is not unequal knowledge. The Mariner and the Vector helped turn separate scientific interests into a shared laboratory language. The Filter demonstrated that rigorous standards and genuine encouragement can occupy the same person.</p>
+
+            <p>Together, they taught me that collaboration does not mean distributing one mind across several bodies. It means allowing different minds to change what the work can become.</p>
+
+            <p>I have moved yourself too.</p>
+
+            <p>In the original matrix, the self occupied the Frenemies quadrant: intimately informed, emotionally compromised and capable of producing an impressive quantity of undermining commentary.</p>
+
+            <p>I understood immediately why it had been placed there.</p>
+
+            <p>For most of my life, I had been my most informed and least charitable observer.</p>
+
+            <p>But models are supposed to change when new evidence arrives.</p>
+
+            <p>I am beginning to want my own improvement without treating my present self as the principal obstacle. I am learning that work assembled from online courses, improvised projects and stubbornness still constitutes work. I am learning that belonging somewhere does not require arriving there already complete.</p>
+
+            <p>The self remains highly correlated with Hockey every insecurity in the dataset and should therefore be interpreted cautiously. Nevertheless, accumulating evidence suggests that she wants to see me improve and thrive.</p>
+
+            <p>For now, that is enough to reclassify her as a Calibrator.</p>
+
+            <p>Finally, there is the Cartographer.</p>
+
+            <p>Statistically, he is a problem.</p>
+
+            <p>He designed the original coordinate system, influenced several other observations and cannot reasonably be treated as an independent variable. His presence introduces obvious leakage and a completely unacceptable conflict of interest. Any respectable reviewer would request his exclusion.</p>
+
+            <p>I have retained him anyway.</p>
+
+            <p>He belongs among the Calibrators because he recognised a direction before there was a project to prove it. He created room for work that did not yet have an obvious place inside the laboratory, connected people who could build it together and continued asking what the work might become beyond its first result.</p>
+
+            <p>The Cartographer may have supplied the original coordinate system.</p>
+
+            <p>The institute populated it.</p>
+
+            <p>The model remains overfitted. The sample is small. The conclusions may not generalise.</p>
+
+            <p>But they changed the subject on whom they were trained.</p>
+        `
     }
 ].sort((a, b) => new Date(b.date) - new Date(a.date));
 
