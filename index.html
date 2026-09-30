@@ -658,6 +658,48 @@
             #modalImg { width: 90%; margin-top: 18%; }
             #imageModal .modal-close { top: 12px; right: 18px; }
         }
+
+        /* Small field-notebook accents; the page copy and photos remain untouched. */
+        :root { --journal-bluegrey: #aab9c5; --journal-mauve: #c7b9cd; }
+        .idx-num {
+            position: relative;
+            display: inline-flex;
+            justify-self: start;
+            isolation: isolate;
+        }
+        .idx-num::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            inset: -6px -9px;
+            border: 1px solid rgba(125,48,56,.38);
+            border-radius: 48% 52% 45% 55%;
+            transform: rotate(-8deg);
+            pointer-events: none;
+        }
+        .w-row:first-child {
+            background: linear-gradient(100deg, rgba(170,185,197,.23), rgba(170,185,197,.10) 72%, rgba(170,185,197,.04));
+            border-top-color: rgba(125,48,56,.28);
+            border-bottom: 1px solid rgba(216,209,199,.9);
+            padding-right: 14px;
+        }
+        .w-row:first-child .w-main { position: relative; }
+        .w-row:first-child .w-main::before {
+            content: "";
+            position: absolute;
+            top: -17px;
+            right: 8px;
+            width: 48px;
+            height: 11px;
+            background: rgba(199,185,205,.62);
+            box-shadow: 0 1px 1px rgba(36,50,71,.08);
+            transform: rotate(3deg);
+            pointer-events: none;
+        }
+        @media (max-width: 640px) {
+            .w-row:first-child { padding-right: 8px; }
+            .w-row:first-child .w-main::before { top: -14px; right: 4px; width: 40px; height: 9px; }
+        }
 </style>
 </head>
 <body>
@@ -958,7 +1000,9 @@
             requestAnimationFrame(() => {
                 const heading = container.querySelector('.full-post-content h1');
                 if (heading && Number.isFinite(triggerTop)) {
-                    const shift = heading.getBoundingClientRect().top - triggerTop;
+                    const preferredTop = Math.min(132, Math.max(88, window.innerHeight * 0.15));
+                    const targetTop = Math.min(preferredTop, Math.max(0, triggerTop));
+                    const shift = heading.getBoundingClientRect().top - targetTop;
                     window.scrollTo(0, window.scrollY + shift);
                 } else if (heading) {
                     container.scrollIntoView({ behavior: 'smooth', block: 'start' });
