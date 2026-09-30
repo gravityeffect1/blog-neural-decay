@@ -461,6 +461,28 @@
         .recent-list a:hover { color: var(--accent); }
         .recent-list a span { font-family: var(--mono); font-size: 0.64rem; color: var(--ink-faint); white-space: nowrap; margin-left: 12px; }
 
+        .journal-browser { display: none; }
+        body.reading-mode .journal-browser { display: block; }
+        body.reading-mode .sidebar-column {
+            position: sticky; top: 16px; align-self: start;
+            max-height: calc(100vh - 32px); overflow-y: auto; scrollbar-width: thin;
+        }
+        .browser-categories { display: flex; flex-wrap: wrap; gap: 7px; margin: -3px 0 14px; }
+        .browser-category {
+            border: 1px solid var(--line-strong); border-radius: 99px; padding: 4px 9px;
+            background: transparent; color: var(--ink-soft); font: 0.62rem var(--mono); cursor: pointer;
+            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+        }
+        .browser-category:hover, .browser-category.active { background: var(--ink); border-color: var(--ink); color: var(--paper-raised); }
+        .browser-post-list { max-height: min(34vh, 310px); overflow-y: auto; border-top: 1px solid var(--line); scrollbar-width: thin; }
+        .browser-post-list a {
+            display: block; padding: 9px 2px; border-bottom: 1px dotted var(--line-strong);
+            color: var(--ink-soft); font: 0.82rem/1.4 var(--body-serif); text-decoration: none;
+        }
+        .browser-post-list a:hover, .browser-post-list a[aria-current="page"] { color: var(--accent); }
+        .browser-post-list a span { display: block; margin-top: 3px; color: var(--ink-faint); font: 0.58rem var(--mono); text-transform: uppercase; }
+        .inline-post-browser { display: none; }
+
         /* ---------- gallery ---------- */
         .gallery-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
         .gallery-item {
@@ -516,6 +538,24 @@
 
         @media (max-width: 900px) {
             main.layout { grid-template-columns: 1fr; }
+            body.reading-mode .sidebar-column { display: none; }
+            body.reading-mode .inline-post-browser { display: block; margin: 0 0 18px; }
+            .inline-post-browser details {
+                position: sticky; top: 2px; z-index: 40;
+                border: 1px solid var(--line); background: var(--paper-raised);
+                box-shadow: 0 5px 18px rgba(36, 50, 71, 0.08);
+            }
+            .inline-post-browser summary {
+                padding: 10px 13px; color: var(--ink); cursor: pointer; list-style: none;
+                font: 0.65rem var(--mono); letter-spacing: 0.06em; text-transform: uppercase;
+            }
+            .inline-post-browser summary::-webkit-details-marker { display: none; }
+            .inline-post-browser details[open] { padding-bottom: 10px; }
+            .inline-post-browser details[open] .browser-categories,
+            .inline-post-browser details[open] .browser-post-list { margin-left: 12px; margin-right: 12px; }
+            .inline-post-browser .browser-post-list { max-height: 32vh; }
+            .inline-post-browser .browser-category { padding: 6px 10px; }
+            .inline-post-browser .browser-post-list a { padding: 10px 2px; }
             .sidebar-column { grid-column: 1; grid-row: auto; border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 56px; margin-top: 8px; }
             .container { padding: 0 26px; }
             .identity-grid, .author-grid { grid-template-columns: 1fr; }
@@ -793,6 +833,13 @@
                         <div>
                             <span class="idx-label"><span id="writings-label-text">Recent Writings</span></span>
                             <div class="tag-filter-info" id="tag-filter-info"></div>
+                            <div class="inline-post-browser" id="inline-post-browser" aria-label="Browse categories and posts">
+                                <details>
+                                    <summary>Browse categories &amp; posts</summary>
+                                    <div class="browser-categories" id="inline-browser-categories"></div>
+                                    <div class="browser-post-list" id="inline-browser-posts"></div>
+                                </details>
+                            </div>
                             <div id="posts-container"></div>
                         </div>
                     </div>
@@ -800,6 +847,11 @@
             </div>
 
             <aside class="sidebar-column">
+                <div class="side-block journal-browser" id="journal-browser">
+                    <div class="side-label">Browse categories &amp; posts</div>
+                    <div class="browser-categories" id="sidebar-browser-categories"></div>
+                    <div class="browser-post-list" id="sidebar-browser-posts"></div>
+                </div>
                 <div class="side-block">
                     <div class="side-label">Paper of the Day</div>
                     <div id="paper-of-the-day"></div>
@@ -943,7 +995,47 @@
             }).join('');
         }
 
+        let activeBrowseCategory = '';
+
+        function renderPostBrowser() {
+            const categories = [...new Set(allPosts.map(post => post.category).filter(Boolean))]
+                .sort((a, b) => a.localeCompare(b));
+            const targets = [
+                { categories: document.getElementById('sidebar-browser-categories'), posts: document.getElementById('sidebar-browser-posts') },
+                { categories: document.getElementById('inline-browser-categories'), posts: document.getElementById('inline-browser-posts') }
+            ];
+            targets.forEach(target => {
+                if (!target.categories || !target.posts) return;
+                target.categories.replaceChildren();
+                target.posts.replaceChildren();
+                [['', 'All'], ...categories.map(category => [category, category])].forEach(([value, label]) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = 'browser-category' + (activeBrowseCategory === value ? ' active' : '');
+                    button.textContent = label;
+                    button.setAttribute('aria-pressed', String(activeBrowseCategory === value));
+                    button.addEventListener('click', () => {
+                        activeBrowseCategory = value;
+                        renderPostBrowser();
+                    });
+                    target.categories.appendChild(button);
+                });
+                allPosts.filter(post => !activeBrowseCategory || post.category === activeBrowseCategory).forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = 'javascript:void(0)';
+                    link.textContent = post.title;
+                    const date = document.createElement('span');
+                    const parsed = new Date(post.date);
+                    date.textContent = (post.category || '') + (isNaN(parsed) ? '' : ' · ' + parsed.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }));
+                    link.appendChild(date);
+                    link.addEventListener('click', () => window.showFullPost(post.id, link));
+                    target.posts.appendChild(link);
+                });
+            });
+        }
+
         window.showPostsByTag = function(tag) {
+            document.body.classList.remove('reading-mode');
             hideProgressBar();
             renderPostsByTag(tag);
             window.location.hash = `tag-${tag}`;
@@ -953,12 +1045,14 @@
             }, 100);
         };
         window.showAllPosts = function() {
+            document.body.classList.remove('reading-mode');
             hideProgressBar();
             renderPostsByTag();
             window.location.hash = '';
         };
 
         window.showFullPost = function(postId, trigger = null) {
+            document.body.classList.add('reading-mode');
             const triggerTop = trigger ? trigger.getBoundingClientRect().top : null;
             const post = allPosts.find(p => p.id === postId);
             if (!post) return;
@@ -1046,6 +1140,7 @@
             window.addEventListener('scroll', updateProgressBar);
             renderRecentList();
             renderPostsByTag();
+            renderPostBrowser();
 
             if (window.location.hash) {
                 const hash = window.location.hash.substr(1);
