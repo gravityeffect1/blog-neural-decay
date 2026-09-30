@@ -467,20 +467,43 @@
             position: sticky; top: 16px; align-self: start;
             max-height: calc(100vh - 32px); overflow-y: auto; scrollbar-width: thin;
         }
-        .browser-categories { display: flex; flex-wrap: wrap; gap: 7px; margin: -3px 0 14px; }
+        .browser-categories { display: flex; flex-wrap: wrap; gap: 5px 0; margin: -3px 0 14px; }
         .browser-category {
-            border: 1px solid var(--line-strong); border-radius: 99px; padding: 4px 9px;
-            background: transparent; color: var(--ink-soft); font: 0.62rem var(--mono); cursor: pointer;
-            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+            position: relative; border: 0; border-radius: 0; padding: 2px 9px;
+            background: transparent; color: var(--ink-faint); font: 0.62rem var(--mono);
+            text-transform: lowercase; cursor: pointer;
         }
-        .browser-category:hover, .browser-category.active { background: var(--ink); border-color: var(--ink); color: var(--paper-raised); }
-        .browser-post-list { max-height: min(34vh, 310px); overflow-y: auto; border-top: 1px solid var(--line); scrollbar-width: thin; }
+        .browser-category:first-child { padding-left: 0; }
+        .browser-category:not(:last-child)::after {
+            content: '/'; position: absolute; right: -2px; color: var(--line-strong);
+        }
+        .browser-category:hover, .browser-category.active {
+            background: transparent; color: var(--accent); text-decoration: underline;
+            text-decoration-thickness: 1px; text-underline-offset: 4px;
+        }
+        .browser-post-list {
+            max-height: min(34vh, 310px); overflow-y: auto;
+            border-top: 1px solid var(--line); scrollbar-width: thin;
+        }
         .browser-post-list a {
-            display: block; padding: 9px 2px; border-bottom: 1px dotted var(--line-strong);
-            color: var(--ink-soft); font: 0.82rem/1.4 var(--body-serif); text-decoration: none;
+            display: grid; grid-template-columns: 25px 1fr; gap: 6px;
+            padding: 10px 2px; border-bottom: 1px solid var(--line);
+            color: var(--ink-soft); text-decoration: none;
         }
-        .browser-post-list a:hover, .browser-post-list a[aria-current="page"] { color: var(--accent); }
-        .browser-post-list a span { display: block; margin-top: 3px; color: var(--ink-faint); font: 0.58rem var(--mono); text-transform: uppercase; }
+        .browser-post-list a:hover .browser-title,
+        .browser-post-list a[aria-current="page"] .browser-title { color: var(--accent); }
+        .browser-post-list .browser-index {
+            padding-top: 3px; color: var(--ink-faint); font: 0.58rem var(--mono);
+        }
+        .browser-post-list .browser-title {
+            display: block; color: var(--ink); font: 0.92rem/1.25 var(--display);
+            transition: color 0.2s ease;
+        }
+        .browser-post-list .browser-meta {
+            display: block; margin-top: 4px; color: var(--ink-faint);
+            font: 0.55rem var(--mono); letter-spacing: 0.03em;
+        }
+        .browser-post-list a[aria-current="page"] .browser-index { color: var(--accent); }
         .inline-post-browser { display: none; }
 
         /* ---------- gallery ---------- */
@@ -835,7 +858,7 @@
                             <div class="tag-filter-info" id="tag-filter-info"></div>
                             <div class="inline-post-browser" id="inline-post-browser" aria-label="Browse categories and posts">
                                 <details>
-                                    <summary>Browse categories &amp; posts</summary>
+                                    <summary>Browse this notebook</summary>
                                     <div class="browser-categories" id="inline-browser-categories"></div>
                                     <div class="browser-post-list" id="inline-browser-posts"></div>
                                 </details>
@@ -848,7 +871,7 @@
 
             <aside class="sidebar-column">
                 <div class="side-block journal-browser" id="journal-browser">
-                    <div class="side-label">Browse categories &amp; posts</div>
+                    <div class="side-label">Notebook index</div>
                     <div class="browser-categories" id="sidebar-browser-categories"></div>
                     <div class="browser-post-list" id="sidebar-browser-posts"></div>
                 </div>
@@ -996,6 +1019,7 @@
         }
 
         let activeBrowseCategory = '';
+        let activeBrowsePostId = '';
 
         function renderPostBrowser() {
             const categories = [...new Set(allPosts.map(post => post.category).filter(Boolean))]
@@ -1023,11 +1047,20 @@
                 allPosts.filter(post => !activeBrowseCategory || post.category === activeBrowseCategory).forEach(post => {
                     const link = document.createElement('a');
                     link.href = 'javascript:void(0)';
-                    link.textContent = post.title;
+                    if (post.id === activeBrowsePostId) link.setAttribute('aria-current', 'page');
+                    const index = document.createElement('span');
+                    index.className = 'browser-index';
+                    index.textContent = String(allPosts.indexOf(post) + 1).padStart(2, '0');
+                    const copy = document.createElement('span');
+                    const title = document.createElement('span');
+                    title.className = 'browser-title';
+                    title.textContent = post.title;
                     const date = document.createElement('span');
+                    date.className = 'browser-meta';
                     const parsed = new Date(post.date);
                     date.textContent = (post.category || '') + (isNaN(parsed) ? '' : ' · ' + parsed.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }));
-                    link.appendChild(date);
+                    copy.append(title, date);
+                    link.append(index, copy);
                     link.addEventListener('click', () => window.showFullPost(post.id, link));
                     target.posts.appendChild(link);
                 });
@@ -1056,6 +1089,8 @@
             const triggerTop = trigger ? trigger.getBoundingClientRect().top : null;
             const post = allPosts.find(p => p.id === postId);
             if (!post) return;
+            activeBrowsePostId = postId;
+            renderPostBrowser();
             const container = document.getElementById('posts-container');
             document.getElementById('writings-label-text').textContent = 'Reading';
             document.getElementById('tag-filter-info').classList.remove('active');
