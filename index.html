@@ -1000,12 +1000,12 @@
             requestAnimationFrame(() => {
                 const heading = container.querySelector('.full-post-content h1');
                 if (heading && Number.isFinite(triggerTop)) {
-                    const preferredTop = Math.min(132, Math.max(88, window.innerHeight * 0.15));
+                    const preferredTop = Math.min(160, Math.max(148, window.innerHeight * 0.18));
                     const targetTop = Math.min(preferredTop, Math.max(0, triggerTop));
                     const shift = heading.getBoundingClientRect().top - targetTop;
                     window.scrollTo(0, window.scrollY + shift);
                 } else if (heading) {
-                    const preferredTop = Math.min(132, Math.max(88, window.innerHeight * 0.15));
+                    const preferredTop = Math.min(160, Math.max(148, window.innerHeight * 0.18));
                     const shift = heading.getBoundingClientRect().top - preferredTop;
                     window.scrollTo(0, window.scrollY + shift);
                 }
