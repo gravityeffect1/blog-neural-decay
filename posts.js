@@ -1089,7 +1089,7 @@ const allPosts = [
 
             <p>But they changed the subject on whom they were trained.</p>
         `
-    }
+    },
     {
         id: 'vivim-laparoscopic-liver-resection',
         title: 'The liver is not a map: what AI vision is learning to see in surgery',
