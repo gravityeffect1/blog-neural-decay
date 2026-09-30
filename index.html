@@ -1005,7 +1005,9 @@
                     const shift = heading.getBoundingClientRect().top - targetTop;
                     window.scrollTo(0, window.scrollY + shift);
                 } else if (heading) {
-                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    const preferredTop = Math.min(132, Math.max(88, window.innerHeight * 0.15));
+                    const shift = heading.getBoundingClientRect().top - preferredTop;
+                    window.scrollTo(0, window.scrollY + shift);
                 }
                 updateProgressBar();
             });
