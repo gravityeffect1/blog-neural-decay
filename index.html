@@ -5,25 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NEURAL_DECAY :: Sara's Digital Diary </title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;1,500&family=Lora:ital,wght@0,400;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600&display=swap');
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --paper: #f6f6f3;
-            --paper-raised: #fbfbf9;
-            --ink: #111113;
-            --ink-soft: #55565b;
-            --ink-faint: #98989c;
-            --line: #dddad4;
-            --line-strong: #bcb8b0;
-            --accent: #8a1f26;
-            --accent-soft: rgba(138, 31, 38, 0.07);
-
-            --display: 'Bodoni Moda', Didot, 'Bodoni MT', Georgia, serif;
-            --body-serif: 'Lora', Georgia, 'Iowan Old Style', serif;
-            --quote-serif: 'Lora', Georgia, serif;
-            --mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+            --paper: #f4f0e8;
+            --paper-raised: #fbf9f4;
+            --ink: #243247;
+            --ink-soft: #596777;
+            --ink-faint: #7f8a96;
+            --line: #d8d1c7;
+            --line-strong: #b9b0a5;
+            --accent: #7d3038;
+            --accent-soft: rgba(125, 48, 56, 0.08);
+            --display: 'Cormorant Garamond', Georgia, serif;
+            --body-serif: 'Source Sans 3', Arial, sans-serif;
+            --quote-serif: 'Cormorant Garamond', Georgia, serif;
+            --mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
         }
 
         html { scroll-behavior: smooth; }
@@ -250,12 +249,7 @@
         .strip-a { aspect-ratio: 3/4; }
         .strip-b-wrap { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
         .strip-b { aspect-ratio: unset; height: 100%; }
-        .strip-item .frame {
-            position: absolute; left: 8px; bottom: 8px;
-            font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.03em;
-            color: #f7f4ee; text-shadow: 0 1px 4px rgba(0,0,0,0.55);
-            opacity: 0; transition: opacity 0.35s ease;
-        }
+        .strip-item .frame { display: none; }
         .strip-item:hover .frame { opacity: 1; }
 
         /* ---------- writings index ---------- */
@@ -557,7 +551,114 @@
             .footer-row { flex-direction: column; align-items: flex-start; gap: 22px; }
             .gallery-item .cap { padding: 10px 14px 16px; }
         }
-    </style>
+    
+        /* Neural Decay field-journal refresh: visual styling only. */
+        body { background: var(--paper); color: var(--ink); line-height: 1.72; }
+        ::selection { background: var(--accent); color: var(--paper-raised); }
+        .container { max-width: 1220px; }
+        header { padding: 38px 0 24px; border-bottom-color: var(--line); }
+        .logo { text-transform: none; font-size: 2.8rem; letter-spacing: 0; padding-bottom: 8px; }
+        .logo::after { width: 42px; }
+        .tagline { letter-spacing: .045em; }
+        nav ul { gap: 25px; }
+        nav a { font-size: .68rem; text-transform: lowercase; }
+        .banner-header { height: 290px; border-bottom: 1px solid var(--line-strong); }
+        .idx-section { padding: 52px 0; border-bottom-color: var(--line); }
+        .idx-section:first-of-type { padding-top: 48px; }
+        .idx-row { grid-template-columns: 64px minmax(0, 1fr); gap: 26px; }
+        .idx-num { color: var(--accent); }
+        .idx-label { color: var(--ink-soft); letter-spacing: .12em; margin-bottom: 22px; }
+        .idx-label::after { border-bottom-style: solid; border-color: var(--line); }
+        main.layout { grid-template-columns: minmax(0, 1.55fr) minmax(270px, .8fr); gap: 0 54px; }
+        .sidebar-column { padding-left: 25px; padding-top: 45px; border-left-color: var(--line); }
+        .identity-term, .author-name, .w-main h3, .full-post-content h1,
+        .full-post-content .post-content h2, .full-post-content .post-content h3 { color: var(--ink); }
+        .identity-def, .author-bio, .w-excerpt, .full-post-content .post-content p { color: var(--ink-soft); }
+        .author-portrait img { border: 7px solid var(--paper-raised); box-shadow: 0 5px 16px rgba(36,50,71,.12); }
+        .author-portrait::after { border-color: var(--nd-blue, #aab9c5); }
+        .author-strip { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 14px; margin-top: 30px; }
+        .strip-caption, .strip-item .frame { display: none; }
+        .strip-b-wrap { display: contents; }
+        .strip-item, .strip-a, .strip-b { aspect-ratio: 4 / 5; height: auto; border: 7px solid var(--paper-raised); outline: 1px solid var(--line); box-shadow: 0 5px 14px rgba(36,50,71,.10); }
+        .strip-item img { display: block; }
+        .w-row { grid-template-columns: 42px 92px minmax(0,1fr); gap: 16px; padding-top: 22px; padding-bottom: 22px; }
+        .w-row::before { background: var(--accent); }
+        .w-main h3 { font-size: 1.55rem; line-height: 1.15; }
+        .w-excerpt { line-height: 1.7; }
+        .w-meta .cat { color: var(--accent); }
+        .w-num, .w-meta, .w-arrow { color: var(--ink-faint); }
+        .side-block { padding: 16px 16px 20px; margin-bottom: 16px; border: 1px solid var(--line); background: var(--paper-raised); }
+        .side-block:last-child { border-bottom: 1px solid var(--line); }
+        .side-label { color: var(--accent); letter-spacing: .11em; }
+        .paper-title { font-size: 1.35rem; line-height: 1.15; }
+        .paper-meta { color: var(--accent); font-size: .66rem; }
+        .paper-abstract { font-size: .92rem; line-height: 1.65; }
+        .quote-block { border-left-color: var(--accent); }
+        .quote-text { font-size: 1.25rem; line-height: 1.4; }
+        .quote-src { color: var(--ink-soft); }
+        .recent-list a { color: var(--ink-soft); border-bottom-color: var(--line); }
+        .gallery-strip { border-top-color: var(--line); }
+        .gallery-item { background: var(--paper-raised); border-right-color: var(--line); }
+        .gallery-item .cap { color: var(--ink-soft); }
+        footer { background: var(--ink); color: var(--paper); }
+        footer .sub, .social-links a { color: #d5dce1; }
+        .social-links a:hover { color: #fff; }
+        .back-button { border-color: var(--ink); color: var(--ink); }
+        .back-button:hover { background: var(--ink); color: var(--paper); }
+        .post-tag-pill { border-color: var(--line-strong); }
+        .post-tag-pill:hover { border-color: var(--accent); color: var(--accent); }
+        @media (max-width: 900px) {
+            .container { padding-left: 26px; padding-right: 26px; }
+            main.layout { grid-template-columns: minmax(0,1fr); }
+            .sidebar-column { grid-column: 1; grid-row: auto; border-left: 0; border-top: 1px solid var(--line); padding: 28px 0 0; margin-top: 8px; }
+            .identity-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .author-grid { grid-template-columns: 145px minmax(0,1fr); gap: 25px; }
+            .author-strip { grid-template-columns: repeat(3,minmax(0,1fr)); }
+            .strip-b-wrap { display: contents; }
+            .strip-item, .strip-a, .strip-b { aspect-ratio: 4 / 5; height: auto; min-width: 0; }
+            .strip-caption, .strip-item .frame { display: none; }
+            .w-row { grid-template-columns: 42px 88px minmax(0,1fr); gap: 13px; }
+            .gallery-strip { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width: 640px) {
+            .container { padding-left: 18px; padding-right: 18px; }
+            header { padding: 27px 0 19px; }
+            .header-content { align-items: flex-start; gap: 17px; }
+            .logo { font-size: 2.3rem; }
+            .logo-block { gap: 8px; }
+            nav { width: 100%; }
+            nav ul { gap: 11px 19px; }
+            nav a { font-size: .62rem; }
+            .banner-header { height: 185px; }
+            .idx-section { padding: 36px 0; }
+            .idx-section:first-of-type { padding-top: 32px; }
+            .idx-row { grid-template-columns: 27px minmax(0,1fr); gap: 12px; }
+            .idx-num { font-size: .62rem; }
+            .idx-label { font-size: .6rem; letter-spacing: .09em; margin-bottom: 17px; }
+            .identity-grid { grid-template-columns: 1fr; gap: 22px; }
+            .author-grid { grid-template-columns: 105px minmax(0,1fr); gap: 19px; }
+            .author-portrait { width: 105px; }
+            .author-name { font-size: 1.45rem; }
+            .author-role { font-size: .59rem; margin-bottom: 12px; }
+            .author-bio { font-size: .96rem; line-height: 1.7; }
+            .author-strip { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 8px; margin-top: 23px; }
+            .strip-item, .strip-a, .strip-b { border-width: 4px; aspect-ratio: 4 / 5; }
+            .strip-caption, .strip-item .frame { display: none; }
+            .w-row { grid-template-columns: 1fr; gap: 5px; padding: 19px 0 19px 14px; margin-left: -14px; }
+            .w-row:hover { padding-left: 18px; }
+            .w-num, .w-meta { padding-top: 0; }
+            .w-main h3 { font-size: 1.4rem; }
+            .w-excerpt { font-size: .95rem; }
+            .sidebar-column { padding-top: 22px; }
+            .side-block { padding: 14px 13px 17px; }
+            .full-post-content h1 { font-size: 2rem; }
+            .full-post-content .post-content p { font-size: 1rem; line-height: 1.8; }
+            .footer-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+            .gallery-item .cap { padding: 10px 11px 13px; }
+            #modalImg { width: 90%; margin-top: 18%; }
+            #imageModal .modal-close { top: 12px; right: 18px; }
+        }
+</style>
 </head>
 <body>
     <div id="reading-progress-bar"></div>
