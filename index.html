@@ -881,9 +881,9 @@
                     <span class="w-num">${ordinal(i + 1)}</span>
                     <div class="w-meta"><span class="cat">${post.category}</span>${post.date}</div>
                     <div class="w-main">
-                        <h3><a href="javascript:void(0)" onclick="showFullPost('${post.id}')">${post.title}</a></h3>
+                        <h3><a href="javascript:void(0)" onclick="showFullPost('${post.id}', this)">${post.title}</a></h3>
                         <p class="w-excerpt">${post.excerpt}</p>
-                        <a href="javascript:void(0)" class="w-arrow" onclick="showFullPost('${post.id}')">read →</a>
+                        <a href="javascript:void(0)" class="w-arrow" onclick="showFullPost('${post.id}', this)">read →</a>
                     </div>
                 `;
                 list.appendChild(row);
@@ -897,7 +897,7 @@
             el.innerHTML = recent.map(post => {
                 const d = new Date(post.date);
                 const label = isNaN(d) ? '' : d.toLocaleDateString('en-US', { month: '2-digit', year: '2-digit' });
-                return `<a href="javascript:void(0)" onclick="showFullPost('${post.id}')">${post.title}<span>${label}</span></a>`;
+                return `<a href="javascript:void(0)" onclick="showFullPost('${post.id}', this)">${post.title}<span>${label}</span></a>`;
             }).join('');
         }
 
@@ -916,7 +916,8 @@
             window.location.hash = '';
         };
 
-        window.showFullPost = function(postId) {
+        window.showFullPost = function(postId, trigger = null) {
+            const triggerTop = trigger ? trigger.getBoundingClientRect().top : null;
             const post = allPosts.find(p => p.id === postId);
             if (!post) return;
             const container = document.getElementById('posts-container');
@@ -953,8 +954,17 @@
                 </div>
             `;
             window.location.hash = `post-${post.id}`;
-            window.scrollTo({ top: 0, behavior: 'smooth' });
             showProgressBar();
+            requestAnimationFrame(() => {
+                const heading = container.querySelector('.full-post-content h1');
+                if (heading && Number.isFinite(triggerTop)) {
+                    const shift = heading.getBoundingClientRect().top - triggerTop;
+                    window.scrollTo(0, window.scrollY + shift);
+                } else if (heading) {
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                updateProgressBar();
+            });
         };
 
         let progressBarActive = false;
