@@ -1,4 +1,35 @@
 const allPosts = [
+
+    {
+        id: 'arta-sublima-de-a-face-lucruri-singura',
+        title: 'Arta sublimă de a face lucruri singură',
+        category: 'reflections',
+        date: '2026-10-01',
+        excerpt: 'Singurătatea ca stil. Independența ca punct de observație — despre cercuri, prietenii și libertatea de a nu-ți amâna viața până când cineva te include.',
+        tags: ['reflections', 'solitude', 'friendship', 'identity'],
+        content: `
+            <p style="font-family: var(--display); font-size: 1.35rem; line-height: 1.35; color: var(--ink-soft); margin: 0 0 28px; text-align: center;">Singurătatea ca stil. Independența ca punct de observație.</p>
+
+            <img src="images/solitude-as-style.jpg" alt="" style="width: 100%; max-width: 720px; height: auto; display: block; margin: 0 auto 32px; border: 1px solid var(--border-color);">
+
+            <p>N-am avut niciodată mulți prieteni. Nu spun asta ca pe o confesiune dramatică, cu muzică tristă în fundal, ci ca pe un fapt pe care am încercat multă vreme să-l repar. Am crezut că undeva trebuie să existe o formulă simplă pentru a deveni genul de om pe care îl include toată lumea: fii mai sociabilă, mai ușoară, mai puțin tu. Ca și cum apartenența ar fi fost o materie cu barem, iar eu pierdusem foaia cu subiecte.</p>
+
+            <p>Cei care mă citesc de mai multă vreme știu că am fost la Sava. Nu e nevoie să reiau toată povestea; ajunge să spun că, pe măsură ce bisericuțele se formau, eu am rămas pe dinafară. Nu într-un moment cinematografic, cu o ușă trântită și o replică memorabilă. Mai degrabă în felul acela lent și foarte obișnuit în care îți dai seama că oamenii au început să se caute între ei, iar numele tău nu prea mai apare în propozițiile lor.</p>
+
+            <p>A fost și dureros. Nu vreau să cosmetizez asta doar fiindcă am găsit, ulterior, o interpretare mai frumoasă. Dar a existat un efect out-of-the-box în toată treaba: când nu ești prinsă în mijlocul unui cerc, începi să-i vezi conturul. Observi cine se apropie de cine, cum se leagă prieteniile din glume comune și locuri păstrate la masă, cum unele alianțe se mută de la o zi la alta. Privită din afară, o bisericuță începe să semene cu un graf: oamenii sunt nodurile, iar micile lor loialități, muchiile. Și da, uneori vezi și cum aceiași oameni pot fi atât de proști — nu într-un sens sofisticat, ci în felul absolut banal în care un grup pare să suspende temporar bunul-simț.</p>
+
+            <p>Nu cred că asta îi face pe toți oamenii răi sau că orice apropiere e falsă. Cred doar că prezența nu e același lucru cu prietenia, iar faptul că ești inclusă într-un grup nu înseamnă automat că ești văzută. Poți să stai la aceeași masă cu oameni și să te simți obligată să-ți traduci fiecare gând înainte să-l spui. Poți, la fel de bine, să fii singură și să nu simți că trebuie să te micșorezi ca să încapă cineva lângă tine.</p>
+
+            <p>Multă vreme am tratat singurătatea ca pe o sală de așteptare. Îmi amânam planurile până apărea cineva cu care să le fac: poate când mă invită cineva, poate data viitoare, poate când o să am grupul meu. Numai că „data viitoare” are un talent aproape matematic de a se îndepărta exact când încerci s-o prinzi. Așa că am început să merg oricum. Să văd un loc fiindcă voiam să-l văd. Să-mi iau o cafea fără să am nevoie de o fotografie care să demonstreze că am fost acolo împreună cu cineva. Să nu mai las o invitație absentă să decidă dacă ziua mea are voie să înceapă.</p>
+
+            <p>Asta nu înseamnă că nu-mi doresc prieteni. Îmi doresc. Dar nu mai vreau să confund dorința de apropiere cu obligația de a păstra lângă mine orice om care a stat suficient de aproape. Unii oameni se dovedesc, pe zi ce trece, urzici. Nu neapărat monștri; uneori doar atingerea lor te ustură, iar tu ai nevoie de mai mult decât de o explicație elegantă ca să accepți că ar fi bine să te îndepărtezi.</p>
+
+            <p>Poate că independența începe acolo: nu în momentul în care nu mai ai nevoie de nimeni, ci în momentul în care nu-ți mai pui viața pe pauză până când cineva te alege. No one is coming to save you. Get up. Sună puțin sever, știu. Dar uneori severitatea asta e doar vocea pe care o folosești ca să te scoți singură dintr-un loc în care ai așteptat prea mult să ți se facă loc.</p>
+
+            <p>Și dacă, uneori, asta înseamnă să faci lucruri singură, atunci poate că „singură” nu trebuie să însemne „în lipsă”. Poate înseamnă doar că, pentru o vreme, tu ești persoana care te duce mai departe.</p>
+        `
+    },
+
     {
         id: 'suferinta-si-arta',
         title: 'Sufletul omului se îmbogățește prin suferință',
