@@ -2,7 +2,7 @@ const allPosts = [
 
     {
         id: 'arta-sublima-de-a-face-lucruri-singura',
-        title: 'Arta sublimă de a face lucruri singură',
+        title: 'Cutia mea — sau, în alte cuvinte, arta sublimă de a fi singură',
         category: 'reflections',
         date: '2026-10-01',
         excerpt: 'Singurătatea ca stil. Independența ca punct de observație — despre cercuri, prietenii și libertatea de a nu-ți amâna viața până când cineva te include.',
