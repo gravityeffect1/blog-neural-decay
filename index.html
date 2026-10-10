@@ -949,7 +949,7 @@
         <div id="caption"></div>
     </div>
 
-    <script src="posts.js"></script>
+    <script src="posts.js?v=20261010-ai"></script>
     <script>
         let currentView = 'all';
         let currentTag = null;
@@ -1087,9 +1087,9 @@
         window.showFullPost = function(postId, trigger = null) {
             document.body.classList.add('reading-mode');
             const triggerTop = trigger ? trigger.getBoundingClientRect().top : null;
-            const post = allPosts.find(p => p.id === postId);
+            const post = allPosts.find(p => p.id === postId || (p.aliases || []).includes(postId));
             if (!post) return;
-            activeBrowsePostId = postId;
+            activeBrowsePostId = post.id;
             renderPostBrowser();
             const container = document.getElementById('posts-container');
             document.getElementById('writings-label-text').textContent = 'Reading';

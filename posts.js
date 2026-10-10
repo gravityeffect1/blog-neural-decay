@@ -1,7 +1,8 @@
 const allPosts = [
 {
-    "id": "ai-in-medicine-oncology-field-guide",
-    "title": "So you want to do AI in medicine: an oncology field guide",
+    "id": "ai",
+    "aliases": ["ai-in-medicine-oncology-field-guide"],
+    "title": "AI in Medicine",
     "category": "medicine",
     "date": "2026-10-10",
     "excerpt": "A practical way into AI and translational oncology: choosing a clinical question, learning the tools, avoiding misleading results, and planning your first twelve weeks.",
