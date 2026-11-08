@@ -958,9 +958,22 @@
         }
 
 </style>
+    <link rel="stylesheet" href="y2k-theme.css?v=20261108">
 </head>
 <body>
     <div id="reading-progress-bar"></div>
+
+    <div class="retro-window">
+        <div class="browser-titlebar" aria-hidden="true">
+            <span class="browser-title-icon sprite sprite-pc"></span>
+            <span class="browser-title">Neural Decay — Sara's Digital Diary</span>
+            <span class="browser-window-controls"><span>−</span><span>□</span><span>×</span></span>
+        </div>
+        <div class="browser-addressbar" aria-label="Retro browser decoration">
+            <span class="browser-transport" aria-hidden="true">◀ &nbsp; ▶ &nbsp; ↻</span>
+            <span class="browser-address"><span aria-hidden="true">♥</span> gravityeffect1.github.io/blog-neural-decay/</span>
+            <span class="browser-go" aria-hidden="true">✦</span>
+        </div>
 
     <header id="home">
         <div class="container">
@@ -979,6 +992,11 @@
                         <li><a href="#contact">contact</a></li>
                     </ul>
                 </nav>
+            </div>
+            <div class="header-sprites" aria-hidden="true">
+                <span class="sprite sprite-pc"></span>
+                <span class="sprite sprite-cat"></span>
+                <span class="sprite sprite-tamagotchi"></span>
             </div>
         </div>
     </header>
@@ -1024,20 +1042,12 @@
                             <span class="idx-label">Author</span>
                             <div class="author-grid">
                                 <div class="author-portrait">
-                                    <img src="images/sara-photo.jpg" alt="Sara Sova">
+                                    <img src="images/sovix-avatar.jpg" alt="Sovix, Sara's illustrated persona avatar">
                                 </div>
                                 <div>
                                     <div class="author-name">Sara Sova</div>
                                     <div class="author-role">Medical Student — UMFCD, Bucharest</div>
                                     <p class="author-bio">Medical student at UMFCD, Bucharest, navigating the beautiful chaos of third year. Currently surviving on phonk music, mania, and the occasional existential crisis about cuboidal epithelium. Coding when I'm not crying over anatomy.</p>
-                                </div>
-                                <div class="author-strip">
-                                    <div class="strip-caption"><span>off<span class="br">-</span>duty frames</span></div>
-                                    <div class="strip-item strip-a" onclick="showModal(this.querySelector('img').src, 'Sara — café portrait')"><img src="images/IMG_2133.jpg" alt="Sara, café portrait"><span class="frame">01</span></div>
-                                    <div class="strip-b-wrap">
-                                        <div class="strip-item strip-b" onclick="showModal(this.querySelector('img').src, 'Sara — close portrait')"><img src="images/sara-closeup.jpg" alt="Sara, close portrait"><span class="frame">02</span></div>
-                                        <div class="strip-item strip-b" onclick="showModal(this.querySelector('img').src, 'Sara — stairwell mirror')"><img src="images/IMG_2567.jpg" alt="Sara, stairwell mirror"><span class="frame">03</span></div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1065,17 +1075,17 @@
 
             <aside class="sidebar-column">
                 <div class="side-block journal-browser" id="journal-browser">
-                    <div class="side-label">Notebook index</div>
+                    <div class="side-label">Notebook index<span class="xp-sprite xp-window" aria-hidden="true"></span></div>
                     <div class="browser-categories" id="sidebar-browser-categories"></div>
                     <div class="browser-post-list" id="sidebar-browser-posts"></div>
                 </div>
                 <div class="side-block">
-                    <div class="side-label">Paper of the Day</div>
+                    <div class="side-label">Paper of the Day<span class="xp-sprite xp-cd" aria-hidden="true"></span></div>
                     <div id="paper-of-the-day"></div>
                 </div>
 
                 <div class="side-block">
-                    <div class="side-label">Quote of the Month</div>
+                    <div class="side-label">Quote of the Month<span class="sprite sprite-heart sprite-tiny" aria-hidden="true"></span></div>
                     <div class="quote-block">
                         <div class="quote-portrait" onclick="showModal('images/brain.jpg', 'Brain')"><img src="images/brain.jpg" alt="Pixelated brain"></div>
                         <p class="quote-text">"Noli foras ire, in teipsum reddi; in interiore homine habitat veritas."</p>
@@ -1084,7 +1094,7 @@
                 </div>
 
                 <div class="side-block">
-                    <div class="side-label">Archive</div>
+                    <div class="side-label">Archive<span class="xp-sprite xp-folder" aria-hidden="true"></span></div>
                     <div class="recent-list" id="recent-list"></div>
                 </div>
             </aside>
@@ -1136,6 +1146,7 @@
             </div>
         </div>
     </footer>
+    </div><!-- /.retro-window -->
 
     <div id="imageModal" onclick="closeImageModal()">
         <span class="modal-close" onclick="closeImageModal()">&times;</span>
@@ -1187,7 +1198,7 @@
 
             postsToShow.forEach((post, i) => {
                 const row = document.createElement('article');
-                row.className = 'w-row';
+                row.className = 'w-row w-category-' + post.category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
                 row.innerHTML = `
                     <span class="w-num">${ordinal(i + 1)}</span>
                     <div class="w-meta"><span class="cat">${post.category}</span>${post.date}</div>
