@@ -209,12 +209,46 @@ nav a:hover::before { color: #ffaddd; }
     box-shadow: 3px 3px #2c1159,0 0 13px #8d36b0;
     transform: rotate(9deg);
 }
-.void-ticker {
-    position: relative; overflow: hidden; max-width: calc(100% - 55px); margin: 0 auto 15px;
-    padding: 4px 10px; border: 1px solid #9b69d3;
-    color: #ffbee8; background: linear-gradient(90deg,#2e1350,#090513,#4f196e);
-    font: 17px/1.1 'VT323',monospace; text-align: center; white-space: nowrap; letter-spacing: .1em;
+.pink-decal {
+    display: block; position: absolute; z-index: 4; pointer-events: none;
+    width: 90px; height: 86px;
+    background-image: url('images/pink-chrome-stickers.jpg');
+    background-repeat: no-repeat;
+    background-size: 540px 432px;
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 4px rgba(240, 120, 222, .48));
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 48%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, #000 48%, transparent 75%);
 }
+.pink-butterfly {
+    top: 3px; right: 180px;
+    background-position: -180px 0;
+    transform: rotate(-12deg);
+}
+.pink-heart-lock {
+    width: 74px; height: 78px;
+    right: -22px; bottom: -22px;
+    background-size: 444px 355px;
+    background-position: -74px 0;
+    transform: rotate(13deg);
+}
+.pink-star {
+    top: -24px; right: 88px;
+    width: 76px; height: 74px;
+    background-size: 456px 365px;
+    background-position: -152px -73px;
+    transform: rotate(-14deg);
+}
+.void-ticker {
+    position: relative; display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-evenly; gap: 4px 18px;
+    max-width: calc(100% - 55px); margin: 0 auto 15px;
+    padding: 7px 14px; border: 1px solid #9b69d3;
+    color: #ffbee8; background: linear-gradient(90deg,#2e1350,#090513,#4f196e);
+    font: clamp(17px, 1.6vw, 22px)/1.1 'VT323',monospace;
+    text-align: center; letter-spacing: .085em;
+}
+.void-ticker > span { white-space: nowrap; }
 
 /* Three uneven columns, small desktop widgets and tight dark content windows. */
 main.layout {
@@ -234,11 +268,6 @@ main.layout {
 .rail-nav a { display: block; text-decoration: none; color: #ded3f4; font: 15px/1.45 'VT323',monospace; padding: 4px 0; }
 .rail-nav a::first-letter { color: #f48fd1; }
 .rail-nav a:hover { color: #ff99d4; text-shadow: 0 0 8px #ba61d8; }
-.rail-status { display: flex; justify-content: space-between; align-items: center; margin: 14px 0; padding: 6px 10px; background: #2b1746; border: 1px solid #9d6ac9; font: 16px 'VT323',monospace; letter-spacing: .04em; }
-.rail-status span:last-child { color: #f88cc9; }
-.status-led { width: 8px; height: 8px; border-radius: 50%; background: #77ffb9; box-shadow: 0 0 9px #77ffb9; }
-.visitor-digits { padding: 3px 5px; background: #000; border: 1px inset #5e4e79; color: #8effab; font: 26px 'VT323',monospace; letter-spacing: 3px; text-align: center; text-shadow: 0 0 5px #56b57b; }
-.rail-visitor p { margin: 8px 0 0; font: 11px/1.5 var(--mono); color: #b9a2dd; }
 .rail-icon-patch { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin: 16px 0; padding: 10px; border: 1px dashed #8266b1; background: #090512; }
 .rail-icon-patch .void-icon { justify-self: center; }
 .rail-icon-patch .void-icon:last-child { grid-column: 1 / -1; }
@@ -470,14 +499,14 @@ footer .sub { font-style: italic; }
     .banner-star-two { display: none; }
     .banner-star-three { font-size: 34px; }
     .sticker-rainbow-decal { width: 90px; height: 31px; top: 44px; right: 5px; background-size: 170px 303px; background-position: -3px -191px; }
-    .void-ticker { max-width: calc(100% - 22px); font-size: 14px; }
+    .void-ticker { max-width: calc(100% - 22px); gap: 4px 11px; padding: 6px 8px; font-size: 16px; }
     main.layout { display: flex; flex-direction: column; gap: 7px; }
-    .retro-left-rail { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; width: 100%; }
-    .rail-nav { grid-column: 1 / -1; }
+    .retro-left-rail { display: block; width: 100%; }
     .rail-nav a { display: inline-block; margin: 0 8px 0 0; }
-    .rail-status { margin: 0; align-self: start; }
-    .rail-visitor { margin: 0; }
     .rail-icon-patch, .rail-sticker-frame { display: none; }
+    .pink-butterfly { width: 56px; height: 56px; right: 78px; top: -25px; background-size: 336px 269px; background-position: -112px 0; }
+    .pink-heart-lock { width: 48px; height: 49px; right: -11px; bottom: -12px; background-size: 288px 230px; background-position: -48px 0; }
+    .pink-star { width: 52px; height: 51px; right: 40px; top: -20px; background-size: 312px 250px; background-position: -104px -50px; }
     .content-column, .sidebar-column { width: 100%; }
     .idx-section, .side-block { margin-bottom: 10px; padding: 12px 10px 14px; }
     .idx-row { grid-template-columns: 23px minmax(0,1fr); gap: 5px; }
