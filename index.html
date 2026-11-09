@@ -959,6 +959,7 @@
 
 </style>
     <link rel="stylesheet" href="y2k-theme.css?v=20261108b">
+    <link rel="stylesheet" href="void-theme.css?v=20261109a">
 </head>
 <body>
     <div id="reading-progress-bar"></div>
@@ -966,7 +967,7 @@
     <div class="retro-window">
         <div class="browser-titlebar" aria-hidden="true">
             <span class="browser-title-icon sprite sprite-pc"></span>
-            <span class="browser-title">Neural Decay — Sara's Digital Diary</span>
+            <span class="browser-title">WELCOME 2 MY WORLD // NEURAL_DECAY.EXE</span>
             <span class="browser-window-controls"><span>−</span><span>□</span><span>×</span></span>
         </div>
         <div class="browser-addressbar" aria-label="Retro browser decoration">
@@ -1003,10 +1004,48 @@
 
     <div class="banner-header">
         <img src="images/graffiti-banner.jpg" alt="Colourful graffiti wall — Neural Decay banner">
+        <div class="banner-scrim" aria-hidden="true"></div>
+        <div class="void-popup">
+            <div class="void-popup-title">HELLO THERE... <span aria-hidden="true">×</span></div>
+            <p><span aria-hidden="true">✧</span> you have reached<br>the neural decay.</p>
+            <a href="#about">[ ENTER ]</a>
+        </div>
+        <div class="banner-hero-copy">
+            <span class="banner-eyebrow">✦ sara's corner of the internet ✦</span>
+            <strong>welcome<br>to my <em>world</em><span class="banner-twinkle">☆</span></strong>
+            <p>somewhere between a laboratory and a late-night internet rabbit hole.</p>
+        </div>
+        <span class="banner-star banner-star-one" aria-hidden="true">✧</span>
+        <span class="banner-star banner-star-two" aria-hidden="true">✦</span>
+        <span class="banner-star banner-star-three" aria-hidden="true">☆</span>
+        <span class="sticker-sample sticker-rainbow-decal" aria-hidden="true"></span>
+    </div>
+
+    <div class="void-ticker" aria-hidden="true">
+        <span>✦ &nbsp; MEDICINE &nbsp; ✧ &nbsp; MACHINE LEARNING &nbsp; ✦ &nbsp; DIGITAL DIARY &nbsp; ✧ &nbsp; CODE &nbsp; ♡ &nbsp; NEURAL DECAY &nbsp; ✦ &nbsp; MEDICINE &nbsp; ✧ &nbsp; MACHINE LEARNING &nbsp; ✦</span>
     </div>
 
     <div class="container">
         <main class="layout">
+            <aside class="retro-left-rail" aria-label="Quick navigation and decorative desktop panels">
+                <div class="rail-panel rail-nav">
+                    <div class="rail-title">NAVIGATION <span>✕</span></div>
+                    <a href="#home">› home sweet home</a>
+                    <a href="#about">› identity</a>
+                    <a href="#about-section">› about me</a>
+                    <a href="#writings">› notebook</a>
+                    <a href="#work">› my work</a>
+                    <a href="#contact">› contact</a>
+                </div>
+                <div class="rail-status" aria-label="Website status"><span class="status-led"></span> ONLINE <span>♡</span></div>
+                <div class="rail-panel rail-visitor">
+                    <div class="rail-title">SITE STATUS</div>
+                    <div class="visitor-digits">001337</div>
+                    <p>curiosity.exe is running</p>
+                </div>
+                <div class="rail-icon-patch" aria-hidden="true"><span class="void-icon void-icon-book"></span><span class="void-icon void-icon-computer"></span><span class="void-icon void-icon-browser"></span></div>
+                <div class="rail-sticker-frame" aria-hidden="true"><span class="sticker-sample sticker-nyan"></span><span class="rail-sticker-caption">made with ♥ and chaos</span></div>
+            </aside>
             <div class="content-column">
 
                 <section class="idx-section" id="about">
@@ -1054,7 +1093,7 @@
                     </div>
                 </section>
 
-                <section class="idx-section" style="border-bottom: none;">
+                <section class="idx-section" id="writings" style="border-bottom: none;">
                     <div class="idx-row">
                         <span class="idx-num">03</span>
                         <div>
@@ -1101,33 +1140,29 @@
         </main>
     </div>
 
-    <div class="container" style="padding-left: 0; padding-right: 0;">
-        <section class="idx-section" style="border-top: 1px solid var(--ink);">
-            <div class="idx-row" style="padding: 0 48px;">
-                <span class="idx-num">04</span>
-                <div>
-                    <span class="idx-label">Gallery</span>
-                </div>
+    <div class="work-section-shell" id="work">
+        <div class="work-window-title"><span>04</span> WHAT I WORK ON <span class="work-window-controls">_ □ ×</span></div>
+        <div class="work-content">
+            <div class="work-landscape">
+                <img src="images/pixel-wait-landscape.jpg" alt="Pixel-art lavender sky and grassy field with a red door reading I'll wait">
+                <span class="work-image-label">a little pixel world, a lot of real-world questions</span>
             </div>
-        </section>
-    </div>
-    <div class="gallery-strip">
-        <div class="gallery-item" onclick="showModal('images/diva.jpg', 'Diva')">
-            <div class="gallery-frame"><img src="images/diva.jpg" alt="diva"></div>
-            <div class="cap"><span>Diva</span><span class="no">01</span></div>
+            <div class="work-pitch">
+                <span class="work-kicker">› about_the_work.txt</span>
+                <h2>medicine meets <em>machine learning.</em></h2>
+                <p>I'm Sara, a medical student at UMF “Carol Davila” in Bucharest, and I love building machine-learning projects around real questions in medicine. My work sits between clinical science, programming, and the messy, fascinating world of biomedical data.</p>
+                <p>I'm especially drawn to computational pathology — teaching models to analyse histology images — alongside bioinformatics and translational oncology. I enjoy going from an actual biological problem to a carefully built pipeline, testing what works, and being honest about what doesn't.</p>
+                <div class="work-quest-list" aria-label="Research interests">
+                    <div><span class="void-icon void-icon-computer" aria-hidden="true"></span><span><b>Computational pathology</b><small>histology · segmentation · grading</small></span></div>
+                    <div><span class="void-icon void-icon-browser" aria-hidden="true"></span><span><b>Machine learning</b><small>Python · deep learning · evaluation</small></span></div>
+                    <div><span class="void-icon void-icon-book" aria-hidden="true"></span><span><b>Biomedical research</b><small>oncology · bioinformatics · clinical questions</small></span></div>
+                </div>
+                <a class="work-github" href="https://github.com/gravityeffect1" target="_blank" rel="noopener noreferrer">[ explore my code ↗ ]</a>
+            </div>
         </div>
-        <div class="gallery-item" onclick="showModal('images/makeup.jpg', 'Makeup')">
-            <div class="gallery-frame"><img src="images/makeup.jpg" alt="makeup"></div>
-            <div class="cap"><span>Makeup</span><span class="no">02</span></div>
-        </div>
-        <div class="gallery-item" onclick="showModal('images/peony.jpg', 'Peony')">
-            <div class="gallery-frame"><img src="images/peony.jpg" alt="peony"></div>
-            <div class="cap"><span>Peony</span><span class="no">03</span></div>
-        </div>
-        <div class="gallery-item" onclick="showModal('images/swans.jpg', 'Swans')">
-            <div class="gallery-frame"><img src="images/swans.jpg" alt="swans"></div>
-            <div class="cap"><span>Swans</span><span class="no">04</span></div>
-        </div>
+        <span class="work-sparkle work-sparkle-one" aria-hidden="true">✦</span>
+        <span class="work-sparkle work-sparkle-two" aria-hidden="true">✧</span>
+        <span class="sticker-sample sticker-kirby" aria-hidden="true"></span>
     </div>
 
     <footer id="contact">
