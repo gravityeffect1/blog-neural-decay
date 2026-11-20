@@ -879,3 +879,8 @@ main.layout > *, .work-content > * { min-width: 0; }
   .banner-hero-copy p { font-size: .72rem; }
   .void-ticker { font-size: .61rem; gap: 4px 14px; }
 }
+
+/* Clean graffiti banner: image only, true colours */
+.banner-header { height: clamp(180px, 26vw, 340px); margin: 8px auto 32px; }
+.banner-header img { filter: none; }
+@media (max-width: 700px) { .banner-header { height: 170px; margin: 4px auto 24px; } }
