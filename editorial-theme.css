@@ -550,3 +550,299 @@ body.reading-mode .inline-post-browser { display: block; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation: none !important; transition: none !important; }
 }
+
+
+/* -----------------------------------------------------------------------
+   NOV 2026 — PORTRAIT-LED RESEARCH INTRODUCTION
+   Additive styling. Existing assets, archive, research widgets and scripts
+   remain in place. This section comes last to override older banner styles.
+   ----------------------------------------------------------------------- */
+
+.profile-hero {
+  position: relative;
+  padding: clamp(52px,6vw,88px) 0 clamp(45px,5vw,68px);
+  background:
+    radial-gradient(circle at 90% 10%, rgba(139,77,80,.035), transparent 35%),
+    var(--paper);
+  border-bottom: 0;
+}
+.profile-hero .container { max-width: 1240px; }
+.profile-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1.5fr) minmax(260px,.76fr);
+  align-items: center;
+  gap: clamp(35px,5.5vw,85px);
+}
+.profile-hero-copy { min-width: 0; }
+.profile-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--accent-deep);
+  font: 500 .64rem/1.5 var(--mono);
+  letter-spacing: .105em;
+}
+.profile-indicator {
+  display: inline-block;
+  flex: 0 0 7px; width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+.profile-hero h1 {
+  max-width: 720px;
+  margin: 22px 0 22px;
+  font: 500 clamp(3.25rem,5.3vw,5.4rem)/.98 var(--display);
+  letter-spacing: -.037em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.profile-hero h1 em {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--accent-deep);
+}
+.profile-deck {
+  max-width: 625px;
+  color: #39464b;
+  font: 400 1.055rem/1.69 var(--body-serif);
+}
+.profile-note {
+  max-width: 540px;
+  margin-top: 13px;
+  color: var(--ink-faint);
+  font: 400 .92rem/1.7 var(--body-serif);
+}
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 19px;
+  align-items: center;
+  margin: 27px 0 30px;
+}
+.profile-actions a {
+  display: inline-flex;
+  align-items: center; justify-content: center; gap: 12px;
+  padding: 11px 17px;
+  border: 1px solid #28343a;
+  border-radius: 2px;
+  text-decoration: none;
+  font: 500 .76rem/1.4 var(--body-serif);
+  transition: background .2s ease, color .2s ease;
+}
+.profile-action-primary { color: #fff; background: #28343a; }
+.profile-action-primary:hover { color: #fff; background: var(--accent-deep); border-color: var(--accent-deep); }
+.profile-actions .profile-action-secondary {
+  color: var(--ink);
+  background: transparent;
+  border-color: var(--line-strong);
+}
+.profile-actions .profile-action-secondary:hover { background: var(--accent-soft); color: var(--accent-deep); }
+.profile-meta {
+  display: flex; flex-wrap: wrap; gap: 7px 26px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  font: 400 .57rem/1.65 var(--mono);
+  letter-spacing: .08em;
+  color: var(--ink-faint);
+}
+.profile-photo { width: 100%; max-width: 355px; justify-self: end; margin: 0; }
+.profile-photo-frame {
+  position: relative; isolation: isolate;
+  width: 100%;
+  padding: 9px;
+  border: 1px solid #dcd9d6;
+  background: #fff;
+  box-shadow: 0 14px 30px rgba(30,35,38,.09);
+}
+.profile-photo-frame::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 19px; bottom: -12px;
+  left: 19px; right: -12px;
+  border: 1px solid #b8aca9;
+  pointer-events: none;
+}
+.profile-photo-frame img {
+  display: block;
+  width: 100%; height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  filter: none;
+}
+.profile-photo figcaption {
+  display: flex; justify-content: space-between; flex-wrap: wrap;
+  gap: 4px 10px;
+  padding-top: 18px;
+  color: var(--ink-faint);
+  font: 400 .52rem/1.6 var(--mono);
+  letter-spacing: .055em;
+}
+
+/* An image interlude, not a second competing hero */
+.banner-header {
+  width: min(1152px, calc(100% - 88px));
+  max-width: 1152px;
+  height: 174px;
+  margin: 0 auto 12px;
+  border: 0; border-radius: 2px;
+  outline: 0; box-shadow: none;
+  transform: none;
+}
+.banner-header img {
+  filter: saturate(.58) brightness(.73) contrast(.95);
+  object-position: center 47%;
+}
+.banner-header .banner-scrim {
+  background: linear-gradient(90deg,rgba(22,29,32,.83),rgba(22,29,32,.5) 62%,rgba(22,29,32,.17));
+}
+.banner-hero-copy {
+  left: 33px; right: 24px; bottom: 21px;
+  width: auto;
+}
+.banner-eyebrow {
+  color: #e5d9d7;
+  font: 500 .55rem/1.5 var(--mono);
+  letter-spacing: .15em;
+}
+.banner-hero-copy strong {
+  margin: 4px 0 2px;
+  color: #fffaf4;
+  font: 500 clamp(1.9rem,3.1vw,2.6rem)/1 var(--display);
+  letter-spacing: -.015em;
+}
+.banner-hero-copy p {
+  max-width: 540px;
+  color: #efebea;
+  font: 400 .78rem/1.5 var(--body-serif);
+}
+.void-ticker {
+  max-width: 1152px;
+  margin: 0 auto 36px;
+  gap: 6px 23px;
+  border-bottom-color: var(--line);
+}
+
+/* Editorial structure for the first two journal chapters */
+.section-intro {
+  max-width: 640px;
+  margin: -3px 0 20px;
+  color: var(--ink-soft);
+  font: 400 .91rem/1.72 var(--body-serif);
+}
+.focus-grid {
+  display: grid;
+  grid-template-columns: minmax(0,1fr);
+  border-top: 1px solid var(--line);
+}
+.focus-card {
+  display: grid;
+  grid-template-columns: 142px minmax(0,1fr);
+  column-gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+}
+.focus-card-kicker {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  padding-top: 5px;
+  font: 400 .57rem/1.65 var(--mono);
+  letter-spacing: .055em;
+  color: var(--accent);
+}
+.focus-card h3 {
+  grid-column: 2;
+  margin: 0 0 4px;
+  color: var(--ink);
+  font: 600 1.42rem/1.13 var(--display);
+}
+.focus-card p {
+  grid-column: 2;
+  margin: 0;
+  color: var(--ink-soft);
+  font: 400 .86rem/1.6 var(--body-serif);
+}
+.idx-section--focus, .idx-section--about { margin-bottom: 35px; }
+.author-grid--refined {
+  grid-template-columns: 126px minmax(0,1fr);
+  align-items: start;
+}
+.author-grid--refined .author-portrait { width: 126px; }
+.author-grid--refined .author-portrait img {
+  width: 100%; height: auto; aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  transform: none;
+  box-shadow: none;
+}
+.author-grid--refined .author-role { margin: 7px 0 14px; }
+.author-bio--second { margin-top: 11px; }
+.author-personal {
+  display: flex; align-items: center; gap: 13px;
+  margin-top: 20px;
+  padding: 12px 13px;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--accent);
+  background: #fff;
+}
+.author-personal img {
+  width: 49px; height: 49px;
+  flex: 0 0 49px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+}
+.author-personal span {
+  color: var(--ink-soft);
+  font: 400 .77rem/1.55 var(--body-serif);
+}
+.writings-intro { margin-top: -3px; }
+
+@media (max-width: 970px) {
+  .profile-hero-grid { grid-template-columns: minmax(0,1.35fr) minmax(230px,.7fr); gap: 32px; }
+  .profile-hero h1 { font-size: clamp(3rem,5.5vw,4.25rem); }
+  .profile-photo { max-width: 280px; }
+  .focus-card { grid-template-columns: 110px minmax(0,1fr); gap: 14px; }
+}
+@media (max-width: 735px) {
+  .profile-hero { padding: 42px 0 40px; }
+  .profile-hero-grid { grid-template-columns: minmax(0,1fr); gap: 27px; }
+  .profile-hero h1 { max-width: 660px; font-size: clamp(3.05rem,9vw,4.5rem); margin: 18px 0; }
+  .profile-deck { font-size: .98rem; }
+  .profile-photo { max-width: 270px; justify-self: start; }
+  .profile-actions { margin: 22px 0; }
+  .profile-meta { gap: 6px 15px; }
+  .banner-header { width: calc(100% - 40px); height: 162px; margin: 0 auto 9px; }
+  .banner-hero-copy { left: 18px; bottom: 18px; }
+  .banner-hero-copy strong { font-size: 2rem; }
+  .banner-hero-copy p { font-size: .7rem; }
+  .void-ticker { margin: 0 20px 23px; }
+}
+@media (max-width: 480px) {
+  .profile-eyebrow { font-size: .56rem; letter-spacing: .04em; }
+  .profile-hero h1 { font-size: clamp(2.75rem,12vw,3.7rem); }
+  .profile-photo { width: min(73vw,260px); }
+  .profile-actions { gap: 9px; }
+  .profile-actions a { padding: 10px 13px; font-size: .73rem; }
+  .profile-meta { font-size: .5rem; }
+  .focus-card { grid-template-columns: 1fr; gap: 4px; padding: 15px 0 17px; }
+  .focus-card-kicker, .focus-card h3, .focus-card p { grid-column: 1; grid-row: auto; }
+  .focus-card-kicker { padding-top: 0; }
+  .focus-card h3 { font-size: 1.37rem; }
+  .author-grid--refined { grid-template-columns: 82px minmax(0,1fr); gap: 13px; }
+  .author-grid--refined .author-portrait { width: 82px; }
+  .author-personal { padding: 9px; gap: 9px; }
+  .author-personal img { width: 42px; height: 42px; flex-basis: 42px; }
+  .author-personal span { font-size: .72rem; }
+  .banner-header { height: 153px; }
+  .banner-hero-copy strong { font-size: 1.8rem; }
+}
+
+/* Keep individual articles focused on the writing, not the homepage hero. */
+body.reading-mode .profile-hero,
+body.reading-mode .banner-header,
+body.reading-mode .void-ticker { display: none; }
