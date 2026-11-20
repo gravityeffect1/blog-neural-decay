@@ -841,3 +841,8 @@ body.reading-mode .inline-post-browser { display: block; }
   .banner-header { height: 153px; }
   .banner-hero-copy strong { font-size: 1.8rem; }
 }
+
+/* Keep individual articles focused on the writing, not the homepage hero. */
+body.reading-mode .profile-hero,
+body.reading-mode .banner-header,
+body.reading-mode .void-ticker { display: none; }
